@@ -1,6 +1,6 @@
 function dragify(Frame)
 dragToggle = nil
-dragSpeed = nil -- You can edit this.
+dragSpeed = 99999 -- You can edit this.
 dragInput = nil
 dragStart = nil
 dragPos = nil
@@ -124,6 +124,23 @@ function Load_Key(key,callback)
     TextButton.MouseButton1Click:Connect(function()
 	setclipboard("Nothing")
 end)
+
+    UICorner_5 = Close
+    Close.Name = "Close"
+    Close.Parent = Drag
+    Close.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+    Close.BorderSizePixel = 0
+    Close.Position = UDim2.new(0.0566893369, 0, -0.716666698, 0)
+    Close.Size = UDim2.new(0, 190, 0, 42)
+    Close.Font = Enum.Font.FredokaOne
+    Close.Text = "X"
+    Close.TextColor3 = Color3.fromRGB(255, 255, 255)
+    Close.TextSize = 35.000
+    Load_Text.TextStrokeTransparency = 0.600
+    Close.MouseButton1Click:Connect(function()
+    	KeyboardguiWarriorRoberrVersion:Destroy()
+    end)
+    
     UICorner_3.Parent = TextButton
     
     TextButton_2.Parent = Get_Key_Page
@@ -192,21 +209,7 @@ end)
     Load_Text.TextSize = 26.000
     Load_Text.TextStrokeTransparency = 0.600
     
-    UICorner_5 = Close
-    Close.Name = "Close"
-    Close.Parent = Drag
-    Close.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-    Close.BorderSizePixel = 0
-    Close.Position = UDim2.new(0.0295228846, 0, -0.375300705, 0)
-    Close.Size = UDim2.new(0, 409, 0, 29)
-    Close.Font = Enum.Font.SourceSans
-    Close.Text = "X"
-    Close.TextColor3 = Color3.fromRGB(255, 255, 255)
-    Close.TextSize = 35.000
-    Load_Text.TextStrokeTransparency = 0
-    Close.MouseButton1Click:Connect(function()
-    	KeyboardguiWarriorRoberrVersion:Destroy()
-    end)
+
     
     if key == nil then
         Load_Page.Visible = true
