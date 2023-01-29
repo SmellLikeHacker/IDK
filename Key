@@ -192,7 +192,7 @@ end)
     Load_Text.TextSize = 26.000
     Load_Text.TextStrokeTransparency = 0.600
     
-    local UICorner_5 = Instance.new("UICorner")
+    UICorner_5 = Close
     Close.Name = "Close"
     Close.Parent = Drag
     Close.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
