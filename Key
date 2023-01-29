@@ -48,7 +48,6 @@ function Load_Key(key,callback)
     local UICorner_2 = Instance.new("UICorner")
     local TextButton = Instance.new("TextButton")
     local UICorner_3 = Instance.new("UICorner")
-    local UICorner_5 = Instance.new("UICorner")
     local TextButton_2 = Instance.new("TextButton")
     local UICorner_4 = Instance.new("UICorner")
     local TextLabel_2 = Instance.new("TextLabel")
@@ -123,9 +122,7 @@ function Load_Key(key,callback)
     TextButton.TextStrokeTransparency = 0.600
     TextButton.MouseButton1Click:Connect(function()
 	setclipboard("Nothing")
-end)
-
-    UICorner_5 = Close
+	
     Close.Name = "Close"
     Close.Parent = Drag
     Close.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
@@ -138,9 +135,11 @@ end)
     Close.TextSize = 35.000
     Load_Text.TextStrokeTransparency = 0.600
     Close.MouseButton1Click:Connect(function()
-           Load_Page.Visible = false
-           Get_Key_Page.Visible = true
+        Load_Page.Visible = true
+		pcall(callback , true)
     end)
+end)
+
     
     UICorner_3.Parent = TextButton
     
