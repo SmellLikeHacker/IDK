@@ -1,6 +1,6 @@
 function dragify(Frame)
 dragToggle = nil
-dragSpeed = nil -- You can edit this.
+dragSpeed = .25 -- You can edit this.
 dragInput = nil
 dragStart = nil
 dragPos = nil
@@ -53,11 +53,9 @@ function Load_Key(key,callback)
     local TextLabel_2 = Instance.new("TextLabel")
     local Load_Page = Instance.new("Frame")
     local Load_Text = Instance.new("TextLabel")
-    local Close = Instance.new("TextButton")
-
-
     
-    Muimi.Name = "Smell"
+    
+    Muimi.Name = "Muimi"
     Muimi.Parent = game.CoreGui
     Muimi.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
     
@@ -80,7 +78,7 @@ function Load_Key(key,callback)
     TextLabel.Position = UDim2.new(0.0544662289, 0, 0.0378006846, 0)
     TextLabel.Size = UDim2.new(0, 409, 0, 22)
     TextLabel.Font = Enum.Font.FredokaOne
-    TextLabel.Text = "Smell Hub"
+    TextLabel.Text = "Muimi Hub"
     TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
     TextLabel.TextSize = 24.000
     TextLabel.TextStrokeTransparency = 0.600
@@ -121,26 +119,8 @@ function Load_Key(key,callback)
     TextButton.TextSize = 21.000
     TextButton.TextStrokeTransparency = 0.600
     TextButton.MouseButton1Click:Connect(function()
-	setclipboard("Nothing")
-	
-    Close.Name = "Close"
-    Close.Parent = Drag
-    Close.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
-    Close.BorderSizePixel = 0
-    Close.Position = UDim2.new(0.0566893369, 0, -0.716666698, 0)
-    Close.Size = UDim2.new(0, 190, 0, 42)
-    Close.Font = Enum.Font.FredokaOne
-    Close.Text = "X"
-    Close.TextColor3 = Color3.fromRGB(255, 255, 255)
-    Close.TextSize = 35.000
-    Load_Text.TextStrokeTransparency = 0.600
-    Close.MouseButton1Click:Connect(function()
-        Load_Page.Visible = true
-		pcall(callback , true)
-    end)
+	setclipboard("https://link-center.net/331681/w-key-first")
 end)
-
-    
     UICorner_3.Parent = TextButton
     
     TextButton_2.Parent = Get_Key_Page
@@ -210,7 +190,6 @@ end)
     Load_Text.TextStrokeTransparency = 0.600
     
 
-    
     if key == nil then
         Load_Page.Visible = true
 		pcall(callback , true)
