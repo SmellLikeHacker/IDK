@@ -1,6 +1,6 @@
 function dragify(Frame)
 dragToggle = nil
-dragSpeed = 0 -- You can edit this.
+dragSpeed = 99999 -- You can edit this.
 dragInput = nil
 dragStart = nil
 dragPos = nil
