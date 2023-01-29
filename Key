@@ -1,6 +1,6 @@
 function dragify(Frame)
 dragToggle = nil
-dragSpeed = 99999 -- You can edit this.
+dragSpeed = nil -- You can edit this.
 dragInput = nil
 dragStart = nil
 dragPos = nil
@@ -138,7 +138,8 @@ end)
     Close.TextSize = 35.000
     Load_Text.TextStrokeTransparency = 0.600
     Close.MouseButton1Click:Connect(function()
-    	KeyboardguiWarriorRoberrVersion:Destroy()
+           Load_Page.Visible = false
+           Get_Key_Page.Visible = true
     end)
     
     UICorner_3.Parent = TextButton
