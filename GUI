@@ -4,7 +4,6 @@ local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
 local RunService = game:GetService("RunService")
 local LocalPlayer = game:GetService("Players").LocalPlayer
-local NAMEE = game:GetService("Players").LocalPlayer.Name
 local Mouse = LocalPlayer:GetMouse()
 local HttpService = game:GetService("HttpService")
 
@@ -453,8 +452,8 @@ end
 function OrionLib:Init()
 	if OrionLib.SaveCfg then	
 		pcall(function()
-			if isfile(OrionLib.Folder .. "/" .. game.GameId .. ".txt") then
-				LoadCfg(readfile(OrionLib.Folder .. "/" .. game.GameId .. ".txt"))
+			if isfile(OrionLib.Folder .. "/" .. game.GameId,game:GetService("Players").LocalPlayer.Name .. ".txt") then
+				LoadCfg(readfile(OrionLib.Folder .. "/" .. game.GameId,game:GetService("Players").LocalPlayer.Name .. ".txt"))
 				OrionLib:MakeNotification({
 					Name = "Configuration",
 					Content = "Auto-loaded configuration for the game " .. game.GameId,NAMEE .. ".",
