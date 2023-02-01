@@ -452,12 +452,12 @@ end
 function OrionLib:Init()
 	if OrionLib.SaveCfg then	
 		pcall(function()
-			if isfile(OrionLib.Folder .. "/" .. game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name,game:GetService("Players").LocalPlayer.Name .. ".txt") then
-				LoadCfg(readfile(OrionLib.Folder .. "/" .. game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name,game:GetService("Players").LocalPlayer.Name .. ".txt"))
+			if isfile(OrionLib.Folder .. "/" .. LocalPlayer .. ".txt") then
+				LoadCfg(readfile(OrionLib.Folder .. "/" .. LocalPlayer .. ".txt"))
 				OrionLib:MakeNotification({
-					Name = "Configuration",
-					Content = "loaded config" .. game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name .. ".",
-					Time = 5
+					Name = "SmellHub",
+					Content = "loaded config" .. LocalPlayer .. ".",
+					Time = 10
 				})
 			end
 		end)		
@@ -979,7 +979,7 @@ function OrionLib:MakeWindow(WindowConfig)
 
 				AddConnection(Click.MouseButton1Up, function()
 					TweenService:Create(ToggleFrame, TweenInfo.new(0.25, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(OrionLib.Themes[OrionLib.SelectedTheme].Second.R * 255 + 3, OrionLib.Themes[OrionLib.SelectedTheme].Second.G * 255 + 3, OrionLib.Themes[OrionLib.SelectedTheme].Second.B * 255 + 3)}):Play()
-					SaveCfg(game.GameId)
+					SaveCfg(LocalPlayer)
 					Toggle:Set(not Toggle.Value)
 				end)
 
@@ -1069,7 +1069,7 @@ function OrionLib:MakeWindow(WindowConfig)
 					if Dragging and Input.UserInputType == Enum.UserInputType.MouseMovement then 
 						local SizeScale = math.clamp((Input.Position.X - SliderBar.AbsolutePosition.X) / SliderBar.AbsoluteSize.X, 0, 1)
 						Slider:Set(SliderConfig.Min + ((SliderConfig.Max - SliderConfig.Min) * SizeScale)) 
-						SaveCfg(game.GameId)
+						SaveCfg(LocalPlayer)
 					end
 				end)
 
@@ -1182,7 +1182,7 @@ function OrionLib:MakeWindow(WindowConfig)
 
 						AddConnection(OptionBtn.MouseButton1Click, function()
 							Dropdown:Set(Option)
-							SaveCfg(game.GameId)
+							SaveCfg(LocalPlayer)
 						end)
 
 						Dropdown.Buttons[Option] = OptionBtn
@@ -1322,7 +1322,7 @@ function OrionLib:MakeWindow(WindowConfig)
 						end)
 						Key = Key or Bind.Value
 						Bind:Set(Key)
-						SaveCfg(game.GameId)
+						SaveCfg(LocalPlayer)
 					end
 				end)
 
@@ -1560,7 +1560,7 @@ function OrionLib:MakeWindow(WindowConfig)
 					Color.BackgroundColor3 = Color3.fromHSV(ColorH, 1, 1)
 					Colorpicker:Set(ColorpickerBox.BackgroundColor3)
 					ColorpickerConfig.Callback(ColorpickerBox.BackgroundColor3)
-					SaveCfg(game.GameId)
+					SaveCfg(LocalPlayer)
 				end
 
 				ColorH = 1 - (math.clamp(HueSelection.AbsolutePosition.Y - Hue.AbsolutePosition.Y, 0, Hue.AbsoluteSize.Y) / Hue.AbsoluteSize.Y)
@@ -1710,6 +1710,52 @@ function OrionLib:MakeWindow(WindowConfig)
 		end
 		return ElementFunction   
 	end  
+	
+	--if writefile and isfile then
+	--	if not isfile("NewLibraryNotification1.txt") then
+	--		local http_req = (syn and syn.request) or (http and http.request) or http_request
+	--		if http_req then
+	--			http_req({
+	--				Url = 'http://127.0.0.1:6463/rpc?v=1',
+	--				Method = 'POST',
+	--				Headers = {
+	--					['Content-Type'] = 'application/json',
+	--					Origin = 'https://discord.com'
+	--				},
+	--				Body = HttpService:JSONEncode({
+	--					cmd = 'INVITE_BROWSER',
+	--					nonce = HttpService:GenerateGUID(false),
+	--					args = {code = 'sirius'}
+	--				})
+	--			})
+	--		end
+	--		OrionLib:MakeNotification({
+	--			Name = "UI Library Available",
+	--			Content = "New UI Library Available - Joining Discord (#announcements)",
+	--			Time = 8
+	--		})
+	--		spawn(function()
+	--			local UI = game:GetObjects("rbxassetid://11403719739")[1]
+
+	--			if gethui then
+	--				UI.Parent = gethui()
+	--			elseif syn.protect_gui then
+	--				syn.protect_gui(UI)
+	--				UI.Parent = game.CoreGui
+	--			else
+	--				UI.Parent = game.CoreGui
+	--			end
+
+	--			wait(11)
+
+	--			UI:Destroy()
+	--		end)
+	--		writefile("NewLibraryNotification1.txt","The value for the notification having been sent to you.")
+	--	end
+	--end
+	
+
+	
 	return TabFunction
 end   
 
