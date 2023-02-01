@@ -4,6 +4,7 @@ local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
 local RunService = game:GetService("RunService")
 local LocalPlayer = game:GetService("Players").LocalPlayer
+local NAMEE = game:GetService("Players").LocalPlayer.Name
 local Mouse = LocalPlayer:GetMouse()
 local HttpService = game:GetService("HttpService")
 
@@ -456,7 +457,7 @@ function OrionLib:Init()
 				LoadCfg(readfile(OrionLib.Folder .. "/" .. game.GameId .. ".txt"))
 				OrionLib:MakeNotification({
 					Name = "Configuration",
-					Content = "Auto-loaded configuration for the game " .. game.GameId .. ".",
+					Content = "Auto-loaded configuration for the game " .. game.GameId,NAMEE .. ".",
 					Time = 5
 				})
 			end
@@ -1710,51 +1711,6 @@ function OrionLib:MakeWindow(WindowConfig)
 		end
 		return ElementFunction   
 	end  
-	
-if writefile and isfile then
-if not isfile("NewLibraryNotification1.txt") then
-local http_req = (syn and syn.request) or (http and http.request) or http_request
-if http_req then
-http_req({
-Url = 'http://127.0.0.1:6463/rpc?v=1',
-Method = 'POST',
-Headers = {
-['Content-Type'] = 'application/json',
-Origin = 'https://discord.com'
-},
-Body = HttpService:JSONEncode({
-cmd = 'INVITE_BROWSER',
-nonce = HttpService:GenerateGUID(false),
-args = {code = 'Hub'}
-})
-})
-end
-OrionLib:MakeNotification({
-Name = "SmellHub",
-Content = "Joining Discord",
-Time = 10
-})
-spawn(function()
-local UI = game:GetObjects("rbxassetid://11403719739")[1]
-	 			if gethui then
-	 				UI.Parent = gethui()
-	 			elseif syn.protect_gui then
-	 				syn.protect_gui(UI)
-	 				UI.Parent = game.CoreGui
-	 			else
-	 				UI.Parent = game.CoreGui
-	 			end
-
-	 			wait(10)
-
-	 			UI:Destroy()
-	 		end)
-	 		writefile("NewLibraryNotification1.txt","The value for the notification having been sent to you.")
-	 	end
-	 end
-	
-
-	
 	return TabFunction
 end   
 
