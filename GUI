@@ -452,11 +452,11 @@ end
 function OrionLib:Init()
 	if OrionLib.SaveCfg then	
 		pcall(function()
-			if isfile(OrionLib.Folder .. "/" .. LocalPlayer .. ".txt") then
-				LoadCfg(readfile(OrionLib.Folder .. "/" .. LocalPlayer .. ".txt"))
+			if isfile(OrionLib.Folder .. "/" .. game.GameId,LocalPlayer .. ".txt") then
+				LoadCfg(readfile(OrionLib.Folder .. "/" .. game.GameId,LocalPlayer .. ".txt"))
 				OrionLib:MakeNotification({
 					Name = "SmellHub",
-					Content = "loaded config" .. LocalPlayer .. ".",
+					Content = "loaded config" .. game.GameId,LocalPlayer .. ".",
 					Time = 5
 				})
 			end
