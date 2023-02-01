@@ -452,8 +452,8 @@ end
 function OrionLib:Init()
 	if OrionLib.SaveCfg then	
 		pcall(function()
-			if isfile(OrionLib.Folder .. "/" .. game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name , game:GetService("Players").LocalPlayer.Name .. ".txt") then
-				LoadCfg(readfile(OrionLib.Folder .. "/" .. game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name , game:GetService("Players").LocalPlayer.Name .. ".txt"))
+			if isfile(OrionLib.Folder .. "/" .. game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name,game:GetService("Players").LocalPlayer.Name .. ".txt") then
+				LoadCfg(readfile(OrionLib.Folder .. "/" .. game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name,game:GetService("Players").LocalPlayer.Name .. ".txt"))
 				OrionLib:MakeNotification({
 					Name = "Configuration",
 					Content = "loaded config" .. game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name .. ".",
