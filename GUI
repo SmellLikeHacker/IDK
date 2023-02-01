@@ -456,7 +456,7 @@ function OrionLib:Init()
 				LoadCfg(readfile(OrionLib.Folder .. "/" .. game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name , game:GetService("Players").LocalPlayer.Name .. ".txt"))
 				OrionLib:MakeNotification({
 					Name = "Configuration",
-					Content = "Auto-loaded configuration for the game " .. game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name .. ".",
+					Content = "loaded config" .. game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name .. ".",
 					Time = 5
 				})
 			end
