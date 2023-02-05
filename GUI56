@@ -568,7 +568,7 @@ library.theme = {
 			local tab = { }
 			tab.name = name or ""
 			local textservice = game:GetService("TextService")
-			local size = textservice:GetTextSize(tab.name, window.theme.fontsize, window.theme.font, Vector2.new(200, 300))
+			local size = textservice:GetTextSize(tab.name, window.theme.fontsize, window.theme.font, Vector2.new(200, 200))
 			tab.TabButton = Instance.new("TextButton", window.TabList)
 			tab.TabButton.TextColor3 = window.theme.tabstextcolor
 			tab.TabButton.Text = tab.name
@@ -718,7 +718,7 @@ library.theme = {
 				sector.Label = Instance.new("TextLabel", sector.Main)
 				sector.Label.AnchorPoint = Vector2.new(0, 0.5)
 				sector.Label.Position = UDim2.fromOffset(12, -1)
-				sector.Label.Size = UDim2.fromOffset(math.clamp(textservice:GetTextSize(sector.name, 15, window.theme.font, Vector2.new(200, 300)).X + 13, 0, sector.Main.Size.X.Offset), size.Y)
+				sector.Label.Size = UDim2.fromOffset(math.clamp(textservice:GetTextSize(sector.name, 15, window.theme.font, Vector2.new(200, 200)).X + 13, 0, sector.Main.Size.X.Offset), size.Y)
 				sector.Label.BackgroundTransparency = 1
 				sector.Label.BorderSizePixel = 0
 				sector.Label.ZIndex = 6
@@ -729,7 +729,7 @@ library.theme = {
 				sector.Label.TextSize = 15
 				updateevent.Event:Connect(function(theme)
 					local size = textservice:GetTextSize(sector.name, 15, theme.font, Vector2.new(2000, 2000))
-					sector.Label.Size = UDim2.fromOffset(math.clamp(textservice:GetTextSize(sector.name, 15, theme.font, Vector2.new(200, 300)).X + 13, 0, sector.Main.Size.X.Offset), size.Y)
+					sector.Label.Size = UDim2.fromOffset(math.clamp(textservice:GetTextSize(sector.name, 15, theme.font, Vector2.new(200, 200)).X + 13, 0, sector.Main.Size.X.Offset), size.Y)
 					sector.Label.Font = theme.font
 				end)
 				sector.LabelBackFrame = Instance.new("Frame", sector.Main)
@@ -2055,7 +2055,7 @@ library.theme = {
 						slider.Label.Font = theme.font
 						slider.Label.TextColor3 = theme.itemscolor
 					end)
-					local size = textservice:GetTextSize(slider.Label.Text, slider.Label.TextSize, slider.Label.Font, Vector2.new(200, 300))
+					local size = textservice:GetTextSize(slider.Label.Text, slider.Label.TextSize, slider.Label.Font, Vector2.new(200, 200))
 					slider.InputLabel = Instance.new("TextBox", slider.MainBack)
 					slider.InputLabel.BackgroundTransparency = 1
 					slider.InputLabel.ClearTextOnFocus = false
@@ -2071,7 +2071,7 @@ library.theme = {
 					updateevent.Event:Connect(function(theme)
 						slider.InputLabel.Font = theme.font
 						slider.InputLabel.TextColor3 = theme.itemscolor
-						local size = textservice:GetTextSize(slider.Label.Text, slider.Label.TextSize, slider.Label.Font, Vector2.new(200, 300))
+						local size = textservice:GetTextSize(slider.Label.Text, slider.Label.TextSize, slider.Label.Font, Vector2.new(200, 200))
 						slider.InputLabel.Size = UDim2.fromOffset(sector.Main.Size.X.Offset - size.X - 15, 12)
 					end)
 					slider.Main = Instance.new("TextButton", slider.MainBack)
