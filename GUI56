@@ -2,6 +2,31 @@ library = {
     flags = { },
 	items = { }
 }
+library.theme = {
+    fontsize = 14,
+    titlesize = 18,
+    font = Enum.Font.Code,
+    background = "rbxassetid://5553946656",
+    tilesize = 50,
+    cursor = false,
+    cursorimg = "https://t0.rbxcdn.com/42f66da98c40252ee151326a82aab51f",
+RainbowText    (backgroundcolor)
+RainbowText    (tabstextcolor)
+RainbowText    (bordercolor)
+RainbowText    (accentcolor)
+RainbowText    (accentcolor2)
+RainbowText    (outlinecolor)
+RainbowText    (outlinecolor2)
+RainbowText    (sectorcolor)
+RainbowText    (toptextcolor)
+    topheight = 48,
+RainbowText    (topcolor )
+RainbowText    (topcolor2 )
+RainbowText    (buttoncolor )
+RainbowText    (buttoncolor2 )
+RainbowText    (itemscolor)
+RainbowText    (itemscolor2)
+}
 	local function RainbowText(text)
 		spawn(function()
 			local add = 10
@@ -57,31 +82,6 @@ library = {
 			end
 		end)
 	end
-library.theme = {
-    fontsize = 14,
-    titlesize = 18,
-    font = Enum.Font.Code,
-    background = "rbxassetid://5553946656",
-    tilesize = 50,
-    cursor = false,
-    cursorimg = "https://t0.rbxcdn.com/42f66da98c40252ee151326a82aab51f",
-RainbowText    (backgroundcolor)
-RainbowText    (tabstextcolor)
-RainbowText    (bordercolor)
-RainbowText    (accentcolor)
-RainbowText    (accentcolor2)
-RainbowText    (outlinecolor)
-RainbowText    (outlinecolor2)
-RainbowText    (sectorcolor)
-RainbowText    (toptextcolor)
-    topheight = 48,
-RainbowText    (topcolor )
-RainbowText    (topcolor2 )
-RainbowText    (buttoncolor )
-RainbowText    (buttoncolor2 )
-RainbowText    (itemscolor)
-RainbowText    (itemscolor2)
-}
     if _G.Color == nil then _G.Color = Color3.fromRGB(80, 245, 245) end
     if _G.Color2 == nil then _G.Color2 = Color3.fromRGB(0, 151, 156) end
     -- Services
