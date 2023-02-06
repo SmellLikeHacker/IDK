@@ -128,15 +128,15 @@ library.theme = {
 
 	function library:ConfigSystem(name)
 	    
-	    if not isfolder("Smell_Hub") then
-	        makefolder("Smell_Hub")
+	    if not isfolder("!Smell_Hub") then
+	        makefolder("!Smell_Hub")
 	    end
         
 
 
 	    
 				local configSystem = { }
-				configSystem.configFolder = "Smell_Hub/" .. tostring(game.Players.LocalPlayer.Name) .. "_"..name
+				configSystem.configFolder = "!Smell_Hub/" .. tostring(game.Players.LocalPlayer.Name) .. " "..name
 				if (not isfolder(configSystem.configFolder)) then
 					makefolder(tostring(configSystem.configFolder))
 				end
@@ -3430,7 +3430,7 @@ end
 				return sector
 			end
 			pcall(function()
-				makefolder("Smell_Hub")
+				makefolder("!Smell_Hub")
 			end)
 
 			table.insert(window.Tabs, tab)
