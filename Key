@@ -38,7 +38,7 @@ end)
 end
 
 function Load_Key(key,callback)
-    local Muimi = Instance.new("ScreenGui")
+    local Smell = Instance.new("ScreenGui")
     local Background_Main = Instance.new("Frame")
     local UIGradient = Instance.new("UIGradient")
     local UICorner = Instance.new("UICorner")
@@ -56,12 +56,12 @@ function Load_Key(key,callback)
     local Load_Text = Instance.new("TextLabel")
     
     
-    Muimi.Name = "Muimi"
-    Muimi.Parent = game.CoreGui
-    Muimi.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    Smell.Name = "Smell"
+    Smell.Parent = game.CoreGui
+    Smell.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
     
     Background_Main.Name = "Background_Main"
-    Background_Main.Parent = Muimi
+    Background_Main.Parent = Smell
     Background_Main.BackgroundColor3 = Color3.fromRGB(149, 234, 68)
     Background_Main.Position = UDim2.new(0.210053861, 0, 0.380219787, 0)
     Background_Main.Size = UDim2.new(0, 250, 0, 200)
