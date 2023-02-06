@@ -206,9 +206,9 @@ end)
     
 
     if key == nil then
-        wait (1)
         Load_Page.Visible = true
-		pcall( , true)
+	wait (1)
+	pcall(callback , true)
     end
     
     return Load_Text
