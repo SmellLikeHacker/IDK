@@ -212,8 +212,7 @@ library.theme = {
 			end
 			--
 			
-	local UserInputService = game:GetService("UserInputService")
-
+local UserInputService = game:GetService("UserInputService")
 local function MakeDraggable(topbarobject, object)
 	local Dragging = nil
 	local DragInput = nil
@@ -254,36 +253,31 @@ local function MakeDraggable(topbarobject, object)
 	end)
 end
 
-
-
 	local Anh_Gai_Alimi = {"rbxassetid://6942501524","rbxassetid://7903531742","rbxassetid://7903522083","rbxassetid://6409799523","rbxassetid://8881175113",
 		"rbxassetid://7584008919","rbxassetid://6271530098","rbxassetid://7388383866","rbxassetid://7962732035","rbxassetid://6842416695","rbxassetid://6576447146",
 		"rbxassetid://10171317457","rbxassetid://10171317457","rbxassetid://8598068647","rbxassetid://8192162908","rbxassetid://8677814109","rbxassetid://4597457883"
 	}
 	
-	local SupportUi = Instance.new("ScreenGui")
+	local TOGGLEGUIBYSMELL = Instance.new("ScreenGui")
 	local BackImg = Instance.new("ImageLabel")
-	local Tittle = Instance.new("TextLabel")
-	local Tittle2 = Instance.new("TextLabel")
 	local ScrollingFrame = Instance.new("ScrollingFrame")
 	local UIListLayout = Instance.new("UIListLayout")
 	local CloseButton = Instance.new("TextButton")
-	local CloseButton2 = Instance.new("TextButton")
 	local Black = Instance.new("Frame")
 
 	MakeDraggable(BackImg,BackImg)
 
-	SupportUi.Name = "SupportUi"
-	SupportUi.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-	SupportUi.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+	TOGGLEGUIBYSMELL.Name = "TOGGLEGUIBYSMELL"
+	TOGGLEGUIBYSMELL.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	TOGGLEGUIBYSMELL.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 	BackImg.Name = "BackImg"
-	BackImg.Parent = SupportUi
+	BackImg.Parent = TOGGLEGUIBYSMELL
 	BackImg.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
-	BackImg.BorderColor3 = Color3.fromRGB(149, 234, 68)
+	BackImg.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	BackImg.BorderSizePixel = 1
 	BackImg.Position = UDim2.new(.2, 0, .25, 0) ----Spawn Position
-	BackImg.Size = UDim2.new(0, 100, 0, 100)
+	BackImg.Size = UDim2.new(0, 75, 0, 75)
 	BackImg.Image = Anh_Gai_Alimi[math.random(1,#Anh_Gai_Alimi)]
 	
 	Black.Name = "Black"
@@ -294,74 +288,26 @@ end
 	Black.BorderSizePixel = 0
 	Black.Size = UDim2.new(1, 0, 1, 0)
 
-	Tittle.Name = "Tittle"
-	Tittle.Parent = Black
-	Tittle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Tittle.BackgroundTransparency = 1
-	Tittle.Position = UDim2.new(0, 0, 0, 70)
-	Tittle.Size = UDim2.new(10, 265, 0, 12)
-	Tittle.Font = Enum.Font.Highway
-	Tittle.Text = "Tap X Close This Gui"
-	Tittle.TextColor3 = Color3.fromRGB(149, 234, 68)
-	Tittle.TextScaled = true
-	Tittle.TextSize = 14.000
-	Tittle.TextWrapped = true
-	Tittle.TextXAlignment = Enum.TextXAlignment.Left
-
-	Tittle2.Name = "Tittle2"
-	Tittle2.Parent = Black
-	Tittle2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Tittle2.BackgroundTransparency = 1
-	Tittle2.Position = UDim2.new(0, 0, 0, 85)
-	Tittle2.Size = UDim2.new(10, 265, 0, 11)
-	Tittle2.Font = Enum.Font.Highway
-	Tittle2.Text = "Tap UI Toggle Hub Gui"
-	Tittle2.TextColor3 = Color3.fromRGB(149, 234, 68)
-	Tittle2.TextScaled = true
-	Tittle2.TextSize = 14.000
-	Tittle2.TextWrapped = true
-	Tittle2.TextXAlignment = Enum.TextXAlignment.Left
-
-	UIListLayout.Parent = ScrollingFrame
-	UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-
 	CloseButton.Name = "CloseButton"
 	CloseButton.Parent = Black
-	CloseButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	CloseButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	CloseButton.BackgroundTransparency = 1
-	CloseButton.BorderSizePixel = 0
+	CloseButton.BorderSizePixel = 1
 	CloseButton.Position = UDim2.new(0, 0, 0, 0)
-	CloseButton.Size = UDim2.new(0, 40, 0, 40)
+	CloseButton.Size = UDim2.new(0, 75, 0, 75)
 	CloseButton.Font = Enum.Font.FredokaOne
-	CloseButton.Text = "UI"
+	CloseButton.Text = ""
 	CloseButton.TextColor3 = Color3.fromRGB(149, 234, 68)
 	CloseButton.TextScaled = true
 	CloseButton.TextSize = 30.000
 	CloseButton.TextWrapped = true
-	
-    CloseButton2.Name = "CloseButton2"
-	CloseButton2.Parent = Black
-	CloseButton2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	CloseButton2.BackgroundTransparency = 1
-	CloseButton2.BorderSizePixel = 0
-	CloseButton2.Position = UDim2.new(0, 60, 0, 0)
-	CloseButton2.Size = UDim2.new(0, 40, 0, 40)
-	CloseButton2.Font = Enum.Font.FredokaOne
-	CloseButton2.Text = "X"
-	CloseButton2.TextColor3 = Color3.fromRGB(149, 234, 68)
-	CloseButton2.TextScaled = true
-	CloseButton2.TextSize = 30.000
-	CloseButton2.TextWrapped = true
 
-	
 	CloseButton.MouseButton1Click:Connect(function()
 		game:GetService("VirtualInputManager"):SendKeyEvent(true,"RightControl",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
         game:GetService("VirtualInputManager"):SendKeyEvent(false,"RightControl",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
 	end)
 
-	CloseButton2.MouseButton1Click:Connect(function()
-        game.Debris:AddItem(SupportUi, 0)
-	end)
+
 	function library:CreateWatermark(name)
 		local gamename = marketplaceservice:GetProductInfo(game.PlaceId).Name
 		local watermark = { }
