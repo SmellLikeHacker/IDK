@@ -2438,7 +2438,7 @@ end
 					colorpicker.selector = Instance.new("TextLabel", colorpicker.MainPicker)
 					colorpicker.selector.ZIndex = 100
 					colorpicker.selector.Position = UDim2.new(0, 3, 0, 181)
-					colorpicker.selector.Size = UDim2.new(0, 173, 0, 40)
+					colorpicker.selector.Size = UDim2.new(0, 173, 0, 10)
 					colorpicker.selector.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 					colorpicker.selector.BorderColor3 = window.theme.outlinecolor2
 					colorpicker.selector.Text = ""
@@ -2522,7 +2522,7 @@ end
 						dropdown.Gradient.Rotation = 90
 						dropdown.Gradient.Color = ColorSequence.new{
 							ColorSequenceKeypoint.new(0.00, Color3.fromRGB(49, 49, 49)),
-							ColorSequenceKeypoint.new(1.00, Color3.fromRGB(44, 44, 44))
+							ColorSequenceKeypoint.new(1.00, Color3.fromRGB(39, 39, 39))
 						}
 						dropdown.SelectedLabel = Instance.new("TextLabel", dropdown.Main)
 						dropdown.SelectedLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
