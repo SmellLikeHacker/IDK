@@ -1,3 +1,4 @@
+
 library = {
     flags = { },
 	items = { }
@@ -136,21 +137,21 @@ library.theme = {
 
 	    
 				local configSystem = { }
-				configSystem.configFolder = "!Smell_Hub/" .. tostring(game.Players.LocalPlayer.Name) .. " "..name
+				configSystem.configFolder = "!Smell_Hub/" .. tostring(game.Players.LocalPlayer.Name) .. ""
 				if (not isfolder(configSystem.configFolder)) then
 					makefolder(tostring(configSystem.configFolder))
 				end
 				
-				if not isfile(configSystem.configFolder.."/Config_"..name..".txt") then
-				    writefile(configSystem.configFolder.."/Config_"..name..".txt" , "[]")
+				if not isfile(configSystem.configFolder.."/"..name..".txt") then
+				    writefile(configSystem.configFolder.."/"..name..".txt" , "[]")
 				end
 				
 				function configSystem:Load()
-				local Success = pcall(readfile, configSystem.configFolder.."/Config_"..name..".txt")
+				local Success = pcall(readfile, configSystem.configFolder.."/"..name..".txt")
 					
 					if (Success) then
 						pcall(function()
-							local ReadConfig = httpservice:JSONDecode(readfile(configSystem.configFolder.."/Config_"..name..".txt"))
+							local ReadConfig = httpservice:JSONDecode(readfile(configSystem.configFolder.."/"..name..".txt"))
 							local NewConfig = {}
 							for i, v in pairs(ReadConfig) do
 								if (typeof(v) == "table") then
@@ -205,7 +206,7 @@ library.theme = {
 								end
 							end
 						end
-						writefile(configSystem.configFolder.."/Config_"..name..".txt", httpservice:JSONEncode(config))
+						writefile(configSystem.configFolder.."/"..name..".txt", httpservice:JSONEncode(config))
 					end
 					
 				return configSystem
@@ -3384,4 +3385,4 @@ end
 		end
 		return window
 	end
-		return library
+return library
