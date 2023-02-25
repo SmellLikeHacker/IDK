@@ -15,12 +15,12 @@ library.theme = {
     backgroundcolor = Color3.fromRGB(20, 20, 20),
     tabstextcolor = Color3.fromRGB(240, 240, 240),
     bordercolor = Color3.fromRGB(60, 60, 60),
-    accentcolor = Color3.fromRGB(149, 234, 68),
+    accentcolor = Color3.fromRGB(147, 130, 189),
     accentcolor2 = Color3.fromRGB(0, 151, 156),
     outlinecolor = Color3.fromRGB(60, 60, 60),
     outlinecolor2 = Color3.fromRGB(0, 0, 0),
     sectorcolor = Color3.fromRGB(30, 30, 30),
-    toptextcolor = Color3.fromRGB(149, 234, 68),
+    toptextcolor = Color3.fromRGB(147, 130, 189),
     topheight = 48,
     topcolor = Color3.fromRGB(30, 30, 30),
     topcolor2 = Color3.fromRGB(15, 15, 15),
@@ -129,15 +129,15 @@ library.theme = {
 
 	function library:ConfigSystem(name)
 	    
-	    if not isfolder("!Smell_Hub") then
-	        makefolder("!Smell_Hub")
+	    if not isfolder("!PurpleCat_Hub") then
+	        makefolder("!PurpleCat_Hub")
 	    end
         
 
 
 	    
 				local configSystem = { }
-				configSystem.configFolder = "!Smell_Hub/" .. tostring(game.Players.LocalPlayer.Name) .. ""
+				configSystem.configFolder = "!PurpleCat_Hub/" .. tostring(game.Players.LocalPlayer.Name) .. ""
 				if (not isfolder(configSystem.configFolder)) then
 					makefolder(tostring(configSystem.configFolder))
 				end
@@ -259,7 +259,7 @@ end
 		"rbxassetid://10171317457","rbxassetid://10171317457","rbxassetid://8598068647","rbxassetid://8192162908","rbxassetid://8677814109","rbxassetid://4597457883"
 	}
 	
-	local TOGGLEGUIBYSMELL = Instance.new("ScreenGui")
+	local TOGGLEGUIBYPurpleCat = Instance.new("ScreenGui")
 	local BackImg = Instance.new("ImageLabel")
 	local ScrollingFrame = Instance.new("ScrollingFrame")
 	local UIListLayout = Instance.new("UIListLayout")
@@ -268,12 +268,12 @@ end
 
 	MakeDraggable(BackImg,BackImg)
 
-	TOGGLEGUIBYSMELL.Name = "TOGGLEGUIBYSMELL"
-	TOGGLEGUIBYSMELL.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-	TOGGLEGUIBYSMELL.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+	TOGGLEGUIBYPurpleCat.Name = "TOGGLEGUIBYPurpleCat"
+	TOGGLEGUIBYPurpleCat.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	TOGGLEGUIBYPurpleCat.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 	BackImg.Name = "BackImg"
-	BackImg.Parent = TOGGLEGUIBYSMELL
+	BackImg.Parent = TOGGLEGUIBYPurpleCat
 	BackImg.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
 	BackImg.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	BackImg.BorderSizePixel = 1
@@ -298,7 +298,7 @@ end
 	CloseButton.Size = UDim2.new(0, 75, 0, 75)
 	CloseButton.Font = Enum.Font.FredokaOne
 	CloseButton.Text = ""
-	CloseButton.TextColor3 = Color3.fromRGB(149, 234, 68)
+	CloseButton.TextColor3 = Color3.fromRGB(147, 130, 189)
 	CloseButton.TextScaled = true
 	CloseButton.TextSize = 30.000
 	CloseButton.TextWrapped = true
@@ -3377,7 +3377,7 @@ end
 				return sector
 			end
 			pcall(function()
-				makefolder("!Smell_Hub")
+				makefolder("!PurpleCat_Hub")
 			end)
 
 			table.insert(window.Tabs, tab)
