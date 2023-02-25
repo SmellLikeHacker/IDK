@@ -38,7 +38,7 @@ end)
 end
 
 function Load_Key(key,callback)
-    local Smell = Instance.new("ScreenGui")
+    local PurpleCat = Instance.new("ScreenGui")
     local Background_Main = Instance.new("Frame")
     local UIGradient = Instance.new("UIGradient")
     local UICorner = Instance.new("UICorner")
@@ -56,13 +56,13 @@ function Load_Key(key,callback)
     local Load_Text = Instance.new("TextLabel")
     
     
-    Smell.Name = "Smell"
-    Smell.Parent = game.CoreGui
-    Smell.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    PurpleCat.Name = "PurpleCat"
+    PurpleCat.Parent = game.CoreGui
+    PurpleCat.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
     
     Background_Main.Name = "Background_Main"
-    Background_Main.Parent = Smell
-    Background_Main.BackgroundColor3 = Color3.fromRGB(149, 234, 68)
+    Background_Main.Parent = PurpleCat
+    Background_Main.BackgroundColor3 = Color3.fromRGB(147, 130, 189)
     Background_Main.Position = UDim2.new(0.210053861, 0, 0.380219787, 0)
     Background_Main.Size = UDim2.new(0, 250, 0, 200)
     dragify(Background_Main)
@@ -79,7 +79,7 @@ function Load_Key(key,callback)
     TextLabel.Position = UDim2.new(0.0544662289, 0, 0.0378006846, 0)
     TextLabel.Size = UDim2.new(0, 220, 0, 22)
     TextLabel.Font = Enum.Font.FredokaOne
-    TextLabel.Text = "Smell Hub"
+    TextLabel.Text = "PurpleCat Hub"
     TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
     TextLabel.TextSize = 24.000
     TextLabel.TextStrokeTransparency = 0.600
@@ -97,7 +97,7 @@ function Load_Key(key,callback)
     
     Key_Input.Name = "Key_Input"
     Key_Input.Parent = Get_Key_Page
-    Key_Input.BackgroundColor3 = Color3.fromRGB(149, 234, 68)
+    Key_Input.BackgroundColor3 = Color3.fromRGB(147, 130, 189)
     Key_Input.Position = UDim2.new(0.02, 0, 0.27, 0)
     Key_Input.Size = UDim2.new(0, 222, 0, 32)
     Key_Input.Font = Enum.Font.FredokaOne
@@ -111,7 +111,7 @@ function Load_Key(key,callback)
     UICorner_2.Parent = Key_Input
     
     TextButton.Parent = Get_Key_Page
-    TextButton.BackgroundColor3 = Color3.fromRGB(149, 234, 68)
+    TextButton.BackgroundColor3 = Color3.fromRGB(147, 130, 189)
     TextButton.Position = UDim2.new(0.020, 0, 0.45, 0)
     TextButton.Size = UDim2.new(0, 100, 0, 50)
     TextButton.Font = Enum.Font.FredokaOne
@@ -125,7 +125,7 @@ end)
     UICorner_3.Parent = TextButton
     
     TextButton_2.Parent = Get_Key_Page
-    TextButton_2.BackgroundColor3 = Color3.fromRGB(149, 234, 68)
+    TextButton_2.BackgroundColor3 = Color3.fromRGB(147, 130, 189)
     TextButton_2.Position = UDim2.new(0.30, 0, 0.45, 0)
     TextButton_2.Size = UDim2.new(0, 100, 0, 50)
     TextButton_2.Font = Enum.Font.FredokaOne
