@@ -4,7 +4,7 @@ library = {
 }
 
 library.theme = {
-    fontsize = 14,
+    fontsize = 13,
     titlesize = 18,
     font = Enum.Font.Code,
     background = "rbxassetid://5553946656",
@@ -258,7 +258,7 @@ end
 		"rbxassetid://10171317457","rbxassetid://10171317457","rbxassetid://8598068647","rbxassetid://8192162908","rbxassetid://8677814109","rbxassetid://4597457883"
 	}
 	
-	local TOGGLEGUIBYPurpleCat = Instance.new("ScreenGui")
+	local Cat = Instance.new("ScreenGui")
 	local BackImg = Instance.new("ImageLabel")
 	local ScrollingFrame = Instance.new("ScrollingFrame")
 	local UIListLayout = Instance.new("UIListLayout")
@@ -267,17 +267,18 @@ end
 
 	MakeDraggable(BackImg,BackImg)
 
-	TOGGLEGUIBYPurpleCat.Name = "TOGGLEGUIBYPurpleCat"
-	TOGGLEGUIBYPurpleCat.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-	TOGGLEGUIBYPurpleCat.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+	Cat.Name = "Cat"
+	Cat.ResetOnSpawn = false
+	Cat.Parent = game:GetService("CoreGui")
+	Cat.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 	BackImg.Name = "BackImg"
-	BackImg.Parent = TOGGLEGUIBYPurpleCat
+	BackImg.Parent = Cat
 	BackImg.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
 	BackImg.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	BackImg.BorderSizePixel = 1
 	BackImg.Position = UDim2.new(.2, 0, .25, 0) ----Spawn Position
-	BackImg.Size = UDim2.new(0, 75, 0, 75)
+	BackImg.Size = UDim2.new(0, 50, 0, 50)
 	BackImg.Image = Anh_Gai_Alimi[math.random(1,#Anh_Gai_Alimi)]
 	
 	Black.Name = "Black"
@@ -294,7 +295,7 @@ end
 	CloseButton.BackgroundTransparency = 1
 	CloseButton.BorderSizePixel = 1
 	CloseButton.Position = UDim2.new(0, 0, 0, 0)
-	CloseButton.Size = UDim2.new(0, 75, 0, 75)
+	CloseButton.Size = UDim2.new(0, 50, 0, 50)
 	CloseButton.Font = Enum.Font.FredokaOne
 	CloseButton.Text = ""
 	CloseButton.TextColor3 = Color3.fromRGB(147, 130, 189)
@@ -361,7 +362,7 @@ end
 		watermark.label.Visible = watermark.Visible
 		watermark.label.Text = watermark.text
 		watermark.label.TextColor3 = Color3.fromRGB(255, 255, 255)
-		watermark.label.TextSize = 15
+		watermark.label.TextSize = 14
 		watermark.label.TextStrokeTransparency = 0.000
 		watermark.label.TextXAlignment = Enum.TextXAlignment.Left
 		watermark.label.Size = UDim2.new(0, watermark.label.TextBounds.X + 10, 0, 25)
@@ -466,7 +467,7 @@ end
 	function library:CreateWindow(name, hidebutton)
 		local window = { }
 		window.name = name or ""
-		window.size = UDim2.fromOffset(625, 355)
+		window.size = UDim2.fromOffset(625, 400)
 		window.hidebutton = hidebutton or Enum.KeyCode.RightControl
 		window.theme = library.theme
 		local updateevent = Instance.new("BindableEvent")
@@ -663,7 +664,7 @@ end
 			local tab = { }
 			tab.name = name or ""
 			local textservice = game:GetService("TextService")
-			local size = textservice:GetTextSize(tab.name, window.theme.fontsize, window.theme.font, Vector2.new(200, 300))
+			local size = textservice:GetTextSize(tab.name, window.theme.fontsize, window.theme.font, Vector2.new(200, 280))
 			tab.TabButton = Instance.new("TextButton", window.TabList)
 			tab.TabButton.TextColor3 = window.theme.tabstextcolor
 			tab.TabButton.Text = tab.name
@@ -688,7 +689,7 @@ end
 			tab.Left.Size = UDim2.fromOffset(window.size.X.Offset / 2, window.size.Y.Offset - (window.TopBar.AbsoluteSize.Y + 1))
 			tab.Left.BackgroundTransparency = 1
 			tab.Left.Visible = false
-			tab.Left.ScrollBarThickness = 15
+			tab.Left.ScrollBarThickness = 10
 			tab.Left.ScrollBarImageColor3 = Color3.fromRGB(147, 130, 189)
 			tab.Left.ScrollingDirection = "Y"
 			tab.Left.Position = window.BlackLine.Position + UDim2.fromOffset(0, 1)
@@ -702,7 +703,7 @@ end
 			tab.LeftListPadding.PaddingRight = UDim.new(0, 12)
 			tab.Right = Instance.new("ScrollingFrame", window.Frame)
 			tab.Right.Name = "rightside"
-			tab.Right.ScrollBarThickness = 15
+			tab.Right.ScrollBarThickness = 10
 			tab.Right.ScrollBarImageColor3 = Color3.fromRGB(147, 130, 189)
 			tab.Right.ScrollingDirection = "Y"
 			tab.Right.Visible = false
@@ -823,7 +824,7 @@ end
 				sector.Label.TextColor3 = Color3.new(1, 1, 2552 / 255)
 				sector.Label.TextStrokeTransparency = 1
 				sector.Label.Font = window.theme.font
-				sector.Label.TextSize = 15
+				sector.Label.TextSize = 14
 				updateevent.Event:Connect(function(theme)
 					local size = textservice:GetTextSize(sector.name, 15, theme.font, Vector2.new(2000, 2000))
 					sector.Label.Size = UDim2.fromOffset(math.clamp(textservice:GetTextSize(sector.name, 15, theme.font, Vector2.new(200, 300)).X + 13, 0, sector.Main.Size.X.Offset), size.Y)
@@ -928,7 +929,7 @@ end
 					button.Label.Font = window.theme.font
 					button.Label.Text = button.text
 					button.Label.TextColor3 = window.theme.itemscolor2
-					button.Label.TextSize = 15
+					button.Label.TextSize = 13
 					button.Label.TextStrokeTransparency = 1
 					button.Label.TextXAlignment = Enum.TextXAlignment.Center
 					button.Main.MouseButton1Down:Connect(button.callback)
@@ -956,7 +957,7 @@ end
 					label.Main.Font = window.theme.font
 					label.Main.Text = text
 					label.Main.TextColor3 = window.theme.itemscolor
-					label.Main.TextSize = 15
+					label.Main.TextSize = 13
 					label.Main.TextStrokeTransparency = 1
 					label.Main.TextXAlignment = Enum.TextXAlignment.Left
 					updateevent.Event:Connect(function(theme)
@@ -988,7 +989,7 @@ end
 					toggle.Main.Font = Enum.Font.SourceSans
 					toggle.Main.Text = ""
 					toggle.Main.TextColor3 = Color3.fromRGB(0, 0, 0)
-					toggle.Main.TextSize = 15
+					toggle.Main.TextSize = 14
 					updateevent.Event:Connect(function(theme)
 						toggle.Main.BorderColor3 = theme.outlinecolor
 					end)
@@ -1039,7 +1040,7 @@ end
 					toggle.Label.ZIndex = 5
 					toggle.Label.Text = toggle.text
 					toggle.Label.TextColor3 = window.theme.itemscolor
-					toggle.Label.TextSize = 15
+					toggle.Label.TextSize = 14
 					toggle.Label.TextStrokeTransparency = 1
 					toggle.Label.TextXAlignment = Enum.TextXAlignment.Left
 					updateevent.Event:Connect(function(theme)
@@ -1120,7 +1121,7 @@ end
 						keybind.Main.Text = text
 						keybind.Main.Font = window.theme.font
 						keybind.Main.TextColor3 = Color3.fromRGB(136, 136, 136)
-						keybind.Main.TextSize = 15
+						keybind.Main.TextSize = 14
 						keybind.Main.TextXAlignment = Enum.TextXAlignment.Right
 						keybind.Main.MouseButton1Down:Connect(function()
 							keybind.Main.Text = "[...]"
@@ -1193,7 +1194,7 @@ end
 						dropdown.Main.Font = window.theme.font
 						dropdown.Main.Text = ""
 						dropdown.Main.TextColor3 = Color3.fromRGB(255, 255, 255)
-						dropdown.Main.TextSize = 15
+						dropdown.Main.TextSize = 14
 						dropdown.Main.TextXAlignment = Enum.TextXAlignment.Left
 						updateevent.Event:Connect(function(theme)
 							dropdown.Main.Font = theme.font
@@ -1213,7 +1214,7 @@ end
 						dropdown.SelectedLabel.Text = toggle.text
 						dropdown.SelectedLabel.ZIndex = 5
 						dropdown.SelectedLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-						dropdown.SelectedLabel.TextSize = 15
+						dropdown.SelectedLabel.TextSize = 14
 						dropdown.SelectedLabel.TextStrokeTransparency = 1
 						dropdown.SelectedLabel.TextXAlignment = Enum.TextXAlignment.Left
 						updateevent.Event:Connect(function(theme)
@@ -1223,11 +1224,11 @@ end
 						dropdown.Nav.Name = "navigation"
 						dropdown.Nav.BackgroundTransparency = 1
 						dropdown.Nav.LayoutOrder = 10
-						dropdown.Nav.Position = UDim2.fromOffset(sector.Main.Size.X.Offset - 26, 5)
+						dropdown.Nav.Position = UDim2.fromOffset(sector.Main.Size.X.Offset - 26, 0)
 						dropdown.Nav.Rotation = 90
 						dropdown.Nav.ZIndex = 5
-						dropdown.Nav.Size = UDim2.fromOffset(8, 8)
-						dropdown.Nav.Image = "rbxassetid://4918373417"
+						dropdown.Nav.Size = UDim2.fromOffset(15, 15)
+						dropdown.Nav.Image = "rbxassetid://4483345875"
 						dropdown.Nav.ImageColor3 = Color3.fromRGB(210, 210, 210)
 						dropdown.BlackOutline2 = Instance.new("Frame", dropdown.Main)
 						dropdown.BlackOutline2.Name = "blackline"
@@ -1264,7 +1265,7 @@ end
 						dropdown.ItemsFrame.BorderSizePixel = 0
 						dropdown.ItemsFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 						dropdown.ItemsFrame.Position = UDim2.fromOffset(0, dropdown.Main.Size.Y.Offset + 8)
-						dropdown.ItemsFrame.ScrollBarThickness = 15
+						dropdown.ItemsFrame.ScrollBarThickness = 10
 						dropdown.ItemsFrame.ScrollBarImageColor3 = Color3.fromRGB(147, 130, 189)
 						dropdown.ItemsFrame.ZIndex = 8
 						dropdown.ItemsFrame.ScrollingDirection = "Y"
@@ -1368,13 +1369,13 @@ end
 							Item.TextColor3 = Color3.fromRGB(255, 255, 255)
 							Item.BorderSizePixel = 0
 							Item.Position = UDim2.fromOffset(0, 0)
-							Item.Size = UDim2.fromOffset(dropdown.Main.Size.X.Offset - 4, 20)
+							Item.Size = UDim2.fromOffset(dropdown.Main.Size.X.Offset - 4, 17)
 							Item.ZIndex = 9
 							Item.Text = v
 							Item.Name = v
 							Item.AutoButtonColor = false
 							Item.Font = window.theme.font
-							Item.TextSize = 15
+							Item.TextSize = 14
 							Item.TextXAlignment = Enum.TextXAlignment.Left
 							Item.TextStrokeTransparency = 1
 							dropdown.ItemsFrame.CanvasSize = dropdown.ItemsFrame.CanvasSize + UDim2.fromOffset(0, Item.AbsoluteSize.Y)
@@ -1523,7 +1524,7 @@ end
 						textbox.Main.ZIndex = 5
 						textbox.Main.TextScaled = true
 						textbox.Main.Size = textbox.Holder.Size
-						textbox.Main.TextSize = 15
+						textbox.Main.TextSize = 14
 						textbox.Main.TextColor3 = Color3.fromRGB(255, 255, 255)
 						textbox.Main.BorderSizePixel = 0
 						textbox.Main.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
@@ -1859,7 +1860,7 @@ end
 						slider.InputLabel.TextColor3 = Color3.fromRGB(240, 240, 240)
 						slider.InputLabel.Position = slider.Main.Position
 						slider.InputLabel.Selectable = false
-						slider.InputLabel.TextSize = 15
+						slider.InputLabel.TextSize = 14
 						slider.InputLabel.ZIndex = 9
 						slider.InputLabel.TextStrokeTransparency = 1
 						slider.InputLabel.TextXAlignment = Enum.TextXAlignment.Center
@@ -2022,7 +2023,7 @@ end
 					textbox.Label.ZIndex = 5
 					textbox.Label.Text = textbox.text
 					textbox.Label.TextColor3 = window.theme.itemscolor
-					textbox.Label.TextSize = 15
+					textbox.Label.TextSize = 14
 					textbox.Label.TextStrokeTransparency = 1
 					textbox.Label.TextXAlignment = Enum.TextXAlignment.Left
 					updateevent.Event:Connect(function(theme)
@@ -2052,7 +2053,7 @@ end
 					textbox.Main.ZIndex = 5
 					textbox.Main.TextScaled = true
 					textbox.Main.Size = textbox.Holder.Size
-					textbox.Main.TextSize = 15
+					textbox.Main.TextSize = 14
 					textbox.Main.TextColor3 = Color3.fromRGB(255, 255, 255)
 					textbox.Main.BorderSizePixel = 0
 					textbox.Main.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
@@ -2145,7 +2146,7 @@ end
 					slider.Label.Text = slider.text .. ":"
 					slider.Label.TextColor3 = window.theme.itemscolor
 					slider.Label.Position = UDim2.fromOffset(0, 0)
-					slider.Label.TextSize = 15
+					slider.Label.TextSize = 14
 					slider.Label.ZIndex = 4
 					slider.Label.TextStrokeTransparency = 1
 					slider.Label.TextXAlignment = Enum.TextXAlignment.Left
@@ -2162,7 +2163,7 @@ end
 					slider.InputLabel.Text = "0"
 					slider.InputLabel.TextColor3 = window.theme.itemscolor
 					slider.InputLabel.Position = UDim2.fromOffset(size.X + 3, -3)
-					slider.InputLabel.TextSize = 15
+					slider.InputLabel.TextSize = 14
 					slider.InputLabel.ZIndex = 4
 					slider.InputLabel.TextStrokeTransparency = 1
 					slider.InputLabel.TextXAlignment = Enum.TextXAlignment.Left
@@ -2320,7 +2321,7 @@ end
 					colorpicker.Label.Font = window.theme.font
 					colorpicker.Label.Text = colorpicker.text
 					colorpicker.Label.TextColor3 = window.theme.itemscolor
-					colorpicker.Label.TextSize = 15
+					colorpicker.Label.TextSize = 14
 					colorpicker.Label.TextStrokeTransparency = 1
 					colorpicker.Label.TextXAlignment = Enum.TextXAlignment.Left
 					updateevent.Event:Connect(function(theme)
@@ -2516,7 +2517,7 @@ end
 						dropdown.Main.Font = window.theme.font
 						dropdown.Main.Text = ""
 						dropdown.Main.TextColor3 = Color3.fromRGB(255, 255, 255)
-						dropdown.Main.TextSize = 15
+						dropdown.Main.TextSize = 14
 						dropdown.Main.TextXAlignment = Enum.TextXAlignment.Left
 						updateevent.Event:Connect(function(theme)
 							dropdown.Main.Font = theme.font
@@ -2531,12 +2532,12 @@ end
 						dropdown.SelectedLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 						dropdown.SelectedLabel.BackgroundTransparency = 1
 						dropdown.SelectedLabel.Position = UDim2.fromOffset(5, 2)
-						dropdown.SelectedLabel.Size = UDim2.fromOffset(130, 13)
+						dropdown.SelectedLabel.Size = UDim2.fromOffset(130, 63)
 						dropdown.SelectedLabel.Font = window.theme.font
 						dropdown.SelectedLabel.Text = colorpicker.text
 						dropdown.SelectedLabel.ZIndex = 5
 						dropdown.SelectedLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-						dropdown.SelectedLabel.TextSize = 15
+						dropdown.SelectedLabel.TextSize = 14
 						dropdown.SelectedLabel.TextStrokeTransparency = 1
 						dropdown.SelectedLabel.TextXAlignment = Enum.TextXAlignment.Left
 						updateevent.Event:Connect(function(theme)
@@ -2546,11 +2547,11 @@ end
 						dropdown.Nav.Name = "navigation"
 						dropdown.Nav.BackgroundTransparency = 1
 						dropdown.Nav.LayoutOrder = 10
-						dropdown.Nav.Position = UDim2.fromOffset(sector.Main.Size.X.Offset - 26, 5)
+						dropdown.Nav.Position = UDim2.fromOffset(sector.Main.Size.X.Offset - 26, 0)
 						dropdown.Nav.Rotation = 90
 						dropdown.Nav.ZIndex = 5
-						dropdown.Nav.Size = UDim2.fromOffset(8, 8)
-						dropdown.Nav.Image = "rbxassetid://4918373417"
+						dropdown.Nav.Size = UDim2.fromOffset(15, 15)
+						dropdown.Nav.Image = "rbxassetid://4483345875"
 						dropdown.Nav.ImageColor3 = Color3.fromRGB(210, 210, 210)
 						dropdown.BlackOutline2 = Instance.new("Frame", dropdown.Main)
 						dropdown.BlackOutline2.Name = "blackline"
@@ -2587,7 +2588,7 @@ end
 						dropdown.ItemsFrame.BorderSizePixel = 0
 						dropdown.ItemsFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 						dropdown.ItemsFrame.Position = UDim2.fromOffset(0, dropdown.Main.Size.Y.Offset + 8)
-						dropdown.ItemsFrame.ScrollBarThickness = 15
+						dropdown.ItemsFrame.ScrollBarThickness = 10
 						dropdown.ItemsFrame.ScrollBarImageColor3 = Color3.fromRGB(147, 130, 189)
 						dropdown.ItemsFrame.ZIndex = 8
 						dropdown.ItemsFrame.ScrollingDirection = "Y"
@@ -2690,13 +2691,13 @@ end
 							Item.TextColor3 = Color3.fromRGB(255, 255, 255)
 							Item.BorderSizePixel = 0
 							Item.Position = UDim2.fromOffset(0, 0)
-							Item.Size = UDim2.fromOffset(dropdown.Main.Size.X.Offset - 4, 20)
+							Item.Size = UDim2.fromOffset(dropdown.Main.Size.X.Offset - 4, 17)
 							Item.ZIndex = 9
 							Item.Text = v
 							Item.Name = v
 							Item.AutoButtonColor = false
 							Item.Font = window.theme.font
-							Item.TextSize = 15
+							Item.TextSize = 14
 							Item.TextXAlignment = Enum.TextXAlignment.Left
 							Item.TextStrokeTransparency = 1
 							dropdown.ItemsFrame.CanvasSize = dropdown.ItemsFrame.CanvasSize + UDim2.fromOffset(0, Item.AbsoluteSize.Y)
@@ -2888,7 +2889,7 @@ end
 					keybind.Main.Font = window.theme.font
 					keybind.Main.Text = keybind.text
 					keybind.Main.TextColor3 = window.theme.itemscolor
-					keybind.Main.TextSize = 15
+					keybind.Main.TextSize = 14
 					keybind.Main.TextStrokeTransparency = 1
 					keybind.Main.TextXAlignment = Enum.TextXAlignment.Left
 					updateevent.Event:Connect(function(theme)
@@ -2904,7 +2905,7 @@ end
 					keybind.Bind.Position = UDim2.fromOffset(sector.Main.Size.X.Offset - 10, 0)
 					keybind.Bind.Font = window.theme.font
 					keybind.Bind.TextColor3 = Color3.fromRGB(136, 136, 136)
-					keybind.Bind.TextSize = 15
+					keybind.Bind.TextSize = 14
 					keybind.Bind.TextXAlignment = Enum.TextXAlignment.Right
 					keybind.Bind.MouseButton1Down:Connect(function()
 						keybind.Bind.Text = "[...]"
@@ -2996,7 +2997,7 @@ end
 					dropdown.Label.Text = dropdown.text
 					dropdown.Label.ZIndex = 4
 					dropdown.Label.TextColor3 = window.theme.itemscolor
-					dropdown.Label.TextSize = 15
+					dropdown.Label.TextSize = 14
 					dropdown.Label.TextStrokeTransparency = 1
 					dropdown.Label.TextXAlignment = Enum.TextXAlignment.Left
 					updateevent.Event:Connect(function(theme)
@@ -3014,7 +3015,7 @@ end
 					dropdown.Main.Font = window.theme.font
 					dropdown.Main.Text = ""
 					dropdown.Main.TextColor3 = Color3.fromRGB(255, 255, 255)
-					dropdown.Main.TextSize = 15
+					dropdown.Main.TextSize = 14
 					dropdown.Main.TextXAlignment = Enum.TextXAlignment.Left
 					updateevent.Event:Connect(function(theme)
 						dropdown.Main.Font = theme.font
@@ -3034,7 +3035,7 @@ end
 					dropdown.SelectedLabel.Text = dropdown.text
 					dropdown.SelectedLabel.ZIndex = 5
 					dropdown.SelectedLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-					dropdown.SelectedLabel.TextSize = 15
+					dropdown.SelectedLabel.TextSize = 14
 					dropdown.SelectedLabel.TextStrokeTransparency = 1
 					dropdown.SelectedLabel.TextXAlignment = Enum.TextXAlignment.Left
 					updateevent.Event:Connect(function(theme)
@@ -3044,11 +3045,11 @@ end
 					dropdown.Nav.Name = "navigation"
 					dropdown.Nav.BackgroundTransparency = 1
 					dropdown.Nav.LayoutOrder = 10
-					dropdown.Nav.Position = UDim2.fromOffset(sector.Main.Size.X.Offset - 26, 5)
+					dropdown.Nav.Position = UDim2.fromOffset(sector.Main.Size.X.Offset - 26, 0)
 					dropdown.Nav.Rotation = 90
 					dropdown.Nav.ZIndex = 5
-					dropdown.Nav.Size = UDim2.fromOffset(8, 8)
-					dropdown.Nav.Image = "rbxassetid://4918373417"
+					dropdown.Nav.Size = UDim2.fromOffset(15, 15)
+					dropdown.Nav.Image = "rbxassetid://4483345875"
 					dropdown.Nav.ImageColor3 = Color3.fromRGB(210, 210, 210)
 					dropdown.BlackOutline2 = Instance.new("Frame", dropdown.Main)
 					dropdown.BlackOutline2.Name = "blackline"
@@ -3085,7 +3086,7 @@ end
 					dropdown.ItemsFrame.BorderSizePixel = 0
 					dropdown.ItemsFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 					dropdown.ItemsFrame.Position = UDim2.fromOffset(0, dropdown.Main.Size.Y.Offset + 8)
-					dropdown.ItemsFrame.ScrollBarThickness = 15
+					dropdown.ItemsFrame.ScrollBarThickness = 10
 					dropdown.ItemsFrame.ScrollBarImageColor3 = Color3.fromRGB(147, 130, 189)
 					dropdown.ItemsFrame.ZIndex = 8
 					dropdown.ItemsFrame.ScrollingDirection = "Y"
@@ -3191,13 +3192,13 @@ end
 						Item.TextColor3 = Color3.fromRGB(255, 255, 255)
 						Item.BorderSizePixel = 0
 						Item.Position = UDim2.fromOffset(0, 0)
-						Item.Size = UDim2.fromOffset(dropdown.Main.Size.X.Offset - 4, 20)
+						Item.Size = UDim2.fromOffset(dropdown.Main.Size.X.Offset - 4, 17)
 						Item.ZIndex = 9
 						Item.Text = v
 						Item.Name = v
 						Item.AutoButtonColor = false
 						Item.Font = window.theme.font
-						Item.TextSize = 15
+						Item.TextSize = 14
 						Item.TextXAlignment = Enum.TextXAlignment.Left
 						Item.TextStrokeTransparency = 1
 						dropdown.ItemsFrame.CanvasSize = dropdown.ItemsFrame.CanvasSize + UDim2.fromOffset(0, Item.AbsoluteSize.Y)
