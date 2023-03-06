@@ -1,4 +1,3 @@
-
 library = {
     flags = { },
 	items = { }
@@ -689,7 +688,8 @@ end
 			tab.Left.Size = UDim2.fromOffset(window.size.X.Offset / 2, window.size.Y.Offset - (window.TopBar.AbsoluteSize.Y + 1))
 			tab.Left.BackgroundTransparency = 1
 			tab.Left.Visible = false
-			tab.Left.ScrollBarThickness = 0
+			tab.Left.ScrollBarThickness = 15
+			tab.Left.ScrollBarImageColor3 = Color3.fromRGB(147, 130, 189)
 			tab.Left.ScrollingDirection = "Y"
 			tab.Left.Position = window.BlackLine.Position + UDim2.fromOffset(0, 1)
 			tab.LeftListLayout = Instance.new("UIListLayout", tab.Left)
@@ -702,7 +702,8 @@ end
 			tab.LeftListPadding.PaddingRight = UDim.new(0, 12)
 			tab.Right = Instance.new("ScrollingFrame", window.Frame)
 			tab.Right.Name = "rightside"
-			tab.Right.ScrollBarThickness = 0
+			tab.Right.ScrollBarThickness = 15
+			tab.Right.ScrollBarImageColor3 = Color3.fromRGB(147, 130, 189)
 			tab.Right.ScrollingDirection = "Y"
 			tab.Right.Visible = false
 			tab.Right.BorderSizePixel = 0
@@ -1263,7 +1264,8 @@ end
 						dropdown.ItemsFrame.BorderSizePixel = 0
 						dropdown.ItemsFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 						dropdown.ItemsFrame.Position = UDim2.fromOffset(0, dropdown.Main.Size.Y.Offset + 8)
-						dropdown.ItemsFrame.ScrollBarThickness = 2
+						dropdown.ItemsFrame.ScrollBarThickness = 15
+						dropdown.ItemsFrame.ScrollBarImageColor3 = Color3.fromRGB(147, 130, 189)
 						dropdown.ItemsFrame.ZIndex = 8
 						dropdown.ItemsFrame.ScrollingDirection = "Y"
 						dropdown.ItemsFrame.Visible = false
@@ -2585,7 +2587,8 @@ end
 						dropdown.ItemsFrame.BorderSizePixel = 0
 						dropdown.ItemsFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 						dropdown.ItemsFrame.Position = UDim2.fromOffset(0, dropdown.Main.Size.Y.Offset + 8)
-						dropdown.ItemsFrame.ScrollBarThickness = 2
+						dropdown.ItemsFrame.ScrollBarThickness = 15
+						dropdown.ItemsFrame.ScrollBarImageColor3 = Color3.fromRGB(147, 130, 189)
 						dropdown.ItemsFrame.ZIndex = 8
 						dropdown.ItemsFrame.ScrollingDirection = "Y"
 						dropdown.ItemsFrame.Visible = false
@@ -3082,7 +3085,8 @@ end
 					dropdown.ItemsFrame.BorderSizePixel = 0
 					dropdown.ItemsFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 					dropdown.ItemsFrame.Position = UDim2.fromOffset(0, dropdown.Main.Size.Y.Offset + 8)
-					dropdown.ItemsFrame.ScrollBarThickness = 2
+					dropdown.ItemsFrame.ScrollBarThickness = 15
+					dropdown.ItemsFrame.ScrollBarImageColor3 = Color3.fromRGB(147, 130, 189)
 					dropdown.ItemsFrame.ZIndex = 8
 					dropdown.ItemsFrame.ScrollingDirection = "Y"
 					dropdown.ItemsFrame.Visible = false
