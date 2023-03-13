@@ -156,8 +156,10 @@ local library = {
 					end
 					
 				return configSystem
-			end
-			--
+	end
+		
+		
+		
 local UserInputService = game:GetService("UserInputService")
 local function MakeDraggable(topbarobject, object)
 	local Dragging = nil
@@ -237,7 +239,7 @@ function ttytPr()
 	Back.Name = "Back"
 	Back.Parent = Frame
 	Back.BackgroundColor3 = Color3.fromRGB(147, 130, 189)
-	Back.Position = UDim2.new(0.05, 0, 0.05, 0)
+	Back.Position = UDim2.new(0.13, 0, 0.13, 0)
 	Back.Size = UDim2.new(0.75, 0, 0.75, 0)
 
 	UICorner.Parent = Back
@@ -283,6 +285,7 @@ function ttytPr()
 end
 
 ttytPr()
+
 	function library:CreateWatermark(name)
 		local gamename = marketplaceservice:GetProductInfo(game.PlaceId).Name
 		local watermark = { }
