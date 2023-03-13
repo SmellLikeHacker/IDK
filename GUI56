@@ -13,7 +13,7 @@ local library = {
 		items = { }
 	}
     if _G.Color == nil then _G.Color = Color3.fromRGB(147, 130, 189) end
-    if _G.Color2 == nil then _G.Color2 = Color3.fromRGB(147, 130, 189) end
+    if _G.Color2 == nil then _G.Color2 = Color3.fromRGB(67,50,109) end
     -- Services
 	local players = game:GetService("Players")
 	local uis = game:GetService("UserInputService")
@@ -82,9 +82,6 @@ local library = {
 	        makefolder("!PurpleCat_Hub")
 	    end
         
-
-
-	    
 				local configSystem = { }
 				configSystem.configFolder = "!PurpleCat_Hub/" .. tostring(game.Players.LocalPlayer.Name) .. ""
 				if (not isfolder(configSystem.configFolder)) then
@@ -161,7 +158,6 @@ local library = {
 				return configSystem
 			end
 			--
-						
 local UserInputService = game:GetService("UserInputService")
 local function MakeDraggable(topbarobject, object)
 	local Dragging = nil
@@ -203,60 +199,90 @@ local function MakeDraggable(topbarobject, object)
 	end)
 end
 
-	local Anh_Gai_Alimi = {"rbxassetid://12769475455","rbxassetid://12769475455","rbxassetid://12769475455","rbxassetid://12769475455","rbxassetid://12769475455",
-		"rbxassetid://12769475455","rbxassetid://12769475455","rbxassetid://12769475455","rbxassetid://12769475455","rbxassetid://12769475455","rbxassetid://12769475455",
-		"rbxassetid://12769475455","rbxassetid://12769475455","rbxassetid://12769475455","rbxassetid://12769475455","rbxassetid://12769475455","rbxassetid://12769475455"
-	}
+function ttytPr()
+	local CatGui = Instance.new("ScreenGui")
+	local Frame = Instance.new("Frame")
+	local Back = Instance.new("Frame")
+	local UICorner = Instance.new("UICorner")
+	local ImageLabel = Instance.new("ImageLabel")
+	local UICorner_2 = Instance.new("UICorner")
+	local TextLabel = Instance.new("TextLabel")
+	local TextButton = Instance.new("TextButton")
+	local UICorner_3 = Instance.new("UICorner")
+	local ImageLabel_2 = Instance.new("ImageLabel")
+	local tt = Instance.new("Frame")
+	local UICorner_4 = Instance.new("UICorner")
+	local ImageLabel_3 = Instance.new("ImageLabel")
+	local UICorner_5 = Instance.new("UICorner")
+	local TextLabel_2 = Instance.new("TextLabel")
+	local TextButton_2 = Instance.new("TextButton")
+	local UICorner_6 = Instance.new("UICorner")
+	local ImageLabel_4 = Instance.new("ImageLabel")
+	local UICorner_7 = Instance.new("UICorner")
+	local TextLabel_3 = Instance.new("TextLabel")
+	local UICorner_8 = Instance.new("UICorner")
+	local TextLabel_4 = Instance.new("TextLabel")
+
+	CatGui.Name = "CatGui"
+	CatGui.Parent = game.CoreGui
+	CatGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+	Frame.Parent = CatGui
+	Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	Frame.BackgroundTransparency = 1
+	Frame.Position = UDim2.new(0.15, 0, 0.24, 0)
+	Frame.Size = UDim2.new(0.05, 0, 0.09, 0)
+	MakeDraggable(Frame,Frame)
 	
-	local Cat = Instance.new("ScreenGui")
-	local BackImg = Instance.new("ImageLabel")
-	local ScrollingFrame = Instance.new("ScrollingFrame")
-	local UIListLayout = Instance.new("UIListLayout")
-	local CloseButton = Instance.new("TextButton")
-	local Black = Instance.new("Frame")
+	Back.Name = "Back"
+	Back.Parent = Frame
+	Back.BackgroundColor3 = Color3.fromRGB(147, 130, 189)
+	Back.Position = UDim2.new(0.05, 0, 0.05, 0)
+	Back.Size = UDim2.new(0.75, 0, 0.75, 0)
 
-	MakeDraggable(BackImg,BackImg)
+	UICorner.Parent = Back
 
-	Cat.Name = "Cat"
-	Cat.ResetOnSpawn = false
-	Cat.Parent = game:GetService("CoreGui")
-	Cat.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+	UICorner_2.CornerRadius = UDim.new(0, 60)
+	UICorner_2.Parent = ImageLabel
 
-	BackImg.Name = "BackImg"
-	BackImg.Parent = Cat
-	BackImg.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
-	BackImg.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	BackImg.BorderSizePixel = 1
-	BackImg.Position = UDim2.new(.2, 0, .25, 0) ----Spawn Position
-	BackImg.Size = UDim2.new(0, 50, 0, 50)
-	BackImg.Image = Anh_Gai_Alimi[math.random(1,#Anh_Gai_Alimi)]
+
+	UICorner_3.Parent = TextButton
+
+	ImageLabel_2.Parent = Back
+	ImageLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	ImageLabel_2.BackgroundTransparency = 1.000
+	ImageLabel_2.Position = UDim2.new(0.025, 0, 0.025, 0)
+	ImageLabel_2.Size = UDim2.new(0.95, 0, 0.95, 0)
+	ImageLabel_2.Image = "rbxassetid://12769475455"
+
+	UICorner_5.CornerRadius = UDim.new(0, 60)
+	UICorner_5.Parent = ImageLabel_3
+	UICorner_6.Parent = TextButton_2
+	UICorner_7.CornerRadius = UDim.new(0, 60)
+	UICorner_7.Parent = ImageLabel_4
+	UICorner_8.CornerRadius = UDim.new(0, 16)
+	UICorner_8.Parent = Frame
 	
-	Black.Name = "Black"
-	Black.Parent = BackImg
-	Black.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	Black.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Black.BackgroundTransparency = 0.7
-	Black.BorderSizePixel = 0
-	Black.Size = UDim2.new(1, 0, 1, 0)
+	TextButton.Parent = Back
+	TextButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	TextButton.BackgroundTransparency = 1
+	TextButton.Position = UDim2.new(0, 0, 0, 0)
+	TextButton.Size = UDim2.new(1, 0, 1, 0)
+	TextButton.Font = Enum.Font.SourceSans
+	TextButton.Text = ""
+	TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+	TextButton.TextScaled = true
+	TextButton.TextSize = 14.000
+	TextButton.TextWrapped = true
+	TextButton.Visible = true
 
-	CloseButton.Name = "CloseButton"
-	CloseButton.Parent = Black
-	CloseButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	CloseButton.BackgroundTransparency = 1
-	CloseButton.BorderSizePixel = 1
-	CloseButton.Position = UDim2.new(0, 0, 0, 0)
-	CloseButton.Size = UDim2.new(0, 50, 0, 50)
-	CloseButton.Font = Enum.Font.FredokaOne
-	CloseButton.Text = ""
-	CloseButton.TextColor3 = Color3.fromRGB(147, 130, 189)
-	CloseButton.TextScaled = true
-	CloseButton.TextSize = 30.000
-	CloseButton.TextWrapped = true
-
-	CloseButton.MouseButton1Click:Connect(function()
+	TextButton.MouseButton1Click:Connect(function()
 		game:GetService("VirtualInputManager"):SendKeyEvent(true,"RightControl",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
         game:GetService("VirtualInputManager"):SendKeyEvent(false,"RightControl",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
 	end)
+end
+
+ttytPr()
 	function library:CreateWatermark(name)
 		local gamename = marketplaceservice:GetProductInfo(game.PlaceId).Name
 		local watermark = { }
@@ -412,6 +438,8 @@ end
 		end
 		return watermark
 	end
+	
+	
 	function library:CreateWindow(name, hidebutton)
 		local window = { }
 		window.name = name or ""
@@ -638,7 +666,8 @@ end
 			tab.Left.Size = UDim2.fromOffset(window.size.X.Offset / 2, window.size.Y.Offset - (window.TopBar.AbsoluteSize.Y + 1))
 			tab.Left.BackgroundTransparency = 1
 			tab.Left.Visible = false
-			tab.Left.ScrollBarThickness = 0
+			tab.Left.ScrollBarThickness = 10
+			tab.Left.ScrollBarImageColor3 = Color3.fromRGB(147, 130, 189)
 			tab.Left.ScrollingDirection = "Y"
 			tab.Left.Position = window.BlackLine.Position + UDim2.fromOffset(0, 1)
 			tab.LeftListLayout = Instance.new("UIListLayout", tab.Left)
@@ -651,7 +680,8 @@ end
 			tab.LeftListPadding.PaddingRight = UDim.new(0, 12)
 			tab.Right = Instance.new("ScrollingFrame", window.Frame)
 			tab.Right.Name = "rightside"
-			tab.Right.ScrollBarThickness = 0
+			tab.Right.ScrollBarThickness = 10
+			tab.Right.ScrollBarImageColor3 = Color3.fromRGB(147, 130, 189)
 			tab.Right.ScrollingDirection = "Y"
 			tab.Right.Visible = false
 			tab.Right.BorderSizePixel = 0
@@ -1212,7 +1242,8 @@ end
 						dropdown.ItemsFrame.BorderSizePixel = 0
 						dropdown.ItemsFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 						dropdown.ItemsFrame.Position = UDim2.fromOffset(0, dropdown.Main.Size.Y.Offset + 8)
-						dropdown.ItemsFrame.ScrollBarThickness = 2
+						dropdown.ItemsFrame.ScrollBarThickness = 10
+						dropdown.ItemsFrame.ScrollBarImageColor3 = Color3.fromRGB(147, 130, 189)
 						dropdown.ItemsFrame.ZIndex = 8
 						dropdown.ItemsFrame.ScrollingDirection = "Y"
 						dropdown.ItemsFrame.Visible = false
@@ -2534,7 +2565,8 @@ end
 						dropdown.ItemsFrame.BorderSizePixel = 0
 						dropdown.ItemsFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 						dropdown.ItemsFrame.Position = UDim2.fromOffset(0, dropdown.Main.Size.Y.Offset + 8)
-						dropdown.ItemsFrame.ScrollBarThickness = 2
+						dropdown.ItemsFrame.ScrollBarThickness = 10
+						dropdown.ItemsFrame.ScrollBarImageColor3 = Color3.fromRGB(147, 130, 189)
 						dropdown.ItemsFrame.ZIndex = 8
 						dropdown.ItemsFrame.ScrollingDirection = "Y"
 						dropdown.ItemsFrame.Visible = false
@@ -3031,7 +3063,8 @@ end
 					dropdown.ItemsFrame.BorderSizePixel = 0
 					dropdown.ItemsFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 					dropdown.ItemsFrame.Position = UDim2.fromOffset(0, dropdown.Main.Size.Y.Offset + 8)
-					dropdown.ItemsFrame.ScrollBarThickness = 2
+					dropdown.ItemsFrame.ScrollBarThickness = 10
+					dropdown.ItemsFrame.ScrollBarImageColor3 = Color3.fromRGB(147, 130, 189)
 					dropdown.ItemsFrame.ZIndex = 8
 					dropdown.ItemsFrame.ScrollingDirection = "Y"
 					dropdown.ItemsFrame.Visible = false
