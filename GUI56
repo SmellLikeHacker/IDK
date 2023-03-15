@@ -1,19 +1,37 @@
 
-_G.Color = Color3.fromRGB(147, 130, 189)
-_G.Color2 = Color3.fromRGB(67,50,109)
-_G.FontSizeX = 15 -- Default Value 15
-_G.TitleSizeX = 20 -- Default Value 18
-_G.FontX = "GothamMedium" -- Default Value "Code" | You can try change to other fonts. fonts u can get here https://create.roblox.com/docs/reference/engine/enums/Font
-_G.BackgroundX = "rbxassetid://5553946656"
-_G.TileSizeX = 3*100 -- Default Value 50
+library = {
+    flags = { },
+	items = { }
+}
 
+library.theme = {
+    fontsize = 15,
+    titlesize = 20,
+    font = Enum.Font.Code,
+    background = "rbxassetid://5553946656",
+    tilesize = 50,
+    cursor = false,
+    cursorimg = "https://t0.rbxcdn.com/42f66da98c40252ee151326a82aab51f",
+    backgroundcolor = Color3.fromRGB(20, 20, 20),
+    tabstextcolor = Color3.fromRGB(240, 240, 240),
+    bordercolor = Color3.fromRGB(60, 60, 60),
+    accentcolor = Color3.fromRGB(147, 130, 189),
+    accentcolor2 = Color3.fromRGB(0, 151, 156),
+    outlinecolor = Color3.fromRGB(60, 60, 60),
+    outlinecolor2 = Color3.fromRGB(0, 0, 0),
+    sectorcolor = Color3.fromRGB(30, 30, 30),
+    toptextcolor = Color3.fromRGB(147, 130, 189),
+    topheight = 48,
+    topcolor = Color3.fromRGB(30, 30, 30),
+    topcolor2 = Color3.fromRGB(15, 15, 15),
+    buttoncolor = Color3.fromRGB(49, 49, 49),
+    buttoncolor2 = Color3.fromRGB(39, 39, 39),
+    itemscolor = Color3.fromRGB(200, 200, 200),
+    itemscolor2 = Color3.fromRGB(210, 210, 210)
+}
 
-local library = {
-		flags = { },
-		items = { }
-	}
-    if _G.Color == nil then _G.Color = Color3.fromRGB(147, 130, 189) end
-    if _G.Color2 == nil then _G.Color2 = Color3.fromRGB(67,50,109) end
+    if _G.Color == nil then _G.Color = Color3.fromRGB(80, 245, 245) end
+    if _G.Color2 == nil then _G.Color2 = Color3.fromRGB(0, 151, 156) end
     -- Services
 	local players = game:GetService("Players")
 	local uis = game:GetService("UserInputService")
@@ -26,30 +44,62 @@ local library = {
 	local player = players.LocalPlayer
 	local mouse = player:GetMouse()
 	local camera = game.Workspace.CurrentCamera
-	library.theme = {
-        fontsize = _G.FontSizeX,
-        titlesize = _G.TitleSizeX,
-        font = Enum.Font[_G.FontX],
-        background = _G.BackgroundX,
-        tilesize = _G.TileSizeX,
-        cursor = false,
-        cursorimg = "https://t0.rbxcdn.com/42f66da98c40252ee151326a82aab51f",
-        backgroundcolor = Color3.fromRGB(20, 20, 20),
-        tabstextcolor = Color3.fromRGB(240, 240, 240),
-        bordercolor = Color3.fromRGB(60, 60, 60),
-        accentcolor = _G.Color,
-        accentcolor2 = _G.Color2,
-        outlinecolor = Color3.fromRGB(60, 60, 60),
-        outlinecolor2 = Color3.fromRGB(0, 0, 0),
-        sectorcolor = Color3.fromRGB(30, 30, 30),
-        toptextcolor = _G.Color,
-        topheight = 48,
-        topcolor = Color3.fromRGB(30, 30, 30),
-        topcolor2 = Color3.fromRGB(15, 15, 15),
-        buttoncolor = Color3.fromRGB(49, 49, 49),
-        buttoncolor2 = Color3.fromRGB(39, 39, 39),
-        itemscolor = Color3.fromRGB(200, 200, 200),
-        itemscolor2 = Color3.fromRGB(210, 210, 210)}
+	local function RainbowText(text)
+		spawn(function()
+			local add = 10
+			wait(.1)
+			local k = 1
+			while k <= 255 do
+				text.TextColor3 = Color3.new(k/255,0/255,0/255)
+				k = k + add
+				wait()
+			end
+			while true do
+				k = 1
+				while k <= 255 do
+					text.TextColor3 = Color3.new(255/255,k/255,0/255)
+					k = k + add
+					wait()
+				end
+				k = 1
+				while k <= 255 do
+					text.TextColor3 = Color3.new(255/255 - k/255,255/255,0/255)
+					k = k + add
+					wait()
+				end
+				k = 1
+				while k <= 255 do
+					text.TextColor3 = Color3.new(0/255,255/255,k/255)
+					k = k + add
+					wait()
+				end
+				k = 1
+				while k <= 255 do
+					text.TextColor3 = Color3.new(0/255,255/255 - k/255,255/255)
+					k = k + add
+					wait()
+				end
+				k = 1
+				while k <= 255 do
+					text.TextColor3 = Color3.new(k/255,0/255,255/255)
+					k = k + add
+					wait()
+				end
+				k = 1
+				while k <= 255 do
+					text.TextColor3 = Color3.new(255/255,0/255,255/255 - k/255)
+					k = k + add
+					wait()
+				end
+				while k <= 255 do
+					text.TextColor3 = Color3.new(255/255 - k/255,0/255,0/255)
+					k = k + add
+					wait()
+				end
+			end
+		end)
+	end
+
 	if library.theme.cursor and Drawing then
 		local success = pcall(function()
 			library.cursor = Drawing.new("Image")
@@ -75,6 +125,7 @@ local library = {
 			library.cursor:Remove()
 		end
 	end
+	
 
 	function library:ConfigSystem(name)
 	    
@@ -82,6 +133,9 @@ local library = {
 	        makefolder("!PurpleCat_Hub")
 	    end
         
+
+
+	    
 				local configSystem = { }
 				configSystem.configFolder = "!PurpleCat_Hub/" .. tostring(game.Players.LocalPlayer.Name) .. ""
 				if (not isfolder(configSystem.configFolder)) then
@@ -156,10 +210,9 @@ local library = {
 					end
 					
 				return configSystem
-	end
-		
-		
-		
+			end
+			--
+
 local UserInputService = game:GetService("UserInputService")
 local function MakeDraggable(topbarobject, object)
 	local Dragging = nil
@@ -283,8 +336,9 @@ function ttytPr()
         game:GetService("VirtualInputManager"):SendKeyEvent(false,"RightControl",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
 	end)
 end
-
+if not game:GetService("CoreGui"):FindFirstChild("CatGui") then
 ttytPr()
+end
 
 	function library:CreateWatermark(name)
 		local gamename = marketplaceservice:GetProductInfo(game.PlaceId).Name
@@ -441,8 +495,6 @@ ttytPr()
 		end
 		return watermark
 	end
-	
-	
 	function library:CreateWindow(name, hidebutton)
 		local window = { }
 		window.name = name or ""
@@ -457,9 +509,8 @@ ttytPr()
 		window.Main = Instance.new("ScreenGui", coregui)
 		window.Main.Name = name
 		window.Main.DisplayOrder = 15
-		if syn then
-			syn.protect_gui(window.Main)
-		end
+		
+    
 		if getgenv().uilib then
 			getgenv().uilib:Remove()
 		end
@@ -657,7 +708,7 @@ ttytPr()
 			tab.TabButton.Name = tab.name
 			tab.TabButton.TextSize = window.theme.fontsize
 			updateevent.Event:Connect(function(theme)
-				local size = textservice:GetTextSize(tab.name, theme.fontsize, theme.font, Vector2.new(200, 300))
+				local size = textservice:GetTextSize(tab.name, theme.fontsize, theme.font, Vector2.new(200, 200))
 				tab.TabButton.TextColor3 = tab.TabButton.Name == "SelectedTab" and theme.accentcolor or theme.tabstextcolor
 				tab.TabButton.Font = theme.font
 				tab.TabButton.Size = UDim2.fromOffset(size.X + 15, window.TabList.AbsoluteSize.Y - 1)
@@ -669,8 +720,7 @@ ttytPr()
 			tab.Left.Size = UDim2.fromOffset(window.size.X.Offset / 2, window.size.Y.Offset - (window.TopBar.AbsoluteSize.Y + 1))
 			tab.Left.BackgroundTransparency = 1
 			tab.Left.Visible = false
-			tab.Left.ScrollBarThickness = 10
-			tab.Left.ScrollBarImageColor3 = Color3.fromRGB(147, 130, 189)
+			tab.Left.ScrollBarThickness = 0
 			tab.Left.ScrollingDirection = "Y"
 			tab.Left.Position = window.BlackLine.Position + UDim2.fromOffset(0, 1)
 			tab.LeftListLayout = Instance.new("UIListLayout", tab.Left)
@@ -683,8 +733,7 @@ ttytPr()
 			tab.LeftListPadding.PaddingRight = UDim.new(0, 12)
 			tab.Right = Instance.new("ScrollingFrame", window.Frame)
 			tab.Right.Name = "rightside"
-			tab.Right.ScrollBarThickness = 10
-			tab.Right.ScrollBarImageColor3 = Color3.fromRGB(147, 130, 189)
+			tab.Right.ScrollBarThickness = 0
 			tab.Right.ScrollingDirection = "Y"
 			tab.Right.Visible = false
 			tab.Right.BorderSizePixel = 0
@@ -1204,11 +1253,11 @@ ttytPr()
 						dropdown.Nav.Name = "navigation"
 						dropdown.Nav.BackgroundTransparency = 1
 						dropdown.Nav.LayoutOrder = 10
-						dropdown.Nav.Position = UDim2.fromOffset(sector.Main.Size.X.Offset - 26, 0)
+						dropdown.Nav.Position = UDim2.fromOffset(sector.Main.Size.X.Offset - 26, 5)
 						dropdown.Nav.Rotation = 90
 						dropdown.Nav.ZIndex = 5
-						dropdown.Nav.Size = UDim2.fromOffset(15, 15)
-						dropdown.Nav.Image = "rbxassetid://4483345875"
+						dropdown.Nav.Size = UDim2.fromOffset(8, 8)
+						dropdown.Nav.Image = "rbxassetid://4918373417"
 						dropdown.Nav.ImageColor3 = Color3.fromRGB(210, 210, 210)
 						dropdown.BlackOutline2 = Instance.new("Frame", dropdown.Main)
 						dropdown.BlackOutline2.Name = "blackline"
@@ -1245,8 +1294,7 @@ ttytPr()
 						dropdown.ItemsFrame.BorderSizePixel = 0
 						dropdown.ItemsFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 						dropdown.ItemsFrame.Position = UDim2.fromOffset(0, dropdown.Main.Size.Y.Offset + 8)
-						dropdown.ItemsFrame.ScrollBarThickness = 10
-						dropdown.ItemsFrame.ScrollBarImageColor3 = Color3.fromRGB(147, 130, 189)
+						dropdown.ItemsFrame.ScrollBarThickness = 2
 						dropdown.ItemsFrame.ZIndex = 8
 						dropdown.ItemsFrame.ScrollingDirection = "Y"
 						dropdown.ItemsFrame.Visible = false
@@ -2527,11 +2575,11 @@ ttytPr()
 						dropdown.Nav.Name = "navigation"
 						dropdown.Nav.BackgroundTransparency = 1
 						dropdown.Nav.LayoutOrder = 10
-						dropdown.Nav.Position = UDim2.fromOffset(sector.Main.Size.X.Offset - 26, 0)
+						dropdown.Nav.Position = UDim2.fromOffset(sector.Main.Size.X.Offset - 26, 5)
 						dropdown.Nav.Rotation = 90
 						dropdown.Nav.ZIndex = 5
-						dropdown.Nav.Size = UDim2.fromOffset(15, 15)
-						dropdown.Nav.Image = "rbxassetid://4483345875"
+						dropdown.Nav.Size = UDim2.fromOffset(8, 8)
+						dropdown.Nav.Image = "rbxassetid://4918373417"
 						dropdown.Nav.ImageColor3 = Color3.fromRGB(210, 210, 210)
 						dropdown.BlackOutline2 = Instance.new("Frame", dropdown.Main)
 						dropdown.BlackOutline2.Name = "blackline"
@@ -2568,8 +2616,7 @@ ttytPr()
 						dropdown.ItemsFrame.BorderSizePixel = 0
 						dropdown.ItemsFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 						dropdown.ItemsFrame.Position = UDim2.fromOffset(0, dropdown.Main.Size.Y.Offset + 8)
-						dropdown.ItemsFrame.ScrollBarThickness = 10
-						dropdown.ItemsFrame.ScrollBarImageColor3 = Color3.fromRGB(147, 130, 189)
+						dropdown.ItemsFrame.ScrollBarThickness = 2
 						dropdown.ItemsFrame.ZIndex = 8
 						dropdown.ItemsFrame.ScrollingDirection = "Y"
 						dropdown.ItemsFrame.Visible = false
@@ -3025,11 +3072,11 @@ ttytPr()
 					dropdown.Nav.Name = "navigation"
 					dropdown.Nav.BackgroundTransparency = 1
 					dropdown.Nav.LayoutOrder = 10
-					dropdown.Nav.Position = UDim2.fromOffset(sector.Main.Size.X.Offset - 26, 0)
+					dropdown.Nav.Position = UDim2.fromOffset(sector.Main.Size.X.Offset - 26, 5)
 					dropdown.Nav.Rotation = 90
 					dropdown.Nav.ZIndex = 5
-					dropdown.Nav.Size = UDim2.fromOffset(15, 15)
-					dropdown.Nav.Image = "rbxassetid://4483345875"
+					dropdown.Nav.Size = UDim2.fromOffset(8, 8)
+					dropdown.Nav.Image = "rbxassetid://4918373417"
 					dropdown.Nav.ImageColor3 = Color3.fromRGB(210, 210, 210)
 					dropdown.BlackOutline2 = Instance.new("Frame", dropdown.Main)
 					dropdown.BlackOutline2.Name = "blackline"
@@ -3066,8 +3113,7 @@ ttytPr()
 					dropdown.ItemsFrame.BorderSizePixel = 0
 					dropdown.ItemsFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 					dropdown.ItemsFrame.Position = UDim2.fromOffset(0, dropdown.Main.Size.Y.Offset + 8)
-					dropdown.ItemsFrame.ScrollBarThickness = 10
-					dropdown.ItemsFrame.ScrollBarImageColor3 = Color3.fromRGB(147, 130, 189)
+					dropdown.ItemsFrame.ScrollBarThickness = 2
 					dropdown.ItemsFrame.ZIndex = 8
 					dropdown.ItemsFrame.ScrollingDirection = "Y"
 					dropdown.ItemsFrame.Visible = false
@@ -3362,136 +3408,9 @@ ttytPr()
 				return sector
 			end
 			pcall(function()
-				makefolder("Example Script")
+				makefolder("!PurpleCat_Hub")
 			end)
-			function tab:CreateConfigSystem(side)
-				local configSystem = { }
-				configSystem.configFolder = window.name .. "/" .. tostring(game.Players.LocalPlayer.Name) .. "_BF"
-				if (not isfolder(configSystem.configFolder)) then
-					makefolder(tostring(configSystem.configFolder))
-				end
-				configSystem.sector = tab:CreateSector("Configs", side or "left")
-				local ConfigName = configSystem.sector:AddTextbox("Config Name", "", ConfigName, function()
-				end, "")
-				local default = tostring(listfiles(configSystem.configFolder)[1] or ""):gsub(configSystem.configFolder .. "\\", ""):gsub(".txt", "")
-				local Config = configSystem.sector:AddDropdown("Configs", {}, default, false, function()
-				end, "")
-				for i, v in pairs(listfiles(configSystem.configFolder)) do
-					if v:find(".txt") then
-						Config:Add(tostring(v):gsub(configSystem.configFolder .. "\\", ""):gsub(".txt", ""))
-					end
-				end
-				configSystem.Create = configSystem.sector:AddButton("Create", function()
-					for i, v in pairs(listfiles(configSystem.configFolder)) do
-						Config:Remove(tostring(v):gsub(configSystem.configFolder .. "\\", ""):gsub(".txt", ""))
-					end
-					if ConfigName:Get() and ConfigName:Get() ~= "" then
-						local config = {}
-						for i, v in pairs(library.flags) do
-							if (v ~= nil and v ~= "") then
-								if (typeof(v) == "Color3") then
-									config[i] = {
-										v.R,
-										v.G,
-										v.B
-									}
-								elseif (tostring(v):find("Enum.KeyCode")) then
-									config[i] = v.Name
-								elseif (typeof(v) == "table") then
-									config[i] = {
-										v
-									}
-								else
-									config[i] = v
-								end
-							end
-						end
-						writefile(configSystem.configFolder .. "/" .. ConfigName:Get() .. ".txt", httpservice:JSONEncode(config))
-						for i, v in pairs(listfiles(configSystem.configFolder)) do
-							if v:find(".txt") then
-								Config:Add(tostring(v):gsub(configSystem.configFolder .. "\\", ""):gsub(".txt", ""))
-							end
-						end
-					end
-				end)
-				configSystem.Save = configSystem.sector:AddButton("Save", function()
-					local config = {}
-					if Config:Get() and Config:Get() ~= "" then
-						for i, v in pairs(library.flags) do
-							if (v ~= nil and v ~= "") then
-								if (typeof(v) == "Color3") then
-									config[i] = {
-										v.R,
-										v.G,
-										v.B
-									}
-								elseif (tostring(v):find("Enum.KeyCode")) then
-									config[i] = "Enum.KeyCode." .. v.Name
-								elseif (typeof(v) == "table") then
-									config[i] = {
-										v
-									}
-								else
-									config[i] = v
-								end
-							end
-						end
-						writefile(configSystem.configFolder .. "/" .. Config:Get() .. ".txt", httpservice:JSONEncode(config))
-					end
-				end)
-				configSystem.Load = configSystem.sector:AddButton("Load", function()
-					local Success = pcall(readfile, configSystem.configFolder .. "/" .. Config:Get() .. ".txt")
-					if (Success) then
-						pcall(function()
-							local ReadConfig = httpservice:JSONDecode(readfile(configSystem.configFolder .. "/" .. Config:Get() .. ".txt"))
-							local NewConfig = {}
-							for i, v in pairs(ReadConfig) do
-								if (typeof(v) == "table") then
-									if (typeof(v[1]) == "number") then
-										NewConfig[i] = Color3.new(v[1], v[2], v[3])
-									elseif (typeof(v[1]) == "table") then
-										NewConfig[i] = v[1]
-									end
-								elseif (tostring(v):find("Enum.KeyCode.")) then
-									NewConfig[i] = Enum.KeyCode[tostring(v):gsub("Enum.KeyCode.", "")]
-								else
-									NewConfig[i] = v
-								end
-							end
-							library.flags = NewConfig
-							for i, v in pairs(library.flags) do
-								for i2, v2 in pairs(library.items) do
-									if (i ~= nil and i ~= "" and i ~= "Configs_Name" and i ~= "Configs" and v2.flag ~= nil) then
-										if (v2.flag == i) then
-											pcall(function()
-												v2:Set(v)
-											end)
-										end
-									end
-								end
-							end
-						end)
-					end
-				end)
-				configSystem.Delete = configSystem.sector:AddButton("Delete", function()
-					for i, v in pairs(listfiles(configSystem.configFolder)) do
-						Config:Remove(tostring(v):gsub(configSystem.configFolder .. "\\", ""):gsub(".txt", ""))
-					end
-					if (not Config:Get() or Config:Get() == "") then
-						return
-					end
-					if (not isfile(configSystem.configFolder .. "/" .. Config:Get() .. ".txt")) then
-						return
-					end
-					delfile(configSystem.configFolder .. "/" .. Config:Get() .. ".txt")
-					for i, v in pairs(listfiles(configSystem.configFolder)) do
-						if v:find(".txt") then
-							Config:Add(tostring(v):gsub(configSystem.configFolder .. "\\", ""):gsub(".txt", ""))
-						end
-					end
-				end)
-				return configSystem
-			end
+
 			table.insert(window.Tabs, tab)
 			return tab
 		end
