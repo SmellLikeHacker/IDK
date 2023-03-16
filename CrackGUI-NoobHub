@@ -406,7 +406,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 	MainSceen2.BorderSizePixel = 0
 	MainSceen2.ClipsDescendants = true
 	MainSceen2.Position = UDim2.new(0.5, 0, 0.52, 0)
-	MainSceen2.Size = UDim2.new(0, 600, 0, 360)
+	MainSceen2.Size = UDim2.new(0, 580, 0, 360)
 
 	local Main_UiConner2 = Instance.new("UICorner")
 	Main_UiConner2.CornerRadius = UDim.new(0, 8)
@@ -669,7 +669,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 		TextButton_Tap.Parent = Frame_Tap
 		TextButton_Tap.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 		TextButton_Tap.BackgroundTransparency = 1.000
-		TextButton_Tap.Position = UDim2.new(0.0480000004, 0, 0.449999988, 0)
+		TextButton_Tap.Position = UDim2.new(0.048, 0, 0.45, 0)
 		TextButton_Tap.Size = UDim2.new(0, 100, 0, 20)
 		TextButton_Tap.Font = Enum.Font.Gotham
 		TextButton_Tap.Text = tostring(text)
@@ -685,7 +685,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 		MainPage.BackgroundTransparency = 1
 		MainPage.ClipsDescendants = true
 		MainPage.Position = UDim2.new(0.0039138943, 0, 0, 0)
-		MainPage.Size = UDim2.new(0, 550, 0, 310)
+		MainPage.Size = UDim2.new(0, 570, 0, 320)
 		MainPage.LayoutOrder = PageOrders
 
 		TextButton_Tap.MouseButton1Click:connect(function()
@@ -733,7 +733,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 		ScrollingFrame_Pagefrist.Active = true
 		ScrollingFrame_Pagefrist.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
 		ScrollingFrame_Pagefrist.BorderSizePixel = 0
-		ScrollingFrame_Pagefrist.Size = UDim2.new(0, 600, 0, 320)
+		ScrollingFrame_Pagefrist.Size = UDim2.new(0, 555, 0, 335)
 		ScrollingFrame_Pagefrist.ScrollBarThickness = 4
 
 		local UIGridLayout_Pagefrist = Instance.new("UIGridLayout")
@@ -769,7 +769,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 			ScrollingFrame_Pageframe.BackgroundTransparency = 1.000
 			ScrollingFrame_Pageframe.BorderColor3 = Color3.fromRGB(27, 42, 53)
 			ScrollingFrame_Pageframe.BorderSizePixel = 0
-			ScrollingFrame_Pageframe.Size = UDim2.new(0, 550, 0, 400)
+			ScrollingFrame_Pageframe.Size = UDim2.new(0, 255, 0, 300)
 			ScrollingFrame_Pageframe.ScrollBarThickness = 3
 			ScrollingFrame_Pageframe.ClipsDescendants = true
 
@@ -831,7 +831,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 				Toggle.BackgroundTransparency = 1
 				Toggle.BorderColor3 = Color3.fromRGB(27, 42, 53)
 				Toggle.Position = UDim2.new(0.5, 0, 0.5, 0)
-				Toggle.Size = UDim2.new(0, 250, 0, 35)
+				Toggle.Size = UDim2.new(0, 250, 0, 31)
 
 				local TextButton_Toggle = Instance.new("TextButton")
 				TextButton_Toggle.Name = "TextButton_Toggle"
