@@ -627,13 +627,13 @@ function ui:W1n(text,text2,text2Pos,toclose)
 				tween:Create(Main_UiStroke,TweenInfo.new(0.4,Enum.EasingStyle.Back,Enum.EasingDirection.In),{Thickness = 0}):Play()
 				uitoggled = true
 				wait(.5)
-				ui:Notification("UI Toggle","Has Been Close",2.5)
+				ui:Notification("UI Toggle","Has Been Close",5)
 			else
-				MainSceen:TweenSize(UDim2.new(0, 550, 0, 300), Enum.EasingDirection.Out, Enum.EasingStyle.Back, .4, true)
+				MainSceen:TweenSize(UDim2.new(0, 600, 0, 400), Enum.EasingDirection.Out, Enum.EasingStyle.Back, .4, true)
 				tween:Create(Main_UiStroke,TweenInfo.new(0.4,Enum.EasingStyle.Back,Enum.EasingDirection.In),{Thickness = 2}):Play()
 				uitoggled = false
 				wait(.5)
-				ui:Notification("UI Toggle","Has Been Open",2.5)
+				ui:Notification("UI Toggle","Has Been Open",5)
 			end
 		end
 	end)
