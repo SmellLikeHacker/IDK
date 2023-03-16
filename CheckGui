@@ -4162,3 +4162,4 @@ function ui:W1n(text,text2,text2Pos,toclose)
 	end
 	return uitop
 end
+return ui
