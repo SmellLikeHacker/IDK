@@ -1,0 +1,30 @@
+local ui = loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/IDK/main/CrackGUI-NoobHub"))()
+local Tab = ui:W1n("",game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name,0.4,toclose)
+local Page = Tab:Tap("TabByCat")
+local P1 = Page:newpage()
+local P2 = Page:newpage()
+text = "Cat"
+text2 = "ByCat"
+min = 10
+max = 100
+de = 20
+lol = 1
+P1:Toggle(text,config,callback)
+P1:ToggleS(text,config,callback)
+P1:ToggleDesc(text,text2,config,callback)
+P2:Button(text,callback)
+P2:Button2(text,callback)
+P2:Line()
+P2:Blank(10)
+P2:Title(text)
+local Labeel = P2:Label(text)
+Labeel:Change(text2)
+local Page2 = Tab:Tap("TabByCat")
+local P1 = Page2:newpage()
+local P2 = Page2:newpage()
+P1:Slider(text,floor,min,max,de,lol,callback)
+Cat = {"Meow","Maow"}
+local DP = P1:Dropdown(text,Cat,callback)
+DP:Clear()
+DP:Add(Cat)
+P1:Textbox(text,text2,callback)
