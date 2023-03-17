@@ -2777,11 +2777,6 @@ function ui:W1n(text,text2,text2Pos,toclose)
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 						{TextColor3 = _G.Color} -- UDim2.new(0, 128, 0, 25)
 					):Play()
-					TweenService:Create(
-						DropArbt_listimage,
-						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-						{ImageColor3 = Color3.fromRGB(255, 255, 255)} -- UDim2.new(0, 128, 0, 25)
-					):Play()
 				end)
 
 				DropFrame.MouseLeave:Connect(function()
