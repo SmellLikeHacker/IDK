@@ -1,5 +1,14 @@
-_G.Color = Color3.fromRGB(255, 0, 0)
+_G.ThemeColor = Color3.fromRGB(255, 0, 0)
+_G.LineColor = Color3.fromRGB(255, 0, 0)
+_G.LabelColor = Color3.fromRGB(255, 0, 0)
+_G.ToggleTextColor = Color3.fromRGB(255, 255, 255)
+
+
+
 _G.TextSizee = 18.00
+_G.LabelTextsize = 15.00
+_G.TabTextSizee = 15.00
+
 local Close = Instance.new("ScreenGui")
 local MainFrame = Instance.new("Frame")
 local MainFrameUICorner = Instance.new("UICorner")
@@ -370,7 +379,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 	NameReal.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	NameReal.BackgroundTransparency = 1.000
 	NameReal.Position = UDim2.new(0.145454541, 0, 0.0610294119, 0)
-	NameReal.Size = UDim2.new(0, 136, 0, 34)
+	NameReal.Size = UDim2.new(0, 136, 0, 30)
 	NameReal.Font = Enum.Font.GothamSemibold
 	NameReal.TextColor3 = Color3.fromRGB(255, 255, 255)
 	NameReal.TextSize = 18.000
@@ -383,12 +392,12 @@ function ui:W1n(text,text2,text2Pos,toclose)
 	NameReal2.Name = "NameReal"
 	NameReal2.Parent = MainSceen
 	NameReal2.Font = Enum.Font.GothamSemibold
-	NameReal2.TextColor3 = _G.Color
+	NameReal2.TextColor3 = _G.ThemeColor
 	NameReal2.TextSize = 18.000
 	NameReal2.TextTransparency = 0
 	NameReal2.TextXAlignment = Enum.TextXAlignment.Left
 	NameReal2.AnchorPoint = Vector2.new(0.5, 0.8)
-	NameReal2.BackgroundColor3 = _G.Color
+	NameReal2.BackgroundColor3 = _G.ThemeColor
 	NameReal2.BackgroundTransparency = 1.000
 	NameReal2.Text = tostring(text2)
 	NameReal2.Position = UDim2.new(text2Pos, 0, 0.0610294119, 0)
@@ -429,8 +438,8 @@ function ui:W1n(text,text2,text2Pos,toclose)
 	ScolTapBarFrame.BackgroundTransparency = 1.000
 	ScolTapBarFrame.BorderSizePixel = 0
 	ScolTapBarFrame.ClipsDescendants = true
-	ScolTapBarFrame.Position = UDim2.new(0.52, 0, 0.07, 0)
-	ScolTapBarFrame.Size = UDim2.new(0, 600, 0, 55)
+	ScolTapBarFrame.Position = UDim2.new(0.50, 0, 0.05, 0)
+	ScolTapBarFrame.Size = UDim2.new(0, 555, 0, 45)
 
 	local ScrollingFrame_Menubar = Instance.new("ScrollingFrame")
 
@@ -440,7 +449,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 	ScrollingFrame_Menubar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	ScrollingFrame_Menubar.BackgroundTransparency = 1.000
 	ScrollingFrame_Menubar.BorderSizePixel = 0
-	ScrollingFrame_Menubar.Size = UDim2.new(0, 600, 0, 30)
+	ScrollingFrame_Menubar.Size = UDim2.new(0, 555, 0, 30)
 	ScrollingFrame_Menubar.CanvasSize = UDim2.new(2, 0, 0, 0)
 	ScrollingFrame_Menubar.ScrollBarThickness = 3
 
@@ -466,7 +475,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 	Container_Page.AnchorPoint = Vector2.new(0.5, 0.5)
 	Container_Page.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	Container_Page.BackgroundTransparency = 1.000
-	Container_Page.Position = UDim2.new(0.499056607, 0, 0.55, 0)
+	Container_Page.Position = UDim2.new(0.5, 0, 0.55, 0)
 	Container_Page.Size = UDim2.new(0, 550, 0, 330)
 
 	local pagesFolder = Instance.new("Folder")
@@ -538,11 +547,11 @@ function ui:W1n(text,text2,text2Pos,toclose)
 
 		txdlid.Parent = TitleFrame
 		txdlid.Name = "TextLabel_Tap"
-		txdlid.BackgroundColor3 = _G.Color
+		txdlid.BackgroundColor3 = _G.ThemeColor
 		txdlid.Size =UDim2.new(0, 160, 0,25 )
 		txdlid.Font = Enum.Font.GothamBold
 		txdlid.Text = titel
-		txdlid.TextColor3 = _G.Color
+		txdlid.TextColor3 = _G.ThemeColor
 		txdlid.TextSize = 18.000
 		txdlid.AnchorPoint = Vector2.new(0.5, 0.5)
 		txdlid.Position = UDim2.new(0.37, 0, 0.3, 0)
@@ -554,7 +563,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 		LableFrame.Name = "LableFrame"
 		LableFrame.Parent = TitleFrame
 		LableFrame.AnchorPoint = Vector2.new(0.5, 0.5)
-		LableFrame.BackgroundColor3 = _G.Color
+		LableFrame.BackgroundColor3 = _G.ThemeColor
 		LableFrame.BorderSizePixel = 0
 		LableFrame.Position =  UDim2.new(0.36, 0, 0.67,0)
 		LableFrame.Size = UDim2.new(0, 260, 0,25 )
@@ -565,7 +574,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 
 		TextNoti.Parent = LableFrame
 		TextNoti.Name = "TextLabel_Tap"
-		TextNoti.BackgroundColor3 = _G.Color
+		TextNoti.BackgroundColor3 = _G.ThemeColor
 		TextNoti.Size =UDim2.new(0, 260, 0,25 )
 		TextNoti.Font = Enum.Font.Gotham
 		TextNoti.Text = text
@@ -583,7 +592,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 		Time.Name = "Time"
 		Time.Parent = TitleFrame
 		--Time.AnchorPoint = Vector2.new(0.5, 0.5)
-		Time.BackgroundColor3 =  _G.Color
+		Time.BackgroundColor3 =  _G.ThemeColor
 		Time.BorderSizePixel = 0
 		Time.Position =  UDim2.new(0, 0, 0.,0)
 		Time.Size = UDim2.new(0, 0,0,0)
@@ -658,7 +667,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 		TextLabel_Tap.Font = Enum.Font.SourceSans
 		TextLabel_Tap.Text = ""
 		TextLabel_Tap.TextColor3 = Color3.fromRGB(0, 0, 0)
-		TextLabel_Tap.TextSize = _G.TextSizee
+		TextLabel_Tap.TextSize = _G.TabTextSizee
 
 		local TextButton_Tap = Instance.new("TextButton")
 
@@ -671,7 +680,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 		TextButton_Tap.Font = Enum.Font.Gotham
 		TextButton_Tap.Text = tostring(text)
 		TextButton_Tap.TextColor3 = Color3.fromRGB(155, 155, 155)
-		TextButton_Tap.TextSize = 18.000
+		TextButton_Tap.TextSize = _G.TabTextSizee
 
 		local MainPage = Instance.new("Frame")
 
@@ -702,7 +711,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 				TweenService:Create(
 					TextButton_Tap,
 					TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-					{TextColor3 = _G.Color}
+					{TextColor3 = _G.ThemeColor}
 				):Play()
 			end
 		end)
@@ -716,7 +725,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 			TweenService:Create(
 				TextButton_Tap,
 				TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-				{TextColor3 = _G.Color}
+				{TextColor3 = _G.ThemeColor}
 			):Play()
 
 			MainPage.Visible = true
@@ -828,14 +837,14 @@ function ui:W1n(text,text2,text2Pos,toclose)
 				Toggle.BackgroundTransparency = 1
 				Toggle.BorderColor3 = Color3.fromRGB(27, 42, 53)
 				Toggle.Position = UDim2.new(0.5, 0, 0.5, 0)
-				Toggle.Size = UDim2.new(0, 250, 0, 31)
+				Toggle.Size = UDim2.new(0, 250, 0, 30)
 
 				local TextButton_Toggle = Instance.new("TextButton")
 				TextButton_Toggle.Name = "TextButton_Toggle"
 				TextButton_Toggle.Parent = Toggle
 				TextButton_Toggle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 				TextButton_Toggle.BackgroundTransparency = 1.000
-				TextButton_Toggle.Size = UDim2.new(0, 213, 0, 35)
+				TextButton_Toggle.Size = UDim2.new(0, 125, 0, 30)
 				TextButton_Toggle.Font = Enum.Font.SourceSans
 				TextButton_Toggle.Text = " "
 				TextButton_Toggle.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -904,7 +913,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 
 				ImageButton.Parent = TextButton_2_Toggle
 				ImageButton.AnchorPoint = Vector2.new(0.5, 0.5)
-				ImageButton.BackgroundColor3 = _G.Color
+				ImageButton.BackgroundColor3 = _G.ThemeColor
 				ImageButton.BackgroundTransparency = 0
 				ImageButton.BorderSizePixel = 0
 				ImageButton.AutoButtonColor = false
@@ -926,7 +935,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 				TextLabel_Toggle.Position = UDim2.new(0.55, 0, 0.5, 0)
 				TextLabel_Toggle.Size = UDim2.new(0, 200, 0, 25)
 				TextLabel_Toggle.Font = Enum.Font.Gotham
-				TextLabel_Toggle.TextColor3 = Color3.fromRGB(255, 255, 255)
+				TextLabel_Toggle.TextColor3 = _G.ToggleTextColor
 				TextLabel_Toggle.TextSize = 12.000
 				TextLabel_Toggle.Text = text
 				TextLabel_Toggle.TextWrapped = true
@@ -1183,7 +1192,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 				Toggle_2_Toggle_UIStroke.Parent = Toggle
 				Toggle_2_Toggle_UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 				Toggle_2_Toggle_UIStroke.LineJoinMode = Enum.LineJoinMode.Round
-				Toggle_2_Toggle_UIStroke.Color = _G.Color
+				Toggle_2_Toggle_UIStroke.Color = Color3.fromRGB(0, 0, 0)
 				Toggle_2_Toggle_UIStroke.Transparency = 0
 
 				local Toggle_Pageframe_Uiconner = Instance.new("UICorner")
@@ -1256,10 +1265,10 @@ function ui:W1n(text,text2,text2Pos,toclose)
 				TextLabel_Toggle.BackgroundTransparency = 1
 				TextLabel_Toggle.ClipsDescendants = true
 				TextLabel_Toggle.Position = UDim2.new(0.35, 0, 0.5, 0)
-				TextLabel_Toggle.Size = UDim2.new(0, 155, 0, 31)
+				TextLabel_Toggle.Size = UDim2.new(0, 155, 0, 30)
 				TextLabel_Toggle.Font = Enum.Font.GothamSemibold
 				TextLabel_Toggle.Text = text
-				TextLabel_Toggle.TextColor3 = Color3.fromRGB(255, 255, 255)
+				TextLabel_Toggle.TextColor3 = _G.ToggleTextColor
 				TextLabel_Toggle.TextSize = 11.000
 				TextLabel_Toggle.TextWrapped = true
 				TextLabel_Toggle.TextXAlignment = Enum.TextXAlignment.Center
@@ -1273,12 +1282,12 @@ function ui:W1n(text,text2,text2Pos,toclose)
 						TweenService:Create(
 							TextButton_3_Toggle,
 							TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-							{BackgroundColor3 =  _G.Color} -- UDim2.new(0, 128, 0, 25)
+							{BackgroundColor3 =  _G.ThemeColor} -- UDim2.new(0, 128, 0, 25)
 						):Play()
 						TweenService:Create(
 							Toggle_2_Toggle_UIStroke,
 							TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-							{Color =  _G.Color} -- UDim2.new(0, 128, 0, 25)
+							{Color =  _G.ThemeColor} -- UDim2.new(0, 128, 0, 25)
 						):Play()
 						TweenService:Create(
 							TextButton_2_Toggle,
@@ -1295,7 +1304,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 						TweenService:Create(
 							TextButton_3_Toggle,
 							TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-							{BackgroundColor3 =  Color3.fromRGB(255, 46, 46)} -- UDim2.new(0, 128, 0, 25)
+							{BackgroundColor3 =  Color3.fromRGB(0, 0, 0)} -- UDim2.new(0, 128, 0, 25)
 						):Play()
 						TweenService:Create(
 							TextButton_2_Toggle,
@@ -1315,12 +1324,12 @@ function ui:W1n(text,text2,text2Pos,toclose)
 						TweenService:Create(
 							TextButton_3_Toggle,
 							TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-							{BackgroundColor3 =  _G.Color} -- UDim2.new(0, 128, 0, 25)
+							{BackgroundColor3 =  _G.ThemeColor} -- UDim2.new(0, 128, 0, 25)
 						):Play()
 						TweenService:Create(
 							Toggle_2_Toggle_UIStroke,
 							TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-							{Color =  _G.Color} -- UDim2.new(0, 128, 0, 25)
+							{Color =  _G.ThemeColor} -- UDim2.new(0, 128, 0, 25)
 						):Play()
 						TweenService:Create(
 							TextButton_2_Toggle,
@@ -1356,12 +1365,12 @@ function ui:W1n(text,text2,text2Pos,toclose)
 					TweenService:Create(
 						TextButton_3_Toggle,
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-						{BackgroundColor3 =  _G.Color} -- UDim2.new(0, 128, 0, 25)
+						{BackgroundColor3 =  _G.ThemeColor} -- UDim2.new(0, 128, 0, 25)
 					):Play()
 					TweenService:Create(
 						Toggle_2_Toggle_UIStroke,
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-						{Color =  _G.Color} -- UDim2.new(0, 128, 0, 25)
+						{Color =  _G.ThemeColor} -- UDim2.new(0, 128, 0, 25)
 					):Play()
 					TweenService:Create(
 						TextButton_2_Toggle,
@@ -1379,7 +1388,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 				lockerframe.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 				lockerframe.BackgroundTransparency = 1
 				lockerframe.BorderSizePixel = 0
-				lockerframe.Size = UDim2.new(0, 245, 0, 35)
+				lockerframe.Size = UDim2.new(0, 245, 0, 30)
 				lockerframe.Position = UDim2.new(0.5, 0, 0.5, 0)
 				lockerframe.AnchorPoint = Vector2.new(0.5, 0.5)
 
@@ -1435,14 +1444,14 @@ function ui:W1n(text,text2,text2Pos,toclose)
 				Toggle.BackgroundTransparency = 1
 				Toggle.BorderColor3 = Color3.fromRGB(27, 42, 53)
 				Toggle.Position = UDim2.new(0.5, 0, 0.5, 0)
-				Toggle.Size = UDim2.new(0, 250, 0, 35)
+				Toggle.Size = UDim2.new(0, 250, 0, 30)
 
 				local TextButton_Toggle = Instance.new("TextButton")
 				TextButton_Toggle.Name = "TextButton_Toggle"
 				TextButton_Toggle.Parent = Toggle
 				TextButton_Toggle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 				TextButton_Toggle.BackgroundTransparency = 1.000
-				TextButton_Toggle.Size = UDim2.new(0, 213, 0, 35)
+				TextButton_Toggle.Size = UDim2.new(0, 125, 0, 30)
 				TextButton_Toggle.Font = Enum.Font.SourceSans
 				TextButton_Toggle.Text = " "
 				TextButton_Toggle.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -1484,7 +1493,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 				TextButton_2_Toggle2.AutoButtonColor = false
 				TextButton_2_Toggle2.Font = Enum.Font.SourceSans
 				TextButton_2_Toggle2.Text = " "
-				TextButton_2_Toggle2.TextColor3 = Color3.fromRGB(0, 0, 0)
+				TextButton_2_Toggle2.TextColor3 = _G.ToggleTextColor
 				TextButton_2_Toggle2.TextSize = _G.TextSizee
 
 				local UICorner2 = Instance.new("UICorner")
@@ -1511,7 +1520,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 
 				ImageButton.Parent = TextButton_2_Toggle
 				ImageButton.AnchorPoint = Vector2.new(0.5, 0.5)
-				ImageButton.BackgroundColor3 = _G.Color
+				ImageButton.BackgroundColor3 = _G.ThemeColor
 				ImageButton.BackgroundTransparency = 0
 				ImageButton.BorderSizePixel = 0
 				ImageButton.AutoButtonColor = false
@@ -1533,7 +1542,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 				TextLabel_Toggle.Position = UDim2.new(0.55, 0, 0.5, 0)
 				TextLabel_Toggle.Size = UDim2.new(0, 200, 0, 25)
 				TextLabel_Toggle.Font = Enum.Font.Gotham
-				TextLabel_Toggle.TextColor3 = Color3.fromRGB(255, 255, 255)
+				TextLabel_Toggle.TextColor3 = _G.ToggleTextColor
 				TextLabel_Toggle.TextSize = 12.000
 				TextLabel_Toggle.Text = text
 				TextLabel_Toggle.TextWrapped = true
@@ -1555,8 +1564,8 @@ function ui:W1n(text,text2,text2Pos,toclose)
 				DescButton2.AnchorPoint = Vector2.new(0.5, 0.5)
 				DescButton2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 				DescButton2.BackgroundTransparency = 1.000
-				DescButton2.Position = UDim2.new(0.82, 0, 0.5, 0)
-				DescButton2.Size = UDim2.new(0, 21, 0, 21)
+				DescButton2.Position = UDim2.new(0.80, 0, 0.5, 0)
+				DescButton2.Size = UDim2.new(0, 30, 0, 30)
 				DescButton2.Image = "rbxassetid://3926305904"
 				DescButton2.ImageRectOffset = Vector2.new(4, 804)
 				DescButton2.ImageRectSize = Vector2.new(36, 36)
@@ -1623,7 +1632,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 				TextLabel_Toggle2.Position = UDim2.new(0, 4, 0.025, 0)
 				TextLabel_Toggle2.Size = UDim2.new(0, 175, 0, 25)
 				TextLabel_Toggle2.Font = Enum.Font.GothamSemibold
-				TextLabel_Toggle2.TextColor3 = _G.Color
+				TextLabel_Toggle2.TextColor3 = _G.ThemeColor
 				TextLabel_Toggle2.TextSize = 10
 				TextLabel_Toggle2.TextTransparency = 1
 				TextLabel_Toggle2.Text = text2
@@ -1645,7 +1654,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 						TweenService:Create(
 							DescButton2,
 							TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-							{ImageColor3 = _G.Color} -- UDim2.new(0, 128, 0, 25)
+							{ImageColor3 = _G.ThemeColor} -- UDim2.new(0, 128, 0, 25)
 						):Play()
 						TweenService:Create(
 							ScolDown,
@@ -2002,7 +2011,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 					TweenService:Create(
 						Main_UiStroke3,
 						TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-						{Color = _G.Color} -- UDim2.new(0, 128, 0, 25)
+						{Color = _G.ThemeColor} -- UDim2.new(0, 128, 0, 25)
 					):Play()
 				end)
 
@@ -2039,7 +2048,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 
 				Btn.Name = "Btn"
 				Btn.Parent = Button
-				Btn.BackgroundColor3 = _G.Color
+				Btn.BackgroundColor3 = _G.ThemeColor
 				Btn.BackgroundTransparency = 0
 				Btn.BorderColor3 = Color3.fromRGB(0, 0, 0)
 				Btn.BorderSizePixel = 0
@@ -2078,7 +2087,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 					TweenService:Create(
 						Main_UiStroke3,
 						TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-						{Color = _G.Color} -- UDim2.new(0, 128, 0, 25)
+						{Color = _G.ThemeColor} -- UDim2.new(0, 128, 0, 25)
 					):Play()
 				end)
 
@@ -2105,11 +2114,11 @@ function ui:W1n(text,text2,text2Pos,toclose)
 
 				LineFrame.Name = "LineFrame"
 				LineFrame.Parent = ScrollingFrame_Pageframe
-				LineFrame.BackgroundColor3 =  Color3.fromRGB(0, 0, 0)
+				LineFrame.BackgroundColor3 =  _G.LineColor
 				LineFrame.BorderSizePixel = 0
 				LineFrame.Position = UDim2.new(0.5, 0, 0.7, 0)
 				LineFrame.AnchorPoint = Vector2.new(0.5, 0.5)
-				LineFrame.Size = UDim2.new(0, 220, 0, 2)
+				LineFrame.Size = UDim2.new(0, 230, 0, 2)
 				LineFrame.BackgroundTransparency  = 0
 				LineFrame.ClipsDescendants = true
 
@@ -2160,7 +2169,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 				lineframe3.Size = UDim2.new(0, 230, 0, 20)
 				lineframe3.Font = Enum.Font.GothamSemibold
 				lineframe3.Text = tostring(text)
-				lineframe3.TextColor3 = _G.Color
+				lineframe3.TextColor3 = _G.ThemeColor
 				lineframe3.TextSize = 13.000
 				lineframe3.TextWrapped = true
 			end
@@ -2193,8 +2202,8 @@ function ui:W1n(text,text2,text2Pos,toclose)
 				Labelxd.Size = UDim2.new(0, 230, 0, 13)
 				Labelxd.Font = Enum.Font.Gotham
 				Labelxd.Text = tostring(text)
-				Labelxd.TextColor3 = _G.Color
-				Labelxd.TextSize = 12.000
+				Labelxd.TextColor3 = _G.LabelColor
+				Labelxd.TextSize = _G.LabelTextsize
 				Labelxd.TextTransparency = 0.5
 				Labelxd.TextXAlignment = Enum.TextXAlignment.Left
 				Labelxd.TextWrapped = true
@@ -2294,7 +2303,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 				DefaultValue.Position = UDim2.new(0.45, 0, 0.15, 0)
 				DefaultValue.Size = UDim2.new(0, 15, 0, 15)
 				DefaultValue.Image = "rbxassetid://7072721335"
-				DefaultValue.ImageColor3 =  _G.Color
+				DefaultValue.ImageColor3 =  _G.ThemeColor
 
 				local Addvalue = Instance.new("ImageButton")
 
@@ -2305,7 +2314,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 				Addvalue.Position = UDim2.new(0.55, 0, 0.15, 0)
 				Addvalue.Size = UDim2.new(0, 15, 0, 15)
 				Addvalue.Image = "http://www.roblox.com/asset/?id=6035067836"
-				Addvalue.ImageColor3 =  _G.Color
+				Addvalue.ImageColor3 =  _G.ThemeColor
 
 				local Deletevalue = Instance.new("ImageButton")
 
@@ -2316,7 +2325,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 				Deletevalue.Position = UDim2.new(0.65, 0, 0.15, 0)
 				Deletevalue.Size = UDim2.new(0, 15, 0, 15)
 				Deletevalue.Image = "http://www.roblox.com/asset/?id=6035047377"
-				Deletevalue.ImageColor3 =  _G.Color
+				Deletevalue.ImageColor3 =  _G.ThemeColor
 
 				local CustomValue = Instance.new("TextBox")
 
@@ -2379,7 +2388,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 
 				MainValue.Name = "MainValue"
 				MainValue.Parent = PartValue
-				MainValue.BackgroundColor3 = _G.Color
+				MainValue.BackgroundColor3 = _G.ThemeColor
 				MainValue.Position = UDim2.new(0.00101725257, 0, 0.200000003, 0)
 				MainValue.Size = UDim2.new((de or 0) / max, 0, 0, 5)
 				MainValue.BorderSizePixel = 0
@@ -2741,7 +2750,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 						TweenService:Create(
 							TextLabel_TapDro2p,
 							TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-							{TextColor3 = _G.Color} -- UDim2.new(0, 128, 0, 25)
+							{TextColor3 = _G.ThemeColor} -- UDim2.new(0, 128, 0, 25)
 						):Play()
 					end)
 
@@ -2770,12 +2779,12 @@ function ui:W1n(text,text2,text2Pos,toclose)
 					TweenService:Create(
 						Main_UiStroke,
 						TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-						{Color = _G.Color} -- UDim2.new(0, 128, 0, 25)
+						{Color = _G.ThemeColor} -- UDim2.new(0, 128, 0, 25)
 					):Play()
 					TweenService:Create(
 						LabelFrameDrop,
 						TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-						{TextColor3 = _G.Color} -- UDim2.new(0, 128, 0, 25)
+						{TextColor3 = _G.ThemeColor} -- UDim2.new(0, 128, 0, 25)
 					):Play()
 				end)
 
@@ -2846,7 +2855,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 
 						TextLabel_TapDro2p.Parent = ListFrame
 						TextLabel_TapDro2p.Name =  tostring(t).."Dropdown"
-						TextLabel_TapDro2p.BackgroundColor3 = _G.Color
+						TextLabel_TapDro2p.BackgroundColor3 = _G.ThemeColor
 						TextLabel_TapDro2p.Position = UDim2.new(0.5, 0, 0.5, 0)
 						TextLabel_TapDro2p.Size =  UDim2.new(0, 205, 0, 30)
 						TextLabel_TapDro2p.Font = Enum.Font.GothamSemibold
@@ -2861,7 +2870,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 
 						ButtonDrop2.Parent = ListFrame
 						ButtonDrop2.Name = "ButtonDrop2"
-						ButtonDrop2.BackgroundColor3 = _G.Color
+						ButtonDrop2.BackgroundColor3 = _G.ThemeColor
 						ButtonDrop2.Size = UDim2.new(0, 205, 0, 30)
 						ButtonDrop2.Font = Enum.Font.SourceSansSemibold
 						ButtonDrop2.Text = ""
@@ -2879,7 +2888,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 							TweenService:Create(
 								TextLabel_TapDro2p,
 								TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-								{TextColor3 = _G.Color} -- UDim2.new(0, 128, 0, 25)
+								{TextColor3 = _G.ThemeColor} -- UDim2.new(0, 128, 0, 25)
 							):Play()
 						end)
 
@@ -2963,7 +2972,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 				TextBox2Stroke.Name = ""
 				TextBox2Stroke.Parent = FrameBox
 				TextBox2Stroke.LineJoinMode = Enum.LineJoinMode.Round
-				TextBox2Stroke.Color = _G.Color
+				TextBox2Stroke.Color = _G.ThemeColor
 				TextBox2Stroke.Transparency = 0.7
 
 				local TextFrame2 = Instance.new("TextBox")
@@ -3145,12 +3154,12 @@ function ui:W1n(text,text2,text2Pos,toclose)
 					TweenService:Create(
 						FrameStroke,
 						TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-						{Color = _G.Color}
+						{Color = _G.ThemeColor}
 					):Play()
 					TweenService:Create(
 						TextReal,
 						TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-						{TextColor3 = _G.Color}
+						{TextColor3 = _G.ThemeColor}
 					):Play()
 
 				end)
@@ -3230,7 +3239,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 
 				ImageButton.Parent = TextButton_2_Toggle
 				ImageButton.AnchorPoint = Vector2.new(0.5, 0.5)
-				ImageButton.BackgroundColor3 = _G.Color
+				ImageButton.BackgroundColor3 = _G.ThemeColor
 				ImageButton.BackgroundTransparency = 0
 				ImageButton.BorderSizePixel = 0
 				ImageButton.AutoButtonColor = false
@@ -3276,7 +3285,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 
 				Color.Name = "Color"
 				Color.Parent = TextFrameColor
-				Color.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+				Color.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 				Color.Position = UDim2.new(0.03,0,4,0)
 				Color.Size = UDim2.new(0, 195, 0, 40)
 				Color.ZIndex = 0
@@ -3377,7 +3386,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 				BTN_XDStroke.Parent = BTN_XD
 				BTN_XDStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 				BTN_XDStroke.LineJoinMode = Enum.LineJoinMode.Round
-				BTN_XDStroke.Color = _G.Color
+				BTN_XDStroke.Color = _G.ThemeColor
 				BTN_XDStroke.Transparency = 0.7
 
 
@@ -3669,7 +3678,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 				DropFrameStroke.Name = ""
 				DropFrameStroke.Parent = DropFrame
 				DropFrameStroke.LineJoinMode = Enum.LineJoinMode.Round
-				DropFrameStroke.Color = _G.Color
+				DropFrameStroke.Color = _G.ThemeColor
 				DropFrameStroke.Transparency = 0.7
 
 
@@ -3680,7 +3689,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 
 				LabelFrameDrop.Parent = DropFrame
 				LabelFrameDrop.Name = "LabelFrameDrop"
-				LabelFrameDrop.BackgroundColor3 = _G.Color
+				LabelFrameDrop.BackgroundColor3 = _G.ThemeColor
 				LabelFrameDrop.Position = UDim2.new(0., 0, 0., 0)
 				LabelFrameDrop.Size =    UDim2.new(0, 213, 0, 30)
 				LabelFrameDrop.Font = Enum.Font.SourceSansSemibold
@@ -3696,7 +3705,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 
 				TextLabel_TapDrop.Parent = LabelFrameDrop
 				TextLabel_TapDrop.Name = "TextLabel_TapDrop"
-				TextLabel_TapDrop.BackgroundColor3 = _G.Color
+				TextLabel_TapDrop.BackgroundColor3 = _G.ThemeColor
 				TextLabel_TapDrop.Position = UDim2.new(0.04, 0, 0.14, 0)
 				TextLabel_TapDrop.Size =    UDim2.new(0, 140, 0, 20)
 				TextLabel_TapDrop.Font = Enum.Font.SourceSansSemibold
@@ -3750,7 +3759,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 
 				ButtonDrop.Parent = DropFrame
 				ButtonDrop.Name = "ButtonDrop"
-				ButtonDrop.BackgroundColor3 = _G.Color
+				ButtonDrop.BackgroundColor3 = _G.ThemeColor
 				ButtonDrop.Size = UDim2.new(0, 213, 0, 30)
 				ButtonDrop.Font = Enum.Font.SourceSansSemibold
 				ButtonDrop.Text = ""
@@ -3807,7 +3816,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 					local farmtoglist = Instance.new("TextButton")
 
 					farmtoglist.Parent = listtextbutton
-					farmtoglist.BackgroundColor3 = _G.Color
+					farmtoglist.BackgroundColor3 = _G.ThemeColor
 					farmtoglist.BorderColor3 = Color3.fromRGB(255, 255, 255)
 					farmtoglist.BorderSizePixel = 0
 					farmtoglist.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -3824,7 +3833,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 
 					farmtoglist2.Parent = farmtoglist
 					farmtoglist2.BackgroundColor3 = Color3.fromRGB(10,10,10)
-					farmtoglist2.BorderColor3 = _G.Color
+					farmtoglist2.BorderColor3 = _G.ThemeColor
 					farmtoglist2.BorderSizePixel = 0
 					farmtoglist2.AnchorPoint = Vector2.new(0.5, 0.5)
 					farmtoglist2.Position = UDim2.new(0.5, 0, 0.5, 0)
@@ -3839,7 +3848,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 					local listimage = Instance.new("ImageButton")
 
 					listimage.Parent = farmtoglist2
-					listimage.BackgroundColor3 = _G.Color
+					listimage.BackgroundColor3 = _G.ThemeColor
 					listimage.BackgroundTransparency = 0
 					listimage.AnchorPoint = Vector2.new(0.5, 0.5)
 					listimage.Position = UDim2.new(0.5, 0, 0.5, 0)
@@ -3888,7 +3897,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 						TweenService:Create(
 							textlist,
 							TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-							{TextColor3 = _G.Color} -- UDim2.new(0, 128, 0, 25)
+							{TextColor3 = _G.ThemeColor} -- UDim2.new(0, 128, 0, 25)
 						):Play()
 					end)
 
@@ -4022,7 +4031,7 @@ function ui:W1n(text,text2,text2Pos,toclose)
 				BindStroke.Name = ""
 				BindStroke.Parent = BindFrame
 				BindStroke.LineJoinMode = Enum.LineJoinMode.Round
-				BindStroke.Color = _G.Color
+				BindStroke.Color = _G.ThemeColor
 				BindStroke.Transparency = 0.7
 
 				local LabelBind = Instance.new("TextLabel")
@@ -4153,4 +4162,3 @@ function ui:W1n(text,text2,text2Pos,toclose)
 	return uitop
 end
 return ui
-
