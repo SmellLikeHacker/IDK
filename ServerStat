@@ -1,4 +1,5 @@
-
+repeat wait(2) until game:IsLoaded()
+if not game:GetService("CoreGui"):FindFirstChild("ServerStat:ByCat") then
 -- Instances:
 
 local GameStat = Instance.new("ScreenGui")
@@ -16,7 +17,7 @@ local Value_3 = Instance.new("TextLabel")
 
 --Properties:
 
-GameStat.Name = "GameStat"
+GameStat.Name = "ServerStat:ByCat"
 GameStat.Parent = game:GetService("CoreGui")
 GameStat.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 GameStat.IgnoreGuiInset = true
@@ -147,3 +148,4 @@ function GameStat()
 	end)
 end
 coroutine.resume(coroutine.create(GameStat))
+end
