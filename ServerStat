@@ -1,0 +1,149 @@
+
+-- Instances:
+
+local GameStat = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local UIListLayout = Instance.new("UIListLayout")
+local FPS = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local Value = Instance.new("TextLabel")
+local Ping = Instance.new("Frame")
+local UICorner_2 = Instance.new("UICorner")
+local Value_2 = Instance.new("TextLabel")
+local Health = Instance.new("Frame")
+local UICorner_3 = Instance.new("UICorner")
+local Value_3 = Instance.new("TextLabel")
+
+--Properties:
+
+GameStat.Name = "GameStat"
+GameStat.Parent = game:GetService("CoreGui")
+GameStat.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+GameStat.IgnoreGuiInset = true
+GameStat.AutoLocalize = true
+GameStat.ZIndexBehavior = "Global"
+GameStat.ScreenInsets = "DeviceSafeInsets"
+
+
+Frame.Parent = GameStat
+Frame.AnchorPoint = Vector2.new(0.5, 0)
+Frame.BackgroundTransparency = 1.000
+Frame.Position = UDim2.new(0.5, 0, 0.005, 0)
+Frame.Size = UDim2.new(0.95, 0, 0.025, 0)
+
+
+UIListLayout.Parent = Frame
+UIListLayout.FillDirection = Enum.FillDirection.Horizontal
+UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Right
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Bottom
+UIListLayout.Padding = UDim.new(0.001, 0)
+
+FPS.Name = "FPS"
+FPS.Parent = Frame
+FPS.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+FPS.BackgroundTransparency = 0.500
+FPS.Size = UDim2.new(0.05, 0, 0.9, 0)
+
+UICorner.Parent = FPS
+
+Value.Name = "Value"
+Value.Parent = FPS
+Value.AnchorPoint = Vector2.new(0.5, 0.5)
+Value.BackgroundTransparency = 1.000
+Value.Position = UDim2.new(0.5, 0, 0.5, 0)
+Value.Size = UDim2.new(1, 0, 1, 0)
+Value.Font = Enum.Font.PermanentMarker
+Value.Text = "FPS ...."
+Value.TextColor3 = Color3.fromRGB(255, 255, 255)
+Value.TextScaled = true
+Value.TextWrapped = true
+
+Ping.Name = "Ping"
+Ping.Parent = Frame
+Ping.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Ping.BackgroundTransparency = 0.500
+Ping.Size = UDim2.new(0.05, 0, 0.9, 0)
+
+UICorner_2.Parent = Ping
+
+Value_2.Name = "Value"
+Value_2.Parent = Ping
+Value_2.AnchorPoint = Vector2.new(0.5, 0.5)
+Value_2.BackgroundTransparency = 1.000
+Value_2.Position = UDim2.new(0.5, 0, 0.5, 0)
+Value_2.Size = UDim2.new(1, 0, 1, 0)
+Value_2.Font = Enum.Font.PermanentMarker
+Value_2.Text = "Ping ...."
+Value_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Value_2.TextScaled = true
+Value_2.TextWrapped = true
+
+Health.Name = "Health"
+Health.Parent = Frame
+Health.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Health.BackgroundTransparency = 0.500
+Health.Size = UDim2.new(0.05, 0, 0.9, 0)
+
+UICorner_3.Parent = Health
+
+Value_3.Name = "Value"
+Value_3.Parent = Health
+Value_3.AnchorPoint = Vector2.new(0.5, 0.5)
+Value_3.BackgroundTransparency = 1.000
+Value_3.Position = UDim2.new(0.5, 0, 0.5, 0)
+Value_3.Size = UDim2.new(1, 0, 1, 0)
+Value_3.Font = Enum.Font.PermanentMarker
+Value_3.Text = "Health ...."
+Value_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+Value_3.TextScaled = true
+Value_3.TextWrapped = true
+
+
+function GameStat() 
+	local script = Instance.new('LocalScript')
+	script.Parent = Frame
+	repeat wait(1) until game:IsLoaded()
+	local labels = script.Parent
+	game:GetService("RunService").RenderStepped:Connect(function()
+		local split = string.split(game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString(),'(')
+        local ping = math.round(tonumber(split[1]))
+		labels.Ping.Value.Text = "Ping " ..ping
+	    if ping < 100 then
+		labels.Ping.Value.TextColor3 = Color3.fromRGB(0,255,0)
+		elseif ping < 200 then
+		labels.Ping.Value.TextColor3 = Color3.fromRGB(255,255,0)
+		elseif ping < 300 then
+		labels.Ping.Value.TextColor3 = Color3.fromRGB(255,150,0)
+		elseif ping < 400 then
+		labels.Ping.Value.TextColor3 = Color3.fromRGB(255,100,0)
+		elseif ping < 500 then
+		labels.Ping.Value.TextColor3 = Color3.fromRGB(255,0,0)
+		end
+		
+		local fps = math.round(tonumber(game.Workspace:GetRealPhysicsFPS()))
+		labels.FPS.Value.Text = "FPS " ..fps 
+	    if fps < 10 then
+		labels.FPS.Value.TextColor3 = Color3.fromRGB(255,0,0)
+		elseif fps < 30 then
+		labels.FPS.Value.TextColor3 = Color3.fromRGB(255,255,0)
+		elseif fps <= 60 then
+		labels.FPS.Value.TextColor3 = Color3.fromRGB(0,255,0)
+		end
+		
+		labels.Health.Value.Text = "Health " .. tostring(math.round(game.Players.LocalPlayer.Character.Humanoid.Health))
+		HPP = tonumber(math.floor((math.floor(game.Players.LocalPlayer.Character.Humanoid.Health) / math.floor(game.Players.LocalPlayer.Character.Humanoid.MaxHealth)) * 100))
+	    if HPP < 1 then
+		labels.Health.Value.TextColor3 = Color3.fromRGB(255,0,0)
+		elseif HPP < 25 then
+		labels.Health.Value.TextColor3 = Color3.fromRGB(255,100,0)
+		elseif HPP < 50 then
+		labels.Health.Value.TextColor3 = Color3.fromRGB(255,150,0)
+		elseif HPP < 75 then
+		labels.Health.Value.TextColor3 = Color3.fromRGB(255,255,0)
+		elseif HPP <= 100 then
+		labels.Health.Value.TextColor3 = Color3.fromRGB(0,255,0)
+		end
+	end)
+end
+coroutine.resume(coroutine.create(GameStat))
