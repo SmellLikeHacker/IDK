@@ -126,60 +126,63 @@ Value_4.TextColor3 = Color3.fromRGB(255, 255, 255)
 Value_4.TextScaled = true
 Value_4.TextWrapped = true
 
-function GameStat() 
-	local script = Instance.new('LocalScript')
-	script.Parent = Frame
+local script = Instance.new('LocalScript')
+script.Parent = Frame
 repeat wait(1) until game:IsLoaded()
 	local labels = script.Parent
-	game:GetService("RunService").RenderStepped:Connect(function()
-	    pcall(function()
-        	local split = string.split(game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString(),'(')
-            local ping = math.round(tonumber(split[1]))
-        	labels.Ping.Value.Text = "Ping " ..ping
-            if ping < 100 then
-        	labels.Ping.Value.TextColor3 = Color3.fromRGB(0,255,0)
-        	elseif ping < 200 then
-        	labels.Ping.Value.TextColor3 = Color3.fromRGB(255,255,0)
-        	elseif ping < 300 then
-        	labels.Ping.Value.TextColor3 = Color3.fromRGB(255,150,0)
-        	elseif ping < 400 then
-        	labels.Ping.Value.TextColor3 = Color3.fromRGB(255,100,0)
-        	elseif ping < 500 then
-        	labels.Ping.Value.TextColor3 = Color3.fromRGB(255,0,0)
-        	end
-        	
-        	local fps = tostring(math.round(tonumber(game.Workspace:GetRealPhysicsFPS())))
-        	labels.FPS.Value.Text = "FPS " ..fps 
-        	local fpss = math.round(tonumber(game.Workspace:GetRealPhysicsFPS()))
-            if fpss < 10 then
-        	labels.FPS.Value.TextColor3 = Color3.fromRGB(255,0,0)
-        	elseif fpss < 30 then
-        	labels.FPS.Value.TextColor3 = Color3.fromRGB(255,255,0)
-        	elseif fpss <= 60 then
-        	labels.FPS.Value.TextColor3 = Color3.fromRGB(0,255,0)
-        	end
-        	
-        	labels.Health.Value.Text = "Health " .. tostring(math.round(game.Players.LocalPlayer.Character.Humanoid.Health))
-        	HPP = tonumber(math.floor((math.floor(game.Players.LocalPlayer.Character.Humanoid.Health) / math.floor(game.Players.LocalPlayer.Character.Humanoid.MaxHealth)) * 100))
-            if HPP < 1 then
-        	labels.Health.Value.TextColor3 = Color3.fromRGB(255,0,0)
-        	elseif HPP < 25 then
-        	labels.Health.Value.TextColor3 = Color3.fromRGB(255,100,0)
-        	elseif HPP < 50 then
-        	labels.Health.Value.TextColor3 = Color3.fromRGB(255,150,0)
-        	elseif HPP < 75 then
-        	labels.Health.Value.TextColor3 = Color3.fromRGB(255,255,0)
-        	elseif HPP <= 100 then
-        	labels.Health.Value.TextColor3 = Color3.fromRGB(0,255,0)
-        	end
-        	
-        	local TimeInUnix = os.time()
-        	local Lighting = game:GetService("Lighting")
-        	local stringToFormat = "%H:%M:%S"
-        	local result = os.date(stringToFormat, TimeInUnix)
-            labels.Time.Value.Text = result
+    spawn(function()
+        pcall(function()
+            while wait(1) do
+                pcall(function()
+                	labels.Health.Value.Text = "Health " .. tostring(math.round(game.Players.LocalPlayer.Character.Humanoid.Health))
+                	HPP = tonumber(math.floor((math.floor(game.Players.LocalPlayer.Character.Humanoid.Health) / math.floor(game.Players.LocalPlayer.Character.Humanoid.MaxHealth)) * 100))
+                    if HPP < 1 then
+                	labels.Health.Value.TextColor3 = Color3.fromRGB(255,0,0)
+                	elseif HPP < 25 then
+                	labels.Health.Value.TextColor3 = Color3.fromRGB(255,100,0)
+                	elseif HPP < 50 then
+                	labels.Health.Value.TextColor3 = Color3.fromRGB(255,150,0)
+                	elseif HPP < 75 then
+                	labels.Health.Value.TextColor3 = Color3.fromRGB(255,255,0)
+                	elseif HPP <= 100 then
+                	labels.Health.Value.TextColor3 = Color3.fromRGB(0,255,0)
+                	end
+                	
+                	local TimeInUnix = os.time()
+                	local Lighting = game:GetService("Lighting")
+                	local stringToFormat = "%H:%M:%S"
+                	local result = os.date(stringToFormat, TimeInUnix)
+                    labels.Time.Value.Text = result
+                    
+                    local splitFps = string.split(game:GetService("Stats").Network.ServerStatsItem["Sent Data Packets"]:GetValueString(),'/')
+                    local fps = tostring(math.round(tonumber(splitFps[1])))
+            		labels.FPS.Value.Text = "FPS " ..fps 
+            	    local splitFpss = string.split(game:GetService("Stats").Network.ServerStatsItem["Sent Data Packets"]:GetValueString(),'/')
+                    local fpss = math.round(tonumber(splitFpss[1]))
+            	    if fpss < 10 then
+            		labels.FPS.Value.TextColor3 = Color3.fromRGB(255,0,0)
+            		elseif fpss < 30 then
+            		labels.FPS.Value.TextColor3 = Color3.fromRGB(255,255,0)
+            		elseif fpss > 30 then
+            		labels.FPS.Value.TextColor3 = Color3.fromRGB(0,255,0)
+            		end
+            		
+            		local split = string.split(game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString(),'(')
+                    local ping = math.round(tonumber(split[1]))
+                	labels.Ping.Value.Text = "Ping " ..ping
+                    if ping < 100 then
+                	labels.Ping.Value.TextColor3 = Color3.fromRGB(0,255,0)
+                	elseif ping < 200 then
+                	labels.Ping.Value.TextColor3 = Color3.fromRGB(255,255,0)
+                	elseif ping < 300 then
+                	labels.Ping.Value.TextColor3 = Color3.fromRGB(255,150,0)
+                	elseif ping < 400 then
+                	labels.Ping.Value.TextColor3 = Color3.fromRGB(255,100,0)
+                	elseif ping < 500 then
+                	labels.Ping.Value.TextColor3 = Color3.fromRGB(255,0,0)
+                	end
+                end)
+            end
         end)
 	end)
-end
-coroutine.resume(coroutine.create(GameStat))
 end
