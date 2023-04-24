@@ -148,13 +148,14 @@ repeat wait(1) until game:IsLoaded()
         	labels.Ping.Value.TextColor3 = Color3.fromRGB(255,0,0)
         	end
         	
-        	local fps = math.round(tonumber(game.Workspace:GetRealPhysicsFPS()))
+        	local fps = tostring(math.round(tonumber(game.Workspace:GetRealPhysicsFPS())))
         	labels.FPS.Value.Text = "FPS " ..fps 
-            if fps < 10 then
+        	local fpss = math.round(tonumber(game.Workspace:GetRealPhysicsFPS()))
+            if fpss < 10 then
         	labels.FPS.Value.TextColor3 = Color3.fromRGB(255,0,0)
-        	elseif fps < 30 then
+        	elseif fpss < 30 then
         	labels.FPS.Value.TextColor3 = Color3.fromRGB(255,255,0)
-        	elseif fps <= 60 then
+        	elseif fpss <= 60 then
         	labels.FPS.Value.TextColor3 = Color3.fromRGB(0,255,0)
         	end
         	
