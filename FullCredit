@@ -342,7 +342,7 @@ Frame.Parent = Toggle
 Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Frame.Position = UDim2.new(0.156774372, 0, 0.231666654, 0)
-Frame.Size = UDim2.new(0, 75, 0, 75)
+Frame.Size = UDim2.new(0, 50, 0, 50)
 
 UICorner.CornerRadius = UDim.new(0, 25)
 UICorner.Parent = Frame
@@ -352,14 +352,14 @@ Frame_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Frame_2.BackgroundTransparency = 1.000
 Frame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Frame_2.BorderSizePixel = 0
-Frame_2.Size = UDim2.new(0, 75, 0, 75)
+Frame_2.Size = UDim2.new(0, 50, 0, 50)
 
 TextButton.Parent = Frame_2
 TextButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 TextButton.BackgroundTransparency = 1.000
 TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextButton.BorderSizePixel = 0
-TextButton.Size = UDim2.new(0, 75, 0, 75)
+TextButton.Size = UDim2.new(0, 50, 0, 50)
 TextButton.Font = Enum.Font.SourceSans
 TextButton.Text = ""
 TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -368,7 +368,7 @@ TextButton.TextSize = 14.000
 ImageLabel.Parent = Frame_2
 ImageLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ImageLabel.Size = UDim2.new(0, 75, 0, 75)
+ImageLabel.Size = UDim2.new(0, 50, 0, 50)
 ImageLabel.Image = "rbxassetid://13241550901"
 
 UICorner_2.CornerRadius = UDim.new(0, 13)
