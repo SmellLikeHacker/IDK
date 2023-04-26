@@ -248,6 +248,13 @@ Value_5.TextWrapped = true
     script.Parent = Frame
     repeat wait(1) until game:IsLoaded()
 	local labels = script.Parent
+    local RS = game:GetService("RunService")
+    local frames = 0
+    RS.RenderStepped:Connect(function()
+    	frames = frames + 1
+    end)
+
+
     spawn(function()
         pcall(function()
             while wait(1) do
@@ -282,17 +289,16 @@ Value_5.TextWrapped = true
                     labels.Time.Value.Text = result
                     labels.Time.Value.TextColor3 = Color3.fromRGB(0,255,0)
                     
-                	local fps = tostring(math.round(tonumber(game.Workspace:GetRealPhysicsFPS())))
-                	local fpss = math.round(tonumber(game.Workspace:GetRealPhysicsFPS()))
-                    if fpss < 10 then
+                    if tonumber(frames) < 10 then
                 	labels.FPS.Value.TextColor3 = Color3.fromRGB(255,0,0)
-                	elseif fpss <= 30 then
+                	elseif tonumber(frames) <= 30 then
                 	labels.FPS.Value.TextColor3 = Color3.fromRGB(255,255,0)
-                	elseif fpss > 30 then
+                	elseif tonumber(frames) > 30 then
                 	labels.FPS.Value.TextColor3 = Color3.fromRGB(0,255,0)
                 	end
-                    labels.FPS.Value.Text = "FPS " ..fps 	
-                    
+                    labels.FPS.Value.Text = "FPS " ..frames 	
+                    frames = 0
+
                     local scripttime = game.Workspace.DistributedGameTime
                     local seconds = scripttime%60
                     local minutes = math.floor(scripttime/60%60)
@@ -385,5 +391,4 @@ if not game:GetService("CoreGui"):FindFirstChild("Toggle") and not game:GetServi
     Stat()
     Cre()
 end
-
 
