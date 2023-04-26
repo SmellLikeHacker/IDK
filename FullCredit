@@ -16,7 +16,7 @@ local TexT = Instance.new("TextLabel")
 --Properties:
 
 Credit.Name = "Credit"
-Credit.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Credit.Parent = game:GetService("CoreGui")
 
 FRame.Name = "FRame"
 FRame.Parent = Credit
