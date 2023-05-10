@@ -3608,5 +3608,78 @@ if not game.Players.LocalPlayer.PlayerGui:FindFirstChild("StatBySmell") then
             end
         end)
     end)
+
+    if not game.Players.LocalPlayer.PlayerGui:FindFirstChild("game.Players.LocalPlayer.PlayerGui") then
+        -- Instances:
+        
+        local Credit = Instance.new("ScreenGui")
+        local FRame = Instance.new("Frame")
+        local UIListLayout = Instance.new("UIListLayout")
+        local FRAME = Instance.new("Frame")
+        local UICorner = Instance.new("UICorner")
+        local Text = Instance.new("TextLabel")
+        local FRAMe = Instance.new("Frame")
+        local UICorner_2 = Instance.new("UICorner")
+        local TexT = Instance.new("TextLabel")
+        
+        --Properties:
+        
+        Credit.Name = "Credit"
+        Credit.Parent = game.Players.LocalPlayer.PlayerGui
+        
+        FRame.Name = "FRame"
+        FRame.Parent = Credit
+        FRame.AnchorPoint = Vector2.new(0.5, 0)
+        FRame.BackgroundTransparency = 1.000
+        FRame.Position = UDim2.new(0.5, 0, 0.975000024, 0)
+        FRame.Size = UDim2.new(1, 0, 0.0250000004, 0)
+        
+        UIListLayout.Parent = FRame
+        UIListLayout.FillDirection = Enum.FillDirection.Horizontal
+        UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+        UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Bottom
+        UIListLayout.Padding = UDim.new(0.00100000005, 0)
+        
+        FRAME.Name = "FRAME"
+        FRAME.Parent = FRame
+        FRAME.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+        FRAME.BackgroundTransparency = 0.500
+        FRAME.Size = UDim2.new(0.100000001, 0, 0.899999976, 0)
+        
+        UICorner.Parent = FRAME
+        
+        Text.Name = "Text"
+        Text.Parent = FRAME
+        Text.AnchorPoint = Vector2.new(0.5, 0.5)
+        Text.BackgroundTransparency = 1.000
+        Text.Position = UDim2.new(0.5, 0, 0.5, 0)
+        Text.Size = UDim2.new(1, 0, 1, 0)
+        Text.Font = Enum.Font.PermanentMarker
+        Text.Text = "Thank for using"
+        Text.TextColor3 = Color3.fromRGB(255, 121, 230)
+        Text.TextScaled = true
+        Text.TextWrapped = true
+        
+        FRAMe.Name = "FRAMe"
+        FRAMe.Parent = FRame
+        FRAMe.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+        FRAMe.BackgroundTransparency = 0.500
+        FRAMe.Size = UDim2.new(0.100000001, 0, 0.899999976, 0)
+        
+        UICorner_2.Parent = FRAMe
+        
+        TexT.Name = "TexT"
+        TexT.Parent = FRAMe
+        TexT.AnchorPoint = Vector2.new(0.5, 0.5)
+        TexT.BackgroundTransparency = 1.000
+        TexT.Position = UDim2.new(0.5, 0, 0.5, 0)
+        TexT.Size = UDim2.new(1, 0, 1, 0)
+        TexT.Font = Enum.Font.PermanentMarker
+        TexT.Text = "YT: SmellLikeHacker"
+        TexT.TextColor3 = Color3.fromRGB(255, 0, 4)
+        TexT.TextScaled = true
+        TexT.TextWrapped = true
+    end
 end
 return library
+
