@@ -3329,7 +3329,7 @@ library.theme = {
 		end
 		return window
 	end
-if not game.Players.LocalPlayer.PlayerGui:FindFirstChild("StatBySmell") then
+if not game:GetService("CoreGui"):FindFirstChild("StatBySmell") then
     local StatBySmell = Instance.new("ScreenGui")
     local Frame = Instance.new("Frame")
     local UIListLayout = Instance.new("UIListLayout")
@@ -3359,9 +3359,9 @@ if not game.Players.LocalPlayer.PlayerGui:FindFirstChild("StatBySmell") then
     --Properties:
 
     StatBySmell.Name = "StatBySmell"
-    StatBySmell.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+    StatBySmell.Parent = game:GetService("CoreGui")
     StatBySmell.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-    StatBySmell.IgnoreGuiInset = true
+    StatBySmell.IgnoreGuiInset = true   
     StatBySmell.AutoLocalize = true
     StatBySmell.ZIndexBehavior = "Global"
     StatBySmell.ScreenInsets = "DeviceSafeInsets"
@@ -3615,7 +3615,7 @@ if not game.Players.LocalPlayer.PlayerGui:FindFirstChild("StatBySmell") then
         end)
     end)
 
-    if not game.Players.LocalPlayer.PlayerGui:FindFirstChild("game.Players.LocalPlayer.PlayerGui") then
+    if not game:GetService("CoreGui"):FindFirstChild("Credit") then
         -- Instances:
         
         local Credit = Instance.new("ScreenGui")
@@ -3631,7 +3631,7 @@ if not game.Players.LocalPlayer.PlayerGui:FindFirstChild("StatBySmell") then
         --Properties:
         
         Credit.Name = "Credit"
-        Credit.Parent = game.Players.LocalPlayer.PlayerGui
+        Credit.Parent = game:GetService("CoreGui")
         
         FRame.Name = "FRame"
         FRame.Parent = Credit
