@@ -1,0 +1,22 @@
+repeat wait() until game:IsLoaded()
+if game.PlaceId == 10446125875 then
+    pcall(function()
+    	loadstring(game:HttpGet('https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/Anime%20Fruit%20Sim'))()
+    end)
+elseif game.PlaceId == 12192552089 then
+    pcall(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/FruitWarriors"))()
+    end)
+elseif game.PlaceId == 5732966938 or game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name == "Survival" or game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name == "Versus" then
+    pcall(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/WorldDef"))()
+    end)
+elseif game.PlaceId == 2866967438 then
+    pcall(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/FishingSimulator"))()
+    end)
+else
+    pcall(function()
+	print("GameNotfound")
+    end)
+end
