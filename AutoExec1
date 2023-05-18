@@ -1,6 +1,6 @@
-repeat wait(1) until game:IsLoaded()
+repeat wait() until game:IsLoaded()
 if getgenv().Executed then 
-    return print("❗Executed")
+    return print("❗ Executing ❗")
 end
 getgenv().Executed = true
 task.spawn(function()
