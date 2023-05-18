@@ -1,6 +1,6 @@
 repeat wait() until game:IsLoaded()
 if _G.Executed == nil then
-    _G.Execute = false
+    _G.Executed = false
 end
 print("Executed".._G.Executed)
 task.spawn(function()
