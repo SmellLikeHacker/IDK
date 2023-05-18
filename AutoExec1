@@ -1,17 +1,14 @@
 repeat task.wait() until game:IsLoaded()
-if 
-getgenv().Executed 
-then 
+if getgenv().Executed then 
     return 
-end;
-getgenv().Executed=true;
+end
+getgenv().Executed = true
 task.spawn(function()
-    local queue_on_teleport=syn and syn.queue_on_teleport or queue_on_teleport or queueonteleport;
-if queue_on_teleport 
-then 
-    pcall(function()queue_on_teleport'loadstring(game:HttpGet"https://raw.githubusercontent.com/SmellLikeHacker/IDK/main/AutoExec1")()'
-    end)
-end 
-end)loadstring(game:HttpGet"https://raw.githubusercontent.com/SmellLikeHacker/IDK/main/AutoExec2")()
-
-
+    local queue_on_teleport = syn and syn.queue_on_teleport or queue_on_teleport or queueonteleport
+    if queue_on_teleport then 
+        pcall(function()
+            queue_on_teleport'loadstring(game:HttpGet"https://raw.githubusercontent.com/SmellLikeHacker/IDK/main/AutoExec1")()'
+        end)
+    end 
+end)
+loadstring(game:HttpGet"https://raw.githubusercontent.com/SmellLikeHacker/IDK/main/AutoExec2")()
