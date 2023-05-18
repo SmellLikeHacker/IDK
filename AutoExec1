@@ -1,4 +1,5 @@
 repeat wait() until game:IsLoaded()
+print("Executed".._G.Executed)
 task.spawn(function()
     local queue_on_teleport = syn and syn.queue_on_teleport or queue_on_teleport or queueonteleport
     if queue_on_teleport then 
@@ -12,6 +13,7 @@ spawn(function()
         pcall(function()
             _G.Executed = true
             loadstring(game:HttpGet"https://raw.githubusercontent.com/SmellLikeHacker/IDK/main/AutoExec2")()
+            print("Executed".._G.Executed)
         end)
     end
 end)
