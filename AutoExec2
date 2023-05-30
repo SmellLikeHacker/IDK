@@ -11,6 +11,10 @@ elseif game.PlaceId == 5732966938 or game:GetService("MarketplaceService"):GetPr
     pcall(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/WorldDef"))()
     end)
+elseif game.PlaceId == 6938803436 or game.PlaceId == 6990129309 or game.PlaceId == 6990133340 or game.PlaceId == 6990131029 or game.PlaceId == 7338881230 or game.PlaceId == 7274690025 then
+    pcall(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/AnimeDimensions"))()
+    end)
 elseif game.PlaceId == 2866967438 then
     pcall(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/FishingSimulator"))()
