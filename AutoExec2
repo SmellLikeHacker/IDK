@@ -7,6 +7,10 @@ elseif game.PlaceId == 12192552089 then
     pcall(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/FruitWarriors"))()
     end)
+elseif game.PlaceId == 6558526079 then
+    pcall(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/AnimeWorld"))()
+    end)
 elseif game.PlaceId == 5732966938 or game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name == "Survival" or game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name == "Versus" then
     pcall(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/WorldDef"))()
