@@ -7,7 +7,7 @@ elseif game.PlaceId == 12192552089 then
     pcall(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/FruitWarriors"))()
     end)
-elseif game.PlaceId == 6558526079 then
+elseif game.PlaceId == 6593190090 or game.PlaceId == 6558526079 or game.PlaceId == 6696693774  or game.PlaceId == 6708746728  or game.PlaceId == 13042543525  or game.PlaceId == 13068859894 or game.PlaceId == 13408537127 then
     pcall(function()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/AnimeWorld"))()
     end)
