@@ -412,7 +412,7 @@ library.theme = {
 		local window = { }
 		window.name = name or ""
 		window.size = UDim2.fromOffset(600, 400)
-		window.hidebutton = hidebutton or Enum.KeyCode.RightControl
+		window.hidebutton = hidebutton or Enum.KeyCode.LeftControl
 		window.theme = library.theme
 		local updateevent = Instance.new("BindableEvent")
 		function window:UpdateTheme(theme)
@@ -466,7 +466,15 @@ library.theme = {
 		end)
 		uis.InputBegan:Connect(function(key)
 			if key.KeyCode == window.hidebutton then
-				window.Frame.Visible = not window.Frame.Visible
+                for i,v in pairs(game:GetService("CoreGui"):GetChildren()) do
+                    if v:FindFirstChild("main") then
+                            if v.Enabled == false then
+                            v.Enabled = true
+                            else
+                            v.Enabled = false
+                        end
+                    end
+                end
 			end
 		end)
 		local function checkIfGuiInFront(Pos)
