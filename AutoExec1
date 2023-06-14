@@ -4,6 +4,7 @@ pcall(function()
     if getgenv().Execute ~= true then
         loadstring(game:HttpGet"https://raw.githubusercontent.com/SmellLikeHacker/IDK/main/AutoExec2")()
     end
+    getgenv().Execute = true
 end)
 end)
 spawn(function()
