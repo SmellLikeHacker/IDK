@@ -25,6 +25,10 @@ spawn(function()
             pcall(function()
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/FishingSimulator"))()
             end)
+        elseif game.PlaceId == 8396586868 or game.PlaceId == 9264222904 or game.PlaceId == 9432106399 or game.PlaceId == 9551614839 or game.PlaceId == 9572329421 or game.PlaceId == 9812430518 or game.PlaceId == 10866312598 or game.PlaceId == 11216777504 or game.PlaceId == 11287074228 or game.PlaceId == 12697622192 then
+            pcall(function()
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/AOPG"))()
+            end)
         elseif game.PlaceId == 5777228223 or game.PlaceId == 3475397644 or game.PlaceId == 5391312853  or game.PlaceId == 4869039553  or game.PlaceId == 4601778915  or game.PlaceId == 3475419198 or game.PlaceId == 3487210751 or game.PlaceId == 3475422608  or game.PlaceId ==  4728805070 or game.PlaceId ==  4174118306 or game.PlaceId == 3752680052  or game.PlaceId == 3737848045  or game.PlaceId == 3623549100  then
             pcall(function()
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/Dragon%20Adventure"))()
