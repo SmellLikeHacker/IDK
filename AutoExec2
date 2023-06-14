@@ -1,4 +1,3 @@
-getgenv().Execute = true
 repeat wait() until game:IsLoaded()
 if game.PlaceId == 10446125875 then
     pcall(function()
