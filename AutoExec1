@@ -1,8 +1,13 @@
 repeat wait() until game:IsLoaded()
 spawn(function()
 pcall(function()
-loadstring(game:HttpGet"https://raw.githubusercontent.com/SmellLikeHacker/IDK/main/AutoExec2")()
-getgenv().Execute = true
+    if getgenv().Execute ~= true then
+        loadstring(game:HttpGet"https://raw.githubusercontent.com/SmellLikeHacker/IDK/main/AutoExec2")()
+    end
+end)
+end)
+spawn(function()
+pcall(function()
 local queue_on_teleport = syn and syn.queue_on_teleport or queue_on_teleport or queueonteleport;
     if queue_on_teleport then 
         pcall(function()
