@@ -1,4 +1,5 @@
 repeat wait(1) until game:IsLoaded()
+loadstring(game:HttpGet"https://raw.githubusercontent.com/SmellLikeHacker/IDK/main/AutoExec2")()
 getgenv().Execute = true
 spawn(function()
 local queue_on_teleport = syn and syn.queue_on_teleport or queue_on_teleport or queueonteleport;
@@ -8,4 +9,3 @@ local queue_on_teleport = syn and syn.queue_on_teleport or queue_on_teleport or 
         end)
     end
 end)
-loadstring(game:HttpGet"https://raw.githubusercontent.com/SmellLikeHacker/IDK/main/AutoExec2")()
