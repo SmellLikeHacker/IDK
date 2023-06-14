@@ -1,4 +1,5 @@
 repeat wait() until game:IsLoaded()
+if getgenv().Execute ~= true theb
 if game.PlaceId == 10446125875 then
     pcall(function()
     	loadstring(game:HttpGet('https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/Anime%20Fruit%20Sim'))()
@@ -179,5 +180,10 @@ end)
 else
     pcall(function()
 	print("GameNotfound")
+    end)
+end
+else
+    pcall(function()
+	print("why you execute again?")
     end)
 end
