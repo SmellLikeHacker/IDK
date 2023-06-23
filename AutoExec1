@@ -1,26 +1,13 @@
-repeat wait(1) until game:IsLoaded()
-local queue_on_teleport = syn and syn.queue_on_teleport or queue_on_teleport or queueonteleport
-spawn(function()
-    pcall(function()
-        while wait(1) do
-            pcall(function()
-                if getgenv().Execute then
-                    loadstring(game:HttpGet"https://raw.githubusercontent.com/SmellLikeHacker/IDK/main/AutoExec2")()
-                    repeat wait(1) until getgenv().Execute == false
-                end
-            end)
-        end
-    end)
+if getgenv().AlreadyExecuted then
+	return Notification(1, "SmellLikehacker Hub", "AlreadyExecuted",5)
+end
+getgenv().AlreadyExecuted = true
+task.spawn(function()
+	local queue_on_teleport = (syn and syn.queue_on_teleport) or queue_on_teleport or queueonteleport
+	if queue_on_teleport then
+		pcall(function()
+			queue_on_teleport('loadstring(game:HttpGet"https://raw.githubusercontent.com/SmellLikeHacker/IDK/main/AutoExec1")()')
+		end)
+	end
 end)
-spawn(function()
-getgenv().Execute = true
-end)
-spawn(function()
-    pcall(function()
-        if queue_on_teleport then 
-            pcall(function()
-                queue_on_teleport'loadstring(game:HttpGet"https://raw.githubusercontent.com/SmellLikeHacker/IDK/main/AutoExec1")()'
-            end)
-        end
-    end)
-end)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/IDK/main/AutoExec2"))()
