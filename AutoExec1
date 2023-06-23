@@ -1,13 +1,15 @@
 repeat wait() until game:IsLoaded()
 spawn(function()
     pcall(function()
+        if getgenv().Execute then
+            loadstring(game:HttpGet"https://raw.githubusercontent.com/SmellLikeHacker/IDK/main/AutoExec2")()
+        end
+    end)
+end)
+spawn(function()
+    pcall(function()
         if getgenv().Execute ~= true then
-            spawn(function()
-                getgenv().Execute = true
-            end)
-            spawn(function()
-                loadstring(game:HttpGet"https://raw.githubusercontent.com/SmellLikeHacker/IDK/main/AutoExec2")()
-            end)
+            getgenv().Execute = true
         end
     end)
 end)
