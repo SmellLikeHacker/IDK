@@ -12,7 +12,9 @@ spawn(function()
         end
     end)
 end)
+spawn(function()
 getgenv().Execute = true
+end)
 spawn(function()
     pcall(function()
         if queue_on_teleport then 
