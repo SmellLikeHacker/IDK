@@ -1,21 +1,20 @@
-repeat wait() until game:IsLoaded()
+repeat wait(1) until game:IsLoaded()
+local queue_on_teleport = syn and syn.queue_on_teleport or queue_on_teleport or queueonteleport
 spawn(function()
     pcall(function()
-        if getgenv().Execute then
-            loadstring(game:HttpGet"https://raw.githubusercontent.com/SmellLikeHacker/IDK/main/AutoExec2")()
+        while wait(1) do
+            pcall(function()
+                if getgenv().Execute then
+                    loadstring(game:HttpGet"https://raw.githubusercontent.com/SmellLikeHacker/IDK/main/AutoExec2")()
+                    repeat wait(1) until getgenv().Execute == false
+                end
+            end)
         end
     end)
 end)
+getgenv().Execute = true
 spawn(function()
     pcall(function()
-        if getgenv().Execute ~= true then
-            getgenv().Execute = true
-        end
-    end)
-end)
-spawn(function()
-    pcall(function()
-    local queue_on_teleport = syn and syn.queue_on_teleport or queue_on_teleport or queueonteleport;
         if queue_on_teleport then 
             pcall(function()
                 queue_on_teleport'loadstring(game:HttpGet"https://raw.githubusercontent.com/SmellLikeHacker/IDK/main/AutoExec1")()'
