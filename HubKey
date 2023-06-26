@@ -1,3 +1,0 @@
-current_key = "E"
-loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/IDK/main/Key"))()
-key = Load_Key(current_key , function() end)
