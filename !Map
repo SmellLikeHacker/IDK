@@ -17,6 +17,8 @@ elseif game.PlaceId == 5777228223 or game.PlaceId == 3475397644 or game.PlaceId 
     loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/Dragon%20Adventure"))()
 elseif game.PlaceId == 8811271345 or game.PlaceId == 8811375357 or game.PlaceId == 8829364740 or game.PlaceId == 8830255143 or game.PlaceId == 8848036047 or game.PlaceId == 8898827396 or game.PlaceId == 9032150459 or game.PlaceId == 9034159990 or game.PlaceId == 9036392973 or game.PlaceId == 9088363085 or game.PlaceId == 9169451769 or game.PlaceId == 9169452979 or game.PlaceId == 9169455659 or game.PlaceId == 9280551080 or game.PlaceId == 9301650845 or game.PlaceId == 9326753319 or game.PlaceId == 9353614255 or game.PlaceId == 9519390001 or game.PlaceId == 9755250123 or game.PlaceId == 10205913343 or game.PlaceId == 10228957718 or game.PlaceId == 10984614431 or game.PlaceId == 11175531925 or game.PlaceId == 11947222655 or game.PlaceId == 11959131433 or game.PlaceId == 12033513313 or game.PlaceId == 12981871233 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/BalancedCraftwars"))()
+elseif game.PlaceId == 13630971892 or game.PlaceId == 13897983347 then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/PetQuest"))()
 else
     print("GameNotfound")
 end
