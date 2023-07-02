@@ -19,6 +19,8 @@ elseif game.PlaceId == 8811271345 or game.PlaceId == 8811375357 or game.PlaceId 
     loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/BalancedCraftwars"))()
 elseif game.PlaceId == 13630971892 or game.PlaceId == 13897983347 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/PetQuest"))()
+elseif game.PlaceId == 8425128940 then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/AnimeWarriorsSimulator2"))()
 else
     print("GameNotfound")
 end
