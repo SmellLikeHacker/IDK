@@ -9,7 +9,7 @@ elseif game.PlaceId == 5732966938 or game.PlaceId == 5732988980 or game.PlaceId 
     loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/WorldDef"))()
 elseif game.PlaceId == 6938803436 or game.PlaceId == 6990129309 or game.PlaceId == 6990133340 or game.PlaceId == 6990131029 or game.PlaceId == 7338881230 or game.PlaceId == 7274690025 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/AnimeDimensions"))()
-elseif game.PlaceId == 2866967438 then
+elseif game.PlaceId == 2866967438 or game.PlaceId == 13378270416 or game.PlaceId == 7773766301 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/FishingSimulator"))()
 elseif game.PlaceId == 8396586868 or game.PlaceId == 9264222904 or game.PlaceId == 9432106399 or game.PlaceId == 9551614839 or game.PlaceId == 9572329421 or game.PlaceId == 9812430518 or game.PlaceId == 10866312598 or game.PlaceId == 11216777504 or game.PlaceId == 11287074228 or game.PlaceId == 12697622192 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/AOPG"))()
