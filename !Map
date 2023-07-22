@@ -24,5 +24,6 @@ elseif game.PlaceId == 380305410 or game.PlaceId == 2277629691 or game.PlaceId =
 elseif game.PlaceId == 8425128940 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/AnimeWarriorsSimulator2"))()
 else
-    print("GameNotfound")
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/IDK/main/Notification"))()
+    Notification(1, "SmellLikehacker Hub", "GameNotfound", 10)
 end
