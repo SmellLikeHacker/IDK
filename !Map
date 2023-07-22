@@ -19,6 +19,8 @@ elseif game.PlaceId == 8811271345 or game.PlaceId == 8811375357 or game.PlaceId 
     loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/BalancedCraftwars"))()
 elseif game.PlaceId == 13630971892 or game.PlaceId == 13897983347 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/PetQuest"))()
+elseif game.PlaceId == 380305410 or game.PlaceId == 2277629691 or game.PlaceId == 2277630015 or game.PlaceId == 4464235702 or game.PlaceId == 5857709791 or game.PlaceId == 6215448254 or game.PlaceId == 6655712327 then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/INFINITYRPG"))()
 elseif game.PlaceId == 8425128940 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/AnimeWarriorsSimulator2"))()
 else
