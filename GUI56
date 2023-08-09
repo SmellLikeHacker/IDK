@@ -3125,252 +3125,323 @@ library.CreateWindow = function(self, name, hidebutton)
 	end
 	return window
 end
+repeat wait() until game:IsLoaded()
 if not game:GetService("CoreGui"):FindFirstChild("StatBySmell") then
-	local StatBySmell = Instance.new("ScreenGui")
-	local Frame = Instance.new("Frame")
-	local UIListLayout = Instance.new("UIListLayout")
-	local Toggle = Instance.new("Frame")
-	local UICorner = Instance.new("UICorner")
-	local TextButton = Instance.new("TextButton")
-	local UICorner_2 = Instance.new("UICorner")
-	local FPS = Instance.new("Frame")
-	local UICorner_3 = Instance.new("UICorner")
-	local Value = Instance.new("TextLabel")
-	local Health = Instance.new("Frame")
-	local UICorner_4 = Instance.new("UICorner")
-	local Value_2 = Instance.new("TextLabel")
-	local Ping = Instance.new("Frame")
-	local UICorner_5 = Instance.new("UICorner")
-	local Value_3 = Instance.new("TextLabel")
-	local Player = Instance.new("Frame")
-	local UICorner_6 = Instance.new("UICorner")
-	local Value_4 = Instance.new("TextLabel")
-	local PlayTime = Instance.new("Frame")
-	local UICorner_7 = Instance.new("UICorner")
-	local Value_5 = Instance.new("TextLabel")
-	local Time = Instance.new("Frame")
-	local UICorner_8 = Instance.new("UICorner")
-	local Value_6 = Instance.new("TextLabel")
-	StatBySmell.Name = "StatBySmell"
-	StatBySmell.Parent = game:GetService("CoreGui")
-	StatBySmell.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-	StatBySmell.IgnoreGuiInset = true
-	StatBySmell.AutoLocalize = true
-	StatBySmell.ZIndexBehavior = "Global"
-	StatBySmell.ScreenInsets = "DeviceSafeInsets"
-	Frame.Parent = StatBySmell
-	Frame.AnchorPoint = Vector2.new(0.5, 0)
-	Frame.BackgroundTransparency = 1
-	Frame.Position = UDim2.new(0.5, 0, 0.00499999989, 0)
-	Frame.Size = UDim2.new(0.899999976, 0, 0.0250000004, 0)
-	UIListLayout.Parent = Frame
-	UIListLayout.FillDirection = Enum.FillDirection.Horizontal
-	UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Right
-	UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-	UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Bottom
-	UIListLayout.Padding = UDim.new(0.00100000005, 0)
-	Toggle.Name = "Toggle"
-	Toggle.Parent = Frame
-	Toggle.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	Toggle.BackgroundTransparency = 0.5
-	Toggle.Size = UDim2.new(0.0500000007, 0, 0.899999976, 0)
-	UICorner.Parent = Toggle
-	TextButton.Parent = Toggle
-	TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	TextButton.BackgroundTransparency = 1
-	TextButton.Position = UDim2.new(0.012261454, 0, -7.8491716e-8, 0)
-	TextButton.Size = UDim2.new(1, 0, 1, 0)
-	TextButton.Font = Enum.Font.PermanentMarker
-	TextButton.Text = "Toggle GUI"
-	TextButton.TextColor3 = Color3.fromRGB(0, 255, 0)
-	TextButton.TextScaled = true
-	TextButton.TextSize = 14
-	TextButton.TextWrapped = true
-	TextButton.MouseButton1Click:Connect(function()
-		for i, v in pairs(game:GetService("CoreGui"):GetChildren()) do
-			if v:FindFirstChild("main") then
-				v.main.Visible = not v.main.Visible
+local function RainbowText(text)
+	spawn(function()
+		local add = 10
+		wait(0.1)
+		local k = 1
+		while k <= 255 do
+			text.TextColor3 = Color3.new(k / 255, NaN, NaN)
+			k = k + add
+			wait()
+		end
+		while true do
+			k = 1
+			while k <= 255 do
+				text.TextColor3 = Color3.new(255 / 255, k / 255, NaN)
+				k = k + add
+				wait()
+			end
+			k = 1
+			while k <= 255 do
+				text.TextColor3 = Color3.new((255 / 255) - (k / 255), 255 / 255, NaN)
+				k = k + add
+				wait()
+			end
+			k = 1
+			while k <= 255 do
+				text.TextColor3 = Color3.new(NaN, 255 / 255, k / 255)
+				k = k + add
+				wait()
+			end
+			k = 1
+			while k <= 255 do
+				text.TextColor3 = Color3.new(NaN, (255 / 255) - (k / 255), 255 / 255)
+				k = k + add
+				wait()
+			end
+			k = 1
+			while k <= 255 do
+				text.TextColor3 = Color3.new(k / 255, NaN, 255 / 255)
+				k = k + add
+				wait()
+			end
+			k = 1
+			while k <= 255 do
+				text.TextColor3 = Color3.new(255 / 255, NaN, (255 / 255) - (k / 255))
+				k = k + add
+				wait()
+			end
+			while k <= 255 do
+				text.TextColor3 = Color3.new((255 / 255) - (k / 255), NaN, NaN)
+				k = k + add
+				wait()
 			end
 		end
 	end)
-	UICorner_2.Parent = TextButton
-	FPS.Name = "FPS"
-	FPS.Parent = Frame
-	FPS.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	FPS.BackgroundTransparency = 0.5
-	FPS.Size = UDim2.new(0.0500000007, 0, 0.899999976, 0)
-	UICorner_3.Parent = FPS
-	Value.Name = "Value"
-	Value.Parent = FPS
-	Value.AnchorPoint = Vector2.new(0.5, 0.5)
-	Value.BackgroundTransparency = 1
-	Value.Position = UDim2.new(0.5, 0, 0.5, 0)
-	Value.Size = UDim2.new(1, 0, 1, 0)
-	Value.Font = Enum.Font.PermanentMarker
-	Value.Text = "FPS"
-	Value.TextColor3 = Color3.fromRGB(0, 255, 0)
-	Value.TextScaled = true
-	Value.TextWrapped = true
-	Health.Name = "Health"
-	Health.Parent = Frame
-	Health.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	Health.BackgroundTransparency = 0.5
-	Health.Size = UDim2.new(0.0500000007, 0, 0.899999976, 0)
-	UICorner_4.Parent = Health
-	Value_2.Name = "Value"
-	Value_2.Parent = Health
-	Value_2.AnchorPoint = Vector2.new(0.5, 0.5)
-	Value_2.BackgroundTransparency = 1
-	Value_2.Position = UDim2.new(0.5, 0, 0.5, 0)
-	Value_2.Size = UDim2.new(1, 0, 1, 0)
-	Value_2.Font = Enum.Font.PermanentMarker
-	Value_2.Text = "Health"
-	Value_2.TextColor3 = Color3.fromRGB(0, 255, 0)
-	Value_2.TextScaled = true
-	Value_2.TextWrapped = true
-	Ping.Name = "Ping"
-	Ping.Parent = Frame
-	Ping.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	Ping.BackgroundTransparency = 0.5
-	Ping.Size = UDim2.new(0.0500000007, 0, 0.899999976, 0)
-	UICorner_5.Parent = Ping
-	Value_3.Name = "Value"
-	Value_3.Parent = Ping
-	Value_3.AnchorPoint = Vector2.new(0.5, 0.5)
-	Value_3.BackgroundTransparency = 1
-	Value_3.Position = UDim2.new(0.5, 0, 0.5, 0)
-	Value_3.Size = UDim2.new(1, 0, 1, 0)
-	Value_3.Font = Enum.Font.PermanentMarker
-	Value_3.Text = "Ping"
-	Value_3.TextColor3 = Color3.fromRGB(0, 255, 0)
-	Value_3.TextScaled = true
-	Value_3.TextWrapped = true
-	Player.Name = "Player"
-	Player.Parent = Frame
-	Player.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	Player.BackgroundTransparency = 0.5
-	Player.Size = UDim2.new(0.0500000007, 0, 0.899999976, 0)
-	UICorner_6.Parent = Player
-	Value_4.Name = "Value"
-	Value_4.Parent = Player
-	Value_4.AnchorPoint = Vector2.new(0.5, 0.5)
-	Value_4.BackgroundTransparency = 1
-	Value_4.Position = UDim2.new(0.5, 0, 0.5, 0)
-	Value_4.Size = UDim2.new(1, 0, 1, 0)
-	Value_4.Font = Enum.Font.PermanentMarker
-	Value_4.Text = "Players"
-	Value_4.TextColor3 = Color3.fromRGB(0, 255, 0)
-	Value_4.TextScaled = true
-	Value_4.TextWrapped = true
-	PlayTime.Name = "PlayTime"
-	PlayTime.Parent = Frame
-	PlayTime.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	PlayTime.BackgroundTransparency = 0.5
-	PlayTime.Size = UDim2.new(0.0500000007, 0, 0.899999976, 0)
-	UICorner_7.Parent = PlayTime
-	Value_5.Name = "Value"
-	Value_5.Parent = PlayTime
-	Value_5.AnchorPoint = Vector2.new(0.5, 0.5)
-	Value_5.BackgroundTransparency = 1
-	Value_5.Position = UDim2.new(0.5, 0, 0.5, 0)
-	Value_5.Size = UDim2.new(1, 0, 1, 0)
-	Value_5.Font = Enum.Font.PermanentMarker
-	Value_5.Text = "0:0:0"
-	Value_5.TextColor3 = Color3.fromRGB(0, 255, 0)
-	Value_5.TextScaled = true
-	Value_5.TextWrapped = true
-	Time.Name = "Time"
-	Time.Parent = Frame
-	Time.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	Time.BackgroundTransparency = 0.5
-	Time.Size = UDim2.new(0.0500000007, 0, 0.899999976, 0)
-	UICorner_8.Parent = Time
-	Value_6.Name = "Value"
-	Value_6.Parent = Time
-	Value_6.AnchorPoint = Vector2.new(0.5, 0.5)
-	Value_6.BackgroundTransparency = 1
-	Value_6.Position = UDim2.new(0.5, 0, 0.5, 0)
-	Value_6.Size = UDim2.new(1, 0, 1, 0)
-	Value_6.Font = Enum.Font.PermanentMarker
-	Value_6.Text = "0:0:0"
-	Value_6.TextColor3 = Color3.fromRGB(0, 255, 0)
-	Value_6.TextScaled = true
-	Value_6.TextWrapped = true
-	local script = Instance.new("LocalScript")
-	script.Parent = Frame
-	repeat
-		wait(1)
-	until game:IsLoaded() 
-	local labels = script.Parent
-	local RS = game:GetService("RunService")
-	local frames = 0
-	RS.RenderStepped:Connect(function()
-		frames = frames + 1
-	end)
+end
+local function RainbowImage(ImageColor)
 	spawn(function()
-		pcall(function()
-			while wait(1) do
-				pcall(function()
-					labels.Health.Value.Text = "Health " .. tostring(math.round(game.Players.LocalPlayer.Character.Humanoid.Health))
-					HPP = tonumber(math.floor((math.floor(game.Players.LocalPlayer.Character.Humanoid.Health) / math.floor(game.Players.LocalPlayer.Character.Humanoid.MaxHealth)) * 100))
-					if (HPP < 1) then
-						labels.Health.Value.TextColor3 = Color3.fromRGB(255, 0, 0)
-					elseif (HPP < 25) then
-						labels.Health.Value.TextColor3 = Color3.fromRGB(255, 100, 0)
-					elseif (HPP < 50) then
-						labels.Health.Value.TextColor3 = Color3.fromRGB(255, 150, 0)
-					elseif (HPP < 75) then
-						labels.Health.Value.TextColor3 = Color3.fromRGB(255, 255, 0)
-					elseif (HPP <= 100) then
-						labels.Health.Value.TextColor3 = Color3.fromRGB(0, 255, 0)
-					end
-					local Players = game.Players:GetPlayers()
-					labels.Player.Value.Text = "Players " .. #Players .. "/" .. game:GetService("Players").MaxPlayers
-					if (#Players == game:GetService("Players").MaxPlayers) then
-						labels.Player.Value.TextColor3 = Color3.fromRGB(255, 0, 0)
-					else
-						labels.Player.Value.TextColor3 = Color3.fromRGB(0, 255, 0)
-					end
-					local TimeInUnix = os.time()
-					local Lighting = game:GetService("Lighting")
-					local stringToFormat = "%H:%M:%S"
-					local result = os.date(stringToFormat, TimeInUnix)
-					labels.Time.Value.Text = result
-					labels.Time.Value.TextColor3 = Color3.fromRGB(0, 255, 0)
-					if (tonumber(frames) < 10) then
-						labels.FPS.Value.TextColor3 = Color3.fromRGB(255, 0, 0)
-					elseif (tonumber(frames) <= 30) then
-						labels.FPS.Value.TextColor3 = Color3.fromRGB(255, 255, 0)
-					elseif (tonumber(frames) > 30) then
-						labels.FPS.Value.TextColor3 = Color3.fromRGB(0, 255, 0)
-					end
-					labels.FPS.Value.Text = "FPS " .. frames
-					frames = 0
-					local scripttime = game.Workspace.DistributedGameTime
-					local seconds = scripttime % 60
-					local minutes = math.floor((scripttime / 60) % 60)
-					local hours = math.floor(scripttime / 3600)
-					local tempo = string.format("%.0f:%.0f:%.0f", hours, minutes, seconds)
-					labels.PlayTime.Value.Text = tempo
-					labels.PlayTime.Value.TextColor3 = Color3.fromRGB(0, 255, 0)
-					local split = string.split(game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString(), "(")
-					local ping = math.round(tonumber(split[1]))
-					labels.Ping.Value.Text = "Ping " .. ping
-					if (ping < 100) then
-						labels.Ping.Value.TextColor3 = Color3.fromRGB(0, 255, 0)
-					elseif (ping < 200) then
-						labels.Ping.Value.TextColor3 = Color3.fromRGB(255, 255, 0)
-					elseif (ping < 300) then
-						labels.Ping.Value.TextColor3 = Color3.fromRGB(255, 150, 0)
-					elseif (ping < 400) then
-						labels.Ping.Value.TextColor3 = Color3.fromRGB(255, 100, 0)
-					elseif (ping < 500) then
-						labels.Ping.Value.TextColor3 = Color3.fromRGB(255, 0, 0)
-					end
-				end)
+		local add = 10
+		wait(0.1)
+		local k = 1
+		while k <= 255 do
+			ImageColor.ImageColor3 = Color3.new(k / 255, NaN, NaN)
+			k = k + add
+			wait()
+		end
+		while true do
+			k = 1
+			while k <= 255 do
+				ImageColor.ImageColor3 = Color3.new(255 / 255, k / 255, NaN)
+				k = k + add
+				wait()
 			end
-		end)
+			k = 1
+			while k <= 255 do
+				ImageColor.ImageColor3 = Color3.new((255 / 255) - (k / 255), 255 / 255, NaN)
+				k = k + add
+				wait()
+			end
+			k = 1
+			while k <= 255 do
+				ImageColor.ImageColor3 = Color3.new(NaN, 255 / 255, k / 255)
+				k = k + add
+				wait()
+			end
+			k = 1
+			while k <= 255 do
+				ImageColor.ImageColor3 = Color3.new(NaN, (255 / 255) - (k / 255), 255 / 255)
+				k = k + add
+				wait()
+			end
+			k = 1
+			while k <= 255 do
+				ImageColor.ImageColor3 = Color3.new(k / 255, NaN, 255 / 255)
+				k = k + add
+				wait()
+			end
+			k = 1
+			while k <= 255 do
+				ImageColor.ImageColor3 = Color3.new(255 / 255, NaN, (255 / 255) - (k / 255))
+				k = k + add
+				wait()
+			end
+			while k <= 255 do
+				ImageColor.ImageColor3 = Color3.new((255 / 255) - (k / 255), NaN, NaN)
+				k = k + add
+				wait()
+			end
+		end
 	end)
+end
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local GuiStat = Instance.new("ScreenGui")
+local TopbarContainer = Instance.new("Frame")
+local _1FPSCount = Instance.new("Frame")
+local IconButton = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+local IconLabel = Instance.new("TextLabel")
+local _3PingCount = Instance.new("Frame")
+local IconButton_2 = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local IconLabel_2 = Instance.new("TextLabel")
+local UIListLayout = Instance.new("UIListLayout")
+local _2ToggleMenu = Instance.new("Frame")
+local IconButton_3 = Instance.new("TextButton")
+local IconImage = Instance.new("ImageLabel")
+local IconLabel_3 = Instance.new("TextLabel")
+local UICorner_3 = Instance.new("UICorner")
+
+--Properties:
+
+GuiStat.Name = "StatBySmell"
+GuiStat.Parent = game:GetService("CoreGui")
+GuiStat.ResetOnSpawn = false
+GuiStat.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+GuiStat.IgnoreGuiInset = true
+GuiStat.AutoLocalize = true
+GuiStat.ZIndexBehavior = "Global"
+GuiStat.ScreenInsets = "DeviceSafeInsets"
+
+TopbarContainer.Name = "Frame"
+TopbarContainer.Parent = GuiStat
+TopbarContainer.BackgroundTransparency = 1.000
+TopbarContainer.Position = UDim2.new(0.105, 0, 0, 3)
+TopbarContainer.Size = UDim2.new(0.800000012, 0, 0.0299999993, 0)
+
+_1FPSCount.Name = "1FPSCount"
+_1FPSCount.Parent = TopbarContainer
+_1FPSCount.BackgroundTransparency = 1.000
+_1FPSCount.LayoutOrder = 7
+_1FPSCount.Position = UDim2.new(0, 265, 0, 4)
+_1FPSCount.Size = UDim2.new(0, 86, 0, 32)
+
+IconButton.Name = "IconButton"
+IconButton.Parent = _1FPSCount
+IconButton.Active = false
+IconButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+IconButton.BackgroundTransparency = 0.500
+IconButton.BorderSizePixel = 0
+IconButton.Size = UDim2.new(1, 0, 1, 0)
+IconButton.ZIndex = 10
+IconButton.AutoButtonColor = false
+IconButton.Text = ""
+IconButton.TextTransparency = 1.000
+
+UICorner.Parent = IconButton
+
+IconLabel.Name = "IconLabel"
+IconLabel.Parent = IconButton
+IconLabel.AnchorPoint = Vector2.new(0, 0.5)
+IconLabel.BackgroundTransparency = 1.000
+IconLabel.ClipsDescendants = true
+IconLabel.Position = UDim2.new(0, 12, 0.5, 0)
+IconLabel.Size = UDim2.new(1, -24, 0.449999988, 7)
+IconLabel.ZIndex = 11
+IconLabel.Font = Enum.Font.GothamMedium
+IconLabel.Text = "FPS: 0"
+IconLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+IconLabel.TextSize = 14.000
+
+_3PingCount.Name = "3PingCount"
+_3PingCount.Parent = TopbarContainer
+_3PingCount.BackgroundTransparency = 1.000
+_3PingCount.LayoutOrder = 8
+_3PingCount.Position = UDim2.new(0, 363, 0, 4)
+_3PingCount.Size = UDim2.new(0, 107, 0, 32)
+
+IconButton_2.Name = "IconButton"
+IconButton_2.Parent = _3PingCount
+IconButton_2.Active = false
+IconButton_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+IconButton_2.BackgroundTransparency = 0.500
+IconButton_2.BorderSizePixel = 0
+IconButton_2.Size = UDim2.new(1, 0, 1, 0)
+IconButton_2.ZIndex = 10
+IconButton_2.AutoButtonColor = false
+IconButton_2.Text = ""
+IconButton_2.TextTransparency = 1.000
+
+UICorner_2.Parent = IconButton_2
+
+IconLabel_2.Name = "IconLabel"
+IconLabel_2.Parent = IconButton_2
+IconLabel_2.AnchorPoint = Vector2.new(0, 0.5)
+IconLabel_2.BackgroundTransparency = 1.000
+IconLabel_2.ClipsDescendants = true
+IconLabel_2.Position = UDim2.new(0, 12, 0.5, 0)
+IconLabel_2.Size = UDim2.new(1, -24, 0.449999988, 7)
+IconLabel_2.ZIndex = 11
+IconLabel_2.Font = Enum.Font.GothamMedium
+IconLabel_2.Text = "Ping: 0 ms"
+IconLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+IconLabel_2.TextSize = 14.000
+
+UIListLayout.Parent = TopbarContainer
+UIListLayout.FillDirection = Enum.FillDirection.Horizontal
+UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout.Padding = UDim.new(0, 10)
+
+_2ToggleMenu.Name = "2ToggleMenu"
+_2ToggleMenu.Parent = TopbarContainer
+_2ToggleMenu.BackgroundTransparency = 1.000
+_2ToggleMenu.LayoutOrder = 1
+_2ToggleMenu.Position = UDim2.new(0, 171, 0, 4)
+_2ToggleMenu.Size = UDim2.new(0, 82, 0, 32)
+
+IconButton_3.Name = "IconButton"
+IconButton_3.Parent = _2ToggleMenu
+IconButton_3.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+IconButton_3.BackgroundTransparency = 0.500
+IconButton_3.BorderSizePixel = 0
+IconButton_3.Size = UDim2.new(1, 0, 1, 0)
+IconButton_3.ZIndex = 10
+IconButton_3.AutoButtonColor = false
+IconButton_3.Text = ""
+IconButton_3.TextTransparency = 1.000
+
+IconImage.Name = "IconImage"
+IconImage.Parent = IconButton_3
+IconImage.AnchorPoint = Vector2.new(0, 0.5)
+IconImage.BackgroundTransparency = 1.000
+IconImage.Position = UDim2.new(0, 12, 0.5, 0)
+IconImage.Size = UDim2.new(0, 15, 0.629999995, 0)
+IconImage.ZIndex = 11
+IconImage.Image = "http://www.roblox.com/asset/?id=2246477671"
+IconImage.ScaleType = Enum.ScaleType.Fit
+
+IconLabel_3.Name = "IconLabel"
+IconLabel_3.Parent = IconButton_3
+IconLabel_3.AnchorPoint = Vector2.new(0, 0.5)
+IconLabel_3.BackgroundTransparency = 1.000
+IconLabel_3.ClipsDescendants = true
+IconLabel_3.Position = UDim2.new(0, 35, 0.5, 0)
+IconLabel_3.Size = UDim2.new(1, -47, 0.449999988, 7)
+IconLabel_3.ZIndex = 11
+IconLabel_3.Font = Enum.Font.GothamMedium
+IconLabel_3.Text = "Menu"
+IconLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+IconLabel_3.TextSize = 14.000
+IconLabel_3.TextXAlignment = Enum.TextXAlignment.Left
+UICorner_3.Parent = IconButton_3
+IconButton_3.MouseButton1Click:Connect(function()
+    for i, v in pairs(game:GetService("CoreGui"):GetChildren()) do
+        if v:FindFirstChild("main") then
+            v.main.Visible = not v.main.Visible
+        end
+    end
+end)
+
+RainbowText(IconLabel_3)
+RainbowImage(IconImage)
+
+local script = Instance.new("LocalScript")
+script.Parent = GuiStat
+local labels = script.Parent
+local RS = game:GetService("RunService")
+local frames = 0
+RS.RenderStepped:Connect(function()
+    frames = frames + 1
+end)
+
+task.spawn(function()
+    pcall(function()
+        while wait(1) do
+            pcall(function()
+                if (tonumber(frames) < 10) then
+                    labels.Frame["1FPSCount"].IconButton.IconLabel.TextColor3 = Color3.fromRGB(255, 0, 0)
+                elseif (tonumber(frames) <= 30) then
+                    labels.Frame["1FPSCount"].IconButton.IconLabel.TextColor3 = Color3.fromRGB(255, 255, 0)
+                elseif (tonumber(frames) > 30) then
+                    labels.Frame["1FPSCount"].IconButton.IconLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
+                end
+                labels.Frame["1FPSCount"].IconButton.IconLabel.Text = "FPS " .. frames
+                frames = 0
+                local ping = math.round(tonumber(string.split(game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString(), "(")[1]))
+                labels.Frame["3PingCount"].IconButton.IconLabel.Text = "Ping: " .. ping .. " ms"
+                if (ping < 100) then
+                    labels.Frame["3PingCount"].IconButton.IconLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
+                elseif (ping < 200) then
+                    labels.Frame["3PingCount"].IconButton.IconLabel.TextColor3 = Color3.fromRGB(255, 255, 0)
+                elseif (ping < 300) then
+                    labels.Frame["3PingCount"].IconButton.IconLabel.TextColor3 = Color3.fromRGB(255, 150, 0)
+                elseif (ping < 400) then
+                    labels.Frame["3PingCount"].IconButton.IconLabel.TextColor3 = Color3.fromRGB(255, 100, 0)
+                elseif (ping < 500) then
+                    labels.Frame["3PingCount"].IconButton.IconLabel.TextColor3 = Color3.fromRGB(255, 0, 0)
+                end
+            end)
+        end
+    end)
+end)
+end
 	if not game:GetService("CoreGui"):FindFirstChild("Credit") then
 		local Credit = Instance.new("ScreenGui")
 		local FRame = Instance.new("Frame")
