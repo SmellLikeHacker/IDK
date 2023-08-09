@@ -3505,5 +3505,4 @@ end
 	Notification(1, "SmellLikehacker Hub", "Executed!", 10)
 	wait()
 	Notification(1, "SmellLikehacker Hub", "Toggle Gui With (Menu Button , Insert Button)", 10)
-end
 return library
