@@ -24,7 +24,7 @@
 				local u = q.IconSettings
 				local v = q.GradientSettings
 				local w = q.Main
-				m.Name = "NotificationFolder"
+				m.Name = "NotificationFolder_" .. l
 				m.Parent = game:GetService("CoreGui")
 				local x = Instance.new("ScreenGui")
 				local y = (syn and syn.protect_gui) or getgenv().get_hidden_gui or getgenv().protect_gui
