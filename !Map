@@ -23,6 +23,8 @@ elseif game.PlaceId == 380305410 or game.PlaceId == 2277629691 or game.PlaceId =
     loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/INFINITYRPG"))()
 elseif game.PlaceId == 8425128940 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/AnimeWarriorsSimulator2"))()
+elseif game.PlaceId == 7562641527 then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/BCWR"))()
 else
     loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/IDK/main/Notification"))()
     Notification(1, "SmellLikehacker Hub", "GameNotfound", 10)
