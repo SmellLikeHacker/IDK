@@ -27,7 +27,7 @@ elseif game.PlaceId == 7562641527 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/BCWR"))()
 elseif game.PlaceId == 11445923563 or game.PlaceId == 13155198714 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/OneFruit"))()
-elseif game.PlaceId == 7150950346 then
+elseif game.PlaceId == 4994661268 or game.PlaceId == 5633629911 or game.PlaceId == 5633634742 or game.PlaceId == 5633635653 or game.PlaceId == 5689878965 or game.PlaceId == 7150950346 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/UndertaleJudgementDay"))()
 elseif game.PlaceId == 13775256536 or game.PlaceId == 14082129854 or game.PlaceId == 14264219661 or game.PlaceId == 14682939953 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/ToiletTowerDefense"))()
