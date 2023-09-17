@@ -31,6 +31,8 @@ elseif game.PlaceId == 4994661268 or game.PlaceId == 5633629911 or game.PlaceId 
     loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/UndertaleJudgementDay"))()
 elseif game.PlaceId == 13775256536 or game.PlaceId == 14082129854 or game.PlaceId == 14264219661 or game.PlaceId == 14682939953 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/ToiletTowerDefense"))()
+elseif game.PlaceId == 8534845015  then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/SakuraStand"))()
 else
     loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/IDK/main/Notification"))()
     Notification(1, "SmellLikehacker Hub", "GameNotfound", 10)
