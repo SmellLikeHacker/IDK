@@ -35,6 +35,8 @@ elseif game.PlaceId == 8534845015  then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/SakuraStand"))()
 elseif game.PlaceId == 14561998168  then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/HeavenStand"))()
+elseif game.PlaceId == 4639625707  then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/MyEdit/main/WarTycoon"))()
 else
     loadstring(game:HttpGet("https://raw.githubusercontent.com/SmellLikeHacker/IDK/main/Notification"))()
     Notification(1, "SmellLikehacker Hub", "GameNotfound", 10)
