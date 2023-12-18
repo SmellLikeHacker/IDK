@@ -94,7 +94,6 @@ if (library.theme.cursor and Drawing) then
 			library.cursor.Visible = uis.MouseEnabled and (uis.MouseIconEnabled or game:GetService("GuiService").MenuIsOpen);
 		end);
 	elseif (not success and library.cursor) then
-		library.cursor:Remove();
 	end
 end
 library.ConfigSystem = function(self, name)
@@ -206,9 +205,6 @@ library.CreateWatermark = function(self, name)
 	watermark.main.Name = "Watermark";
 	if syn then
 		syn.protect_gui(watermark.main);
-	end
-	if getgenv().watermark then
-		getgenv().watermark:Remove();
 	end
 	getgenv().watermark = watermark.main;
 	watermark.mainbar = Instance.new("Frame", watermark.main);
@@ -333,9 +329,6 @@ library.CreateWindow = function(self, name, hidebutton)
 	window.Main = Instance.new("ScreenGui", coregui);
 	window.Main.Name = name;
 	window.Main.DisplayOrder = 15;
-	if getgenv().uilib then
-		getgenv().uilib:Remove();
-	end
 	getgenv().uilib = window.Main;
 	local dragging, dragInput, dragStart, startPos;
 	uis.InputChanged:Connect(function(input)
